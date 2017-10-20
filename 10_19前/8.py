@@ -1,0 +1,2 @@
+def prt():
+    print('aaaaaaa')
