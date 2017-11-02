@@ -1,0 +1,9 @@
+README.txt
+setup.py
+sdxpy/__init__.py
+sdxpy/sdx.py
+sdxpys.egg-info/PKG-INFO
+sdxpys.egg-info/SOURCES.txt
+sdxpys.egg-info/dependency_links.txt
+sdxpys.egg-info/top_level.txt
+sdxpys.egg-info/zip-safe
