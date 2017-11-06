@@ -109,8 +109,17 @@ def before_requestFn():
 def teardown_requestFn(a):
     g.db.close()
 
-@app.route("/tijiao" , methods=["POST"])
-def tijiaoFn():
+#展示商品列表
+@app.route("/showProducts")
+def showProductsFn():
+    sqlStr ="select productname , shop , freight , norm , price1 , productdepict , aftersale , depictandimage , id , imgurl from productTable"
+    listResult = g.db.execute(sqlStr)
+    listData = [dict(productname = row[0] , shop = row[1] ,freight = row[2] , norm = row[3] ,price1 = row[4] , productdepict = row[5] ,aftersale = row[6] , depictandimage = row[7] , id = row[8] , imgurl = row[9]) for row in listResult.fetchall()]
+    return json.dumps({"data":listData})
+
+#添加商品
+@app.route("/addProduct" , methods=["POST"])
+def addProductFn():
 
     productname = request.form["productname"]
     shop = request.form["shop"]
@@ -121,11 +130,28 @@ def tijiaoFn():
     aftersale = request.form["aftersale"]
     depictandimage = request.form["depictandimage"]
 
-    print(productname , shop , freight , norm , price1 , productdepict , aftersale , depictandimage )
-    
+    image = request.files["image"]
+    image.save("./uploadFile/" + secure_filename(image.filename))
 
-    return json.dumps({"msg" : "tijiaochenggong"})
 
+
+    sqlStr = "insert into productTable (productname , shop , freight , norm , price1 , productdepict , aftersale , depictandimage , imgurl)  values ('%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s')" % (productname , shop , freight , norm , price1 , productdepict , aftersale , depictandimage , image.filename)
+    g.db.execute(sqlStr)
+    g.db.commit()
+
+    return json.dumps({"msg" : "tijiaochenggongxxx"})
+
+#delete 根据id删除商品
+@app.route("/delete" , methods=["POST"])
+def deleteFn():
+    productId = request.values.get("id");
+
+    sqlStr = "delete from productTable where id ='%s' " % str(productId);
+    g.db.execute(sqlStr);
+    g.db.commit();
+
+
+    return json.dumps({"msg" : productId })
 
 
 if __name__ == "__main__":
@@ -133,7 +159,7 @@ if __name__ == "__main__":
 
 
 
-    #初始化数据库
+    # 初始化数据库
     # from contextlib import closing
     # import sqlite3
     # with closing(sqlite3.connect("./myStorage/myDb.db")) as db:

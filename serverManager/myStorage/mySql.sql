@@ -1,7 +1,19 @@
-drop table if exists userTable;
+drop table if exists productTable;
 
-create table userTable(
+create table productTable(
     id integer primary key autoincrement , 
-    username string not null , 
-    password string not null 
+    aftersale string ,
+    businessId string ,
+    depictandimage string ,
+    flag string ,
+    freight string ,
+    imgurl string ,
+    norm string ,
+    price1 string ,
+    productid string ,
+    productdepict string ,
+    productname string ,
+    productsortid string ,
+    shop string
+
 )

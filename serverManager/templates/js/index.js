@@ -6324,7 +6324,8 @@ var ModalEffects = (function() {
 		[].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i ) {
 
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-				close = modal.querySelector( '.md-close' );
+				close = modal.querySelector( '.md-close' ),
+				close1 = modal.querySelector( '.md-close1' );
 
 			function removeModal( hasPerspective ) {
 				classie.remove( modal, 'md-show' );
@@ -6351,6 +6352,11 @@ var ModalEffects = (function() {
 			});
 
 			close.addEventListener( 'click', function( ev ) {
+				ev.stopPropagation();
+				removeModalHandler();
+			});
+			
+			close1.addEventListener( 'click', function( ev ) {
 				ev.stopPropagation();
 				removeModalHandler();
 			});

@@ -5,48 +5,70 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title></title>
-		
+
 		<link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css" />
 		<script src="../static/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../static/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+
 	</head>
 
 	<body>
-		
+
 		<div class="md-modal md-effect-6" id="modal-6">
 			<div class="md-content">
 				<h3>添加商品</h3>
 				<div>
-					
-					<form id="myTijiaoFrom" action="http://localhost:5000/tijiao" method="post">
-					
-					<ul style="list-style: none;">
-						<li><div class="form-group">名称：<input name="productname" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div></li>
-						<li><div class="form-group">店名：<input name="shop" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div></li>
-						<li><div class="form-group">运费：<input name="freight" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div></li>
-						<li><div class="form-group">规格：<input name="norm" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div></li>
-						<li><div class="form-group">价格：<input name="price1" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div></li>
-						<li><div class="form-group">描述：<input name="productdepict" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div></li>
-						<li><div class="form-group">售后：<input name="aftersale" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div></li>
-						<li><div class="form-group">详情：<input name="depictandimage" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div></li>
-					</ul>
-					
-					
-						<button class="md-close" id = "tijiaoBtn"/>提交</button>
+
+					<form id="myTijiaoFrom" action="http://localhost:5000/addProduct" method="post" enctype="multipart/form-data">
+
+						<ul style="list-style: none;">
+							<li>
+								<div class="form-group">名称：<input name="productname" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							<li>
+								<div class="form-group">店名：<input name="shop" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							<li>
+								<div class="form-group">运费：<input name="freight" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							<li>
+								<div class="form-group">规格：<input name="norm" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							<li>
+								<div class="form-group">价格：<input name="price1" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							<li>
+								<div class="form-group">描述：<input name="productdepict" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							<li>
+								<div class="form-group">售后：<input name="aftersale" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							<li>
+								<div class="form-group">详情：<input name="depictandimage" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							<li>
+								<div class="form-group"><input name="image" type="file" class="form-control imageLoadInput" style="width: 80%; display: inline-block;" /></div>
+							</li>
+							
+						</ul>
+
+						<button class="md-close" id="tijiaoBtn" >提交</button>
+						<img id="loadImage" style="width: 100px; height: 50px; border: 1px solid red;" />
+							
 						
+						
+
 					</form>
+
 					
-					<div id="output" style="border: 1px solid red; width: 100px ; height: 100px;background: lightgreen;">
-						
-					</div>
+					<button class="md-close1">取消</button>
+					
 				</div>
+				
 			</div>
 			
 		</div>
-		
-		
 		
 		<nav class="navbar navbar-inverse" role="navigation">
 			<div class="container-fluid">
@@ -139,7 +161,7 @@
 					<!--
                         列表展示
                     -->
-					<div class="table-responsive">
+					<div class="table-responsive" style="color: #696969;">
 						<table class="table table-striped ">
 							<thead>
 								<tr>
@@ -152,120 +174,7 @@
 									<th>操作</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>15</td>
-									<td>
-										<img src="img/test.jpg" class="img-thumbnail" style="height: 30px;" />
-									</td>
-									<td>超人气无花果</td>
-									<td>18.00￥</td>
-									<td>18.00￥</td>
-									<td>上架</td>
-									<td>
-										<div class="btn-group">
-											<a href="" class="btn btn-default">修改</a>
-											<a href="" class="btn btn-default">下架</a>
-											<a href="" class="btn btn-danger">删除</a>
-										</div>
-
-									</td>
-								</tr>
-
-								<tr>
-									<td>15</td>
-									<td>
-										<img src="img/test.jpg" class="img-thumbnail" style="height: 30px;" />
-									</td>
-									<td>超人气无花果</td>
-									<td>18.00￥</td>
-									<td>18.00￥</td>
-									<td>上架</td>
-									<td>
-										<div class="btn-group">
-											<a href="" class="btn btn-default">修改</a>
-											<a href="" class="btn btn-default">下架</a>
-											<a href="" class="btn btn-danger">删除</a>
-										</div>
-
-									</td>
-								</tr>
-
-								<tr>
-									<td>15</td>
-									<td>
-										<img src="img/test.jpg" class="img-thumbnail" style="height: 30px;" />
-									</td>
-									<td>超人气无花果</td>
-									<td>18.00￥</td>
-									<td>18.00￥</td>
-									<td>上架</td>
-									<td>
-										<div class="btn-group">
-											<a href="" class="btn btn-default">修改</a>
-											<a href="" class="btn btn-default">下架</a>
-											<a href="" class="btn btn-danger">删除</a>
-										</div>
-
-									</td>
-								</tr>
-
-								<tr>
-									<td>15</td>
-									<td>
-										<img src="img/test.jpg" class="img-thumbnail" style="height: 30px;" />
-									</td>
-									<td>超人气无花果</td>
-									<td>18.00￥</td>
-									<td>18.00￥</td>
-									<td>上架</td>
-									<td>
-										<div class="btn-group">
-											<a href="" class="btn btn-default">修改</a>
-											<a href="" class="btn btn-default">下架</a>
-											<a href="" class="btn btn-danger">删除</a>
-										</div>
-
-									</td>
-								</tr>
-
-								<tr>
-									<td>15</td>
-									<td>
-										<img src="img/test.jpg" class="img-thumbnail" style="height: 30px;" />
-									</td>
-									<td>超人气无花果</td>
-									<td>18.00￥</td>
-									<td>18.00￥</td>
-									<td>上架</td>
-									<td>
-										<div class="btn-group">
-											<a href="" class="btn btn-default">修改</a>
-											<a href="" class="btn btn-default">下架</a>
-											<a href="" class="btn btn-danger">删除</a>
-										</div>
-
-									</td>
-								</tr>
-
-								<tr>
-									<td>15</td>
-									<td>
-										<img src="img/test.jpg" class="img-thumbnail" style="height: 30px;" />
-									</td>
-									<td>超人气无花果</td>
-									<td>18.00￥</td>
-									<td>18.00￥</td>
-									<td>上架</td>
-									<td>
-										<div class="btn-group">
-											<a href="" class="btn btn-default">修改</a>
-											<a href="" class="btn btn-default">下架</a>
-											<a href="" class="btn btn-danger">删除</a>
-										</div>
-
-									</td>
-								</tr>
+							<tbody class="listBody" style="color: #696969;">
 
 							</tbody>
 						</table>
@@ -297,29 +206,127 @@
 			</div>
 		</div>
 	</body>
-	
+
 	<script type="text/javascript">
 		var polyfilter_scriptpath = '/js/';
 	</script>
-	
-	
-	
+
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.form.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		$("#tijiaoBtn").click(function(){
-			$("#myTijiaoFrom").on("submit" , function(e){
+		function getObjectURL(file) {
+			var url = null;
+			if(window.createObjectURL != undefined) { // basic
+				url = window.createObjectURL(file);
+			} else if(window.URL != undefined) { // mozilla(firefox)
+				url = window.URL.createObjectURL(file);
+			} else if(window.webkitURL != undefined) { // webkit or chrome
+				url = window.webkitURL.createObjectURL(file);
+			}
+			return url;
+		}
+		
+		$(".imageLoadInput").change(function(){
+			var objUrl = getObjectURL(this.files[0]);
+			console.log(objUrl);
+
+			$("#loadImage").attr({
+				"src": objUrl
+			})
+
+		});
+		
+		
+		$("#tijiaoBtn").click(function() {
+			$("#myTijiaoFrom").on("submit", function(e) {
 				e.preventDefault();
-				
+
 				$(this).ajaxSubmit({
-					target : "#output" , 
-					success : function(res){
-						console.log("提交成功...........")
-						console.log(res)
+//					target: "#output",
+					success: function(res) {
+
+						getDataFn("add");
+
 					}
 				})
-				
+
 			})
 		})
+
+		function getDataFn(opt) {
+			$.ajax({
+				type: "get",
+				url: "http://localhost:5000/showProducts",
+				async: true,
+				success: function(res) {
+
+					console.log(res)
+					res = JSON.parse(res);
+
+					if(opt == "add") {
+						if(res.data.length < 1) {
+							return;
+
+						}
+						window.location.reload();
+//						var oneData = res.data[res.data.length - 1];
+//						var aftersSale = oneData.aftersale;
+//						var depictandimage = oneData.depictandimage;
+//						var freight = oneData.freight;
+//						var norm = oneData.norm;
+//						var price1 = oneData.price1;
+//						var productdepict = oneData.productdepict;
+//						var productname = oneData.productname;
+//						var shop = oneData.shop;
+//						var id = oneData.id;
+//
+//						var trEle = '<tr><td>' + id + '</td><td><img src="img/test.jpg" class="img-thumbnail" style="height: 30px;" /></td><td>' + productname + '</td><td>' + price1 + '￥</td><td>' + freight + '￥</td><td>上架</td><td><div class="btn-group"><a href="" class="btn btn-default">修改</a><a href="" class="btn btn-default">下架</a><a class="btn btn-danger deleteBtn">删除</a></div></td></tr>';
+//						$(".listBody").append(trEle);
+
+					} else {
+						for(var i = 0; i < res.data.length; i++) {
+							//									console.log("------");
+							var oneData = res.data[i];
+
+							var aftersSale = oneData.aftersale;
+							var depictandimage = oneData.depictandimage;
+							var freight = oneData.freight;
+							var norm = oneData.norm;
+							var price1 = oneData.price1;
+							var productdepict = oneData.productdepict;
+							var productname = oneData.productname;
+							var shop = oneData.shop;
+							var id = oneData.id;
+							var imgurl = oneData.imgurl;
+//							console.log(imgurl);
+							
+							var trEle = '<tr><td>' + id + '</td><td><img src="http://localhost:5000/serverFile/'+imgurl+'" class="img-thumbnail" style="height: 30px;" /></td><td>' + productname + '</td><td>' + price1 + '￥</td><td>' + freight + '￥</td><td>上架</td><td><div class="btn-group"><a href="" class="btn btn-default">修改</a><a href="" class="btn btn-default">下架</a><a class="btn btn-danger deleteBtn">删除</a></div></td></tr>';
+//							var trEle = '<tr><td>' + id + '</td><td><img src= '+ "../uploadFile/" + imgurl + ' class="img-thumbnail" style="height: 30px;" /></td><td>' + productname + '</td><td>' + price1 + '￥</td><td>' + freight + '￥</td><td>上架</td><td><div class="btn-group"><a href="" class="btn btn-default">修改</a><a href="" class="btn btn-default">下架</a><a class="btn btn-danger deleteBtn">删除</a></div></td></tr>';
+
+							$(".listBody").append(trEle);
+						}
+					}
+
+					$(".deleteBtn").click(function(e){
+						var productId = $(e.currentTarget).parents("tr").children("td").eq(0).text();
+//						console.log(a);
+						$.post("http://localhost:5000/delete" ,{
+							"id" : productId
+						} , function (res) {
+							console.log(res);
+							$(e.currentTarget).parents("tr").remove();
+						})
+					});
+					
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+
+		}
+
+		getDataFn("refresh");
 	</script>
+
 </html>
