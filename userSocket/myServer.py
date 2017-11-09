@@ -16,15 +16,16 @@ def sendMsgToOneUser(content , toUser):
     
 
 def yyy(px):
-    data = px.recvMsg();
-    msgArr = data.split("|");
-    print(msgArr);
-    if msgArr[0] == "login":
-        px.username = msgArr[1];
-        print("%s 登陆了" % msgArr[1]);
-        noticeAllPeople(px);
-    if msgArr[0] == "talk":
-        sendMsgToOneUser(msgArr[1] , msgArr[2]);
+   while True:
+        data = px.recvMsg();
+        msgArr = data.split("|");
+        print(msgArr);
+        if msgArr[0] == "login":
+            px.username = msgArr[1];
+            print("%s 登陆了" % msgArr[1]);
+            noticeAllPeople(px);
+        if msgArr[0] == "talk":
+            sendMsgToOneUser(msgArr[1] , msgArr[2]);
 
 def xxx():
     s = socket.socket(socket.AF_INET , socket.SOCK_STREAM);
