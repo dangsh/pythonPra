@@ -65,6 +65,18 @@ def loginFn():
                 return "密码错误"
             else:
                 return redirect(url_for("homeFn"))
+        # print(userName , passWord)
+        # print("...................")
+        
+        # for i in userTableData:
+        #     if str(i["username"]) == userName:
+        #         if str(i["password"]) == passWord:
+        #             return redirect(url_for("homeFn"))
+        #         else:
+        #             return "密码错误"
+        #     else:
+        #         continue
+        # return "账号错误"
 
 
 
@@ -152,6 +164,9 @@ def deleteFn():
 
 
     return json.dumps({"msg" : productId })
+
+
+
 
 
 if __name__ == "__main__":

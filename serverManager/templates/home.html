@@ -6,10 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title></title>
 
-		<link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css" />
-		<script src="../static/jquery.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../static/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static' , filename='bootstrap.min.css')}}" />
+		<script src="{{url_for('static' , filename='jquery.js')}}" type="text/javascript" charset="utf-8"></script>
+		<script src="{{url_for('static' , filename='bootstrap.min.js')}}" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static' , filename='css/style.css')}}" />
 
 	</head>
 
@@ -48,7 +48,7 @@
 								<div class="form-group">详情：<input name="depictandimage" type="text" class="form-control" style="width: 80%; display: inline-block;" /></div>
 							</li>
 							<li>
-								<div class="form-group"><input name="image" type="file" class="form-control imageLoadInput" style="width: 80%; display: inline-block;" /></div>
+								<div class="form-group">图片：<input name="image" type="file" class="form-control imageLoadInput" style="width: 80%; display: inline-block;" /></div>
 							</li>
 							
 						</ul>
@@ -211,8 +211,8 @@
 		var polyfilter_scriptpath = '/js/';
 	</script>
 
-	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{url_for('static' , filename='js/index.js')}}" type="text/javascript" charset="utf-8"></script>
+	<script src="{{url_for('static' , filename='js/jquery.form.js')}}" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		function getObjectURL(file) {
 			var url = null;
