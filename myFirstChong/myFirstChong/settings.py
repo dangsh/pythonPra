@@ -68,17 +68,18 @@ ROBOTSTXT_OBEY = True
 
 
 
-FEED_EXPORTERS_BASE = {
-    'json' : 'myFirstChong.xxx.chongxie' , 
+# FEED_EXPORTERS_BASE = {
+    # 'json' : 'myFirstChong.xxx.chongxie' , 
     # 'jsonlines' : 'scrapy.contrib.exporter.JsonLinesItemExporter',
 
-}
+# }
 
 
 
 ITEM_PIPELINES = {
 #    'myFirstChong.pipelines.MyfirstchongPipeline': 300,
-   'scrapy.pipelines.images.ImagesPipeline': 100
+#    'scrapy.pipelines.images.ImagesPipeline': 100 ,
+   'myFirstChong.xxx.chongxie' : 100
 #    'scrapy.exrensions.pipelines.images.ImagesPipeline':100
 }
 
@@ -86,6 +87,20 @@ import os
 projectpath = os.path.abspath(os.path.dirname(__file__))
 aaa = os.path.join(projectpath , "myImages1")
 IMAGES_STORE = aaa
+
+#feedExport
+#文件导出的配置
+FEED_FORMAT = "json"
+
+FEED_STORAGES_BASE = {
+    '': 'scrapy.extensions.feedexport.FileFeedStorage',
+    'file': 'scrapy.extensions.feedexport.FileFeedStorage',
+    'stdout': 'scrapy.extensions.feedexport.StdoutFeedStorage',
+    's3': 'scrapy.extensions.feedexport.S3FeedStorage',
+    'ftp': 'scrapy.extensions.feedexport.FTPFeedStorage',
+}
+
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
