@@ -75,14 +75,13 @@ ROBOTSTXT_OBEY = True
 # }
 
 
-
 ITEM_PIPELINES = {
 #    'myFirstChong.pipelines.MyfirstchongPipeline': 300,
 #    'scrapy.pipelines.images.ImagesPipeline': 100 ,
-   'myFirstChong.xxx.chongxie' : 100
+   'myFirstChong.xxx.chongxie' : 100 #-------------------------------------------------
 #    'scrapy.exrensions.pipelines.images.ImagesPipeline':100
 }
-
+#-----------------------------------------------------------------------------------------------
 import os
 projectpath = os.path.abspath(os.path.dirname(__file__))
 aaa = os.path.join(projectpath , "myImages1")
@@ -90,7 +89,7 @@ IMAGES_STORE = aaa
 
 #feedExport
 #文件导出的配置
-FEED_FORMAT = "json"
+# FEED_FORMAT = "json"
 
 FEED_STORAGES_BASE = {
     '': 'scrapy.extensions.feedexport.FileFeedStorage',
@@ -99,6 +98,8 @@ FEED_STORAGES_BASE = {
     's3': 'scrapy.extensions.feedexport.S3FeedStorage',
     'ftp': 'scrapy.extensions.feedexport.FTPFeedStorage',
 }
+
+FEED_URI = "ftp://dangsh:5801200@012.3vftp.com/ddd.json"
 
 
 
