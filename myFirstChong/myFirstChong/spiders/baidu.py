@@ -5,6 +5,7 @@ import scrapy
 from scrapy.spiders import Spider
 from scrapy.http import Request
 import time
+import re
 
 myHead = {
     "Content-Type":"application/x-www-form-urlencoded",
@@ -21,6 +22,18 @@ myHead = {
 
 }
 
+myHead = {
+    "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Encoding":"gzip, deflate, br",
+    "Accept-Language":"zh-CN,zh;q=0.8,en;q=0.6",
+    "Cache-Control":"no-cache",
+    "Connection":"keep-alive",
+    "Host":"passport.baidu.com",
+    "Pragma":"no-cache",
+    "Upgrade-Insecure-Requests":1,
+    "User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+ 
+}
 
 class BaiduScrapy(Spider):
     name = "baidu"
@@ -38,15 +51,44 @@ class BaiduScrapy(Spider):
         print("开始解析百度首页")
         if response.status == 200:
             print("开始请求token。。。。。。。。。。。。")
-            self.getTokenFn()
+            yield self.getTokenFn()
+
         else:
             print("请求百度首页出错")
+        
+
+
+
+    def getFnName(self):
+        fnName = "bd__cbs__%d" % time.time()
+        print("回调函数name:--------------%s" % fnName)  
+        return fnName
+
+    def getGid(self):
+        return "54DEF72-683A-4D40-B973-69EE29C92681"
 
     #token 方法
     def getTokenFn(self):
-        baiduTokenUrl = "https://passport.baidu.com/v2/api/?getapi&tpl=pp&apiver=v3&class=login&logintype=basicLogin&tt="+"%d"%(time.time() * 1000)
-        request = Request("baiduTokenUrl" , headers=myHead , callback=self.parseTokenFn)
+        baiduTokenUrl = "https://passport.baidu.com/v2/api/?getapi&tpl=pp&apiver=v3&class=login&logintype=basicLogin&tt="+"%d"%(time.time() * 1000) + "&callback=" + self.getFnName() + "&gid=" + self.getGid() 
+        request = Request(baiduTokenUrl , headers=myHead , callback = self.parseTokenFn)
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        return request 
 
+        
+        # myHead["Host"] = "passport.baidu.com"
+        # aaa = "https://passport.baidu.com/v2/api/?getapi&tpl=pp&apiver=v3&class=login&logintype=basicLogin"+"&tt="+'%d' % (time.time() * 1000)+"&callback="+self.getFnName()+"&gid="+self.getGid()
+        # request = Request(aaa, headers=myHead, callback=self.parseTokenFn)
+        # return request
     #解析token的方法
-    def parseTokenFn(self):
+    def parseTokenFn(self , response):
         print("正在解析token值。。。。。。。。。。。。。。。")
+        if response.status == 200:
+            print("获取token数据成功")
+
+            guize = re.compile('\"token\"\s+:\s+"(\w+)\"')
+            myData = guize.findall(response.body.decode())[0]
+            print(myData)
+        else:
+            print("获取token数据失败")
+
+    #获取验证码 和 输入验证
