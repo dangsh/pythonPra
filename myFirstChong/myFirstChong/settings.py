@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'myFirstChong.spiders'
 #USER_AGENT = 'myFirstChong (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -75,31 +75,32 @@ ROBOTSTXT_OBEY = True
 # }
 
 
-ITEM_PIPELINES = {
-#    'myFirstChong.pipelines.MyfirstchongPipeline': 300,
-#    'scrapy.pipelines.images.ImagesPipeline': 100 ,
-   'myFirstChong.xxx.chongxie' : 100 #-------------------------------------------------
-#    'scrapy.exrensions.pipelines.images.ImagesPipeline':100
-}
+# ITEM_PIPELINES = {
+# #    'myFirstChong.pipelines.MyfirstchongPipeline': 300,
+# #    'scrapy.pipelines.images.ImagesPipeline': 100 ,
+#    'myFirstChong.xxx.chongxie' : 100 #-------------------------------------------------
+# #    'scrapy.exrensions.pipelines.images.ImagesPipeline':100
+# }
 #-----------------------------------------------------------------------------------------------
-import os
-projectpath = os.path.abspath(os.path.dirname(__file__))
-aaa = os.path.join(projectpath , "myImages1")
-IMAGES_STORE = aaa
+# import os
+# projectpath = os.path.abspath(os.path.dirname(__file__))
+# aaa = os.path.join(projectpath , "myImages1")
+# IMAGES_STORE = aaa
 
-#feedExport
-#文件导出的配置
-# FEED_FORMAT = "json"
+# #feedExport
+# #文件导出的配置
 
-FEED_STORAGES_BASE = {
-    '': 'scrapy.extensions.feedexport.FileFeedStorage',
-    'file': 'scrapy.extensions.feedexport.FileFeedStorage',
-    'stdout': 'scrapy.extensions.feedexport.StdoutFeedStorage',
-    's3': 'scrapy.extensions.feedexport.S3FeedStorage',
-    'ftp': 'scrapy.extensions.feedexport.FTPFeedStorage',
-}
+# # FEED_FORMAT = "json"   
 
-FEED_URI = "ftp://dangsh:5801200@012.3vftp.com/ddd.json"
+# FEED_STORAGES_BASE = {
+#     '': 'scrapy.extensions.feedexport.FileFeedStorage',
+#     'file': 'scrapy.extensions.feedexport.FileFeedStorage',
+#     'stdout': 'scrapy.extensions.feedexport.StdoutFeedStorage',
+#     's3': 'scrapy.extensions.feedexport.S3FeedStorage',
+#     'ftp': 'scrapy.extensions.feedexport.FTPFeedStorage',
+# }
+
+# FEED_URI = "ftp://dangsh:5801200@012.3vftp.com/ddd.json"
 
 
 
