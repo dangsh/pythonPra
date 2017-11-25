@@ -9,7 +9,7 @@ class JingDongSpider(Spider):
     ]
 
     def parse(self , response):
-        for item in response.css(".fore1"):
-            title = item.xpath("a/text()").extract()
+        for item in response.css(".mc"):
+            title = item.css(".p-name a::text").extract()
             print(title)
             
