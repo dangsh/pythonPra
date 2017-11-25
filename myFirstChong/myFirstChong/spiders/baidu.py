@@ -218,3 +218,20 @@ class BaiduScrapy(Spider):
         postData = urllib.parse.urlencode(bdData).encode("utf-8")
         print("((((((((((((((((((((((((((((((((")
         print("login post data is: %s",postData)
+        request = Request("https://passport.baidu.com/v2/api/?login", headers=myHead, cookies=cookies, body=postData, method="POST",callback=self.parse_login_result)
+        return request;
+
+    def parse_login_result(self,response):
+
+            print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+            print("开始解析登录数据....................");
+            if response.status is 200:
+                # logging.info("login response is : %s", response.body)
+                print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+                print(response.body.decode())
+                # if response.body.find("err_no=0") > -1:
+                #     logging.info("login baidu success!")
+                # else:
+                #     logging.error("login baidu failed")
+            else:
+                logging.error("post baidu login failed, the httpstatus is: %s", response.status)

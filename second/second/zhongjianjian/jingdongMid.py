@@ -5,9 +5,11 @@ import time
 class JavaScriptMiddleware(object):
     def process_request(self, request, spider):
         print("**************************************");
-        if spider.name == "JD":
+        if spider.name == "xiecheng" or spider.name == "quna":
 
-            driver = webdriver.Chrome("C:\\Users\张霄港\Desktop\chromedriver.exe") #指定使用的浏览器
+            # driver = webdriver.Chrome("D:\\浏览器代理\chromedriver.exe") #指定使用的浏览器
+            driver = webdriver.PhantomJS("D:\\浏览器代理\phantomjs.exe")  #使用没有界面的浏览器
+
             driver.get(request.url)
             time.sleep(1)
             js = "var q=document.documentElement.scrollTop=10000" 
