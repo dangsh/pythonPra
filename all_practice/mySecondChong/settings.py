@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for praScrapyd project
+# Scrapy settings for mySecondChong project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,20 +9,22 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'praScrapyd'
+BOT_NAME = 'mySecondChong'
 
-SPIDER_MODULES = ['praScrapyd.spiders']
-NEWSPIDER_MODULE = 'praScrapyd.spiders'
+SPIDER_MODULES = ['mySecondChong.spiders']
+NEWSPIDER_MODULE = 'mySecondChong.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'praScrapyd (+http://www.yourdomain.com)'
+#USER_AGENT = 'mySecondChong (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
+COMMANDS_MODULE = 'mySecondChong.commands'
+
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
@@ -47,13 +49,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'praScrapyd.middlewares.PrascrapydSpiderMiddleware': 543,
+#    'mySecondChong.middlewares.MysecondchongSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'praScrapyd.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'mySecondChong.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +67,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'praScrapyd.pipelines.PrascrapydPipeline': 300,
+#    'mySecondChong.pipelines.MysecondchongPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

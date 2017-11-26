@@ -11,4 +11,6 @@ import scrapy
 class PrascrapydItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    cityName = scrapy.Field()
+    
     pass
