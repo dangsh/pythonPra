@@ -8,12 +8,7 @@
 import scrapy
 
 
-class MongotestItem(scrapy.Item):
+class AaaItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    title = scrapy.Field()
-    movieName = scrapy.Field()
     pass
-
-
-

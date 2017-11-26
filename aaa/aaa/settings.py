@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for mongoTest project
+# Scrapy settings for aaa project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'mongoTest'
+BOT_NAME = 'aaa'
 
-SPIDER_MODULES = ['mongoTest.spiders']
-NEWSPIDER_MODULE = 'mongoTest.spiders'
+SPIDER_MODULES = ['aaa.spiders']
+NEWSPIDER_MODULE = 'aaa.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'mongoTest (+http://www.yourdomain.com)'
+#USER_AGENT = 'aaa (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -44,25 +44,17 @@ ROBOTSTXT_OBEY = True
 #   'Accept-Language': 'en',
 #}
 
-
-
-MONGO_HOST = "127.0.0.1"
-MONGO_PORT = 27017
-MONGO_DBNAME = "mongo"
-MONGO_COLLECTION = "worker"
-
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-# SPIDER_MIDDLEWARES = {
-#    'mongoTest.myPipeLines.mongoPipe.MongopipClass': 100,
-# }
+#SPIDER_MIDDLEWARES = {
+#    'aaa.middlewares.AaaSpiderMiddleware': 543,
+#}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-
-DOWNLOADER_MIDDLEWARES = {
-   'mongoTest.middlewares.MyCustomDownloaderMiddleware': 543,
-}
+#DOWNLOADER_MIDDLEWARES = {
+#    'aaa.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -72,10 +64,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   'mongoTest.myPipeLines.mongoPipe.MongopipClass': 300,
-
-}
+#ITEM_PIPELINES = {
+#    'aaa.pipelines.AaaPipeline': 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

@@ -8,29 +8,27 @@ from scrapy import Request
 class TestSpider(scrapy.Spider):
     name = 'test'
     
-    start_urls = ['http://flights.ctrip.com/booking/XMN-BJS-day-1.html?DDate1=2016-04-19']
-    db = MongoClient("127.0.0.1" , 27017)
+    start_urls = ['https://www.douban.com/doulist/36980/']
+    # db = MongoClient("127.0.0.1" , 27017)
 
-    # print(db["mongo"])
-    myDb = db["mongo"]
-    students = myDb["worker"]
-    # print(students)
-    
+    # myDb = db["mongo"]
+    # students = myDb["worker"]
 
     def parse(self, response):
-        
-        xiechengUrl = "http://flights.ctrip.com/booking/XMN-BJS-day-1.html?DDate1=2016-04-19"
-        
-        request = Request(xiechengUrl , headers=None , callback=self.parseResult)
 
-        for item in response.css(".J_header_row"):
+
+        for item in response.css(".doulist-subject .title"):
             print("(((((((((((((((((((((((")
-            company = item.xpath("td[1]/div[1]/strong/text()").extract()
-            planeType = item.xpath("td[1]/div[2]/span/text()").extract()
-            airNumber = item.xpath("td[1]/div[1]/span/text()").extract()
-            print(company , planeType , airNumber)
-            # print(title)
-            # TestSpider.students.insert({'name':title , 'age':13})
+            movieName = item.xpath("a/text()").extract()
+            
+
+            it = MongotestItem()
+            it["movieName"] = movieName
+            yield it
+
+
+            
+            # TestSpider.students.insert({'name':movieName , 'age':13})
 
 
 
