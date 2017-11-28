@@ -15,7 +15,7 @@ class MongopipClass(object):
 
 
     def process_item(self , item , spider):
-        self.myCollection.insert({'name':item["movieName"] , 'age':13})
+        self.myCollection.insert({'name':item["movieName"]})
 
         return item
 

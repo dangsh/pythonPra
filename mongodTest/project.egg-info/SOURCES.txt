@@ -1,0 +1,14 @@
+setup.py
+mongodTest/__init__.py
+mongodTest/deploy.py
+mongodTest/items.py
+mongodTest/middlewares.py
+mongodTest/pipelines.py
+mongodTest/settings.py
+mongodTest/spiders/__init__.py
+mongodTest/spiders/test.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
