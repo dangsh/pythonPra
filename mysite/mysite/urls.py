@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^(?P<aaa>\d+)/$' , parse) ,
     url(r'^addOne/$', addOne) ,
     url(r'^deleteOne/$' , deleteOne),
+    url(r'^getHomeData/$' , getHomeData) , 
+    url(r'^updateOne/$',updateOne),
 
     url(r'^$' , home) , #什么都不填 localhost：8000
     url(r'^.', error) ,

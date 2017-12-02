@@ -15,6 +15,7 @@
             height: 50px;
             border-bottom: 1px dashed #aaaaaa;
             line-height: 50px;
+            font-size:30px;
             
         }
         ul li:nth-child(2n){
@@ -24,14 +25,39 @@
             background-color: lightcyan
         }
         .myForm{
-            border: 1px dotted red;
-            padding:50px;
+            
+            padding: 0;
         }
-        
+        .myBtn{
+            width: 100%;
+            height: 50px;
+            font-size:20px;
+            color: black;
+            /* background-color: rgb(81, 211, 211); */
+            
+        }
+        .myInp{
+            width: 100%;
+            height: 50px;
+            text-align:center;
+            /* background-color: rgb(48, 134, 101); */
+            font-size:20px;
+            color: black;
+        }
+        h1{
+            text-align:center;
+        }
+        .deleteBtn{
+            width: 50%;
+            height: 50px;
+            font-size:20px;
+            color: black;
+            float:right;
+        }
     </style>
 </head>
 <body>
-    <h1 style="color:rgb(168, 82, 82)">我是home.html......</h1>
+    <h1 style="color:rgb(168, 82, 82) ">乾·坤·借·法</h1>
 
     <ul>
         
@@ -41,91 +67,100 @@
 
             <form action="addOne/" method="get">
 
-                <input name="name" type="text" placeholder="请输入名字">
+                <input name="name" type="text" placeholder="请输入名字" class="myInp">
                 <br>
-                <input name="age" type="text" placeholder="请输入年龄">
+                <input name="age" type="text" placeholder="请输入年龄" class="myInp">
                 <br>
-                <input type="submit" value="提交">
+                <input type="submit" value="提交" class="myBtn">
 
             </form>
+            <button id="showData" class="myBtn">显示数据</button>
 
+            <!-- <form action="updateOne/" method="get">
+                <input name="name" type="text" placeholder="请输入名字">
+                <br>
+                <input name="newAge" type="text" placeholder="请输入新年龄">
+                <br>
+                
+                <input type="submit" value="提交">
+            
+            </form> -->
+            
     </div>
+
+    
 </body>
 
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
 
-    var huancun = localStorage.getItem("sb")
 
-    if (huancun == undefined){
-        
-
-    }else if (huancun == "111"){
-        localStorage.setItem("sb" , "undefined");
-        window.location.reload();
-    }
+var homeData = "";
     
+    //解析honme数据的方法
+    function parseHomeData(data){
+        for(var i = 0 ; i < data.length; i++){
+            oneData = data[i];
+            name = oneData.name;
+            age = oneData.age;
 
-    // lis = document.getElementsByTagName('li');
-    // for(var i = 0 ; i < lis.length ; i++ ){
-    //     lis[i].onclick = function(){
-    //         console.log(this.innerText)
-    //     }
-    // }
-    
-    var aaa = {{allStudents | safe}};
-    // console.log(aaa); 
+            liE = document.createElement("li");
+            $(liE).text(name + ":" + age + '');
+            deleteBtn = '<button class = "deleteBtn">删除</button>';
+            $(liE).append(deleteBtn);
+            $("ul").append(liE);
+        }
 
-    for (var i=0 ; i<aaa.length ; i++){
-        oneData = aaa[i];
-        name = oneData.name;
-        age = oneData.age;
-        
-        liE = document.createElement("li");
-        $(liE).text(name + ":" + age + '');
-        deleteBtn = '<button class="deleteBtn">删除</button>'
-        $(liE).append(deleteBtn)
-        $("ul").append(liE);
-    }
-
-    $("li").click(function(){
-        console.log($(this).index())
-        
-    });
-    $(".deleteBtn").click(function(event){
-        // console.log($(event.currentTarget).parents("li").index());
-        
-        currentIndex = $(this).parent().index()
-        currentItem = aaa[currentIndex]
-        // console.log(currentItem.name) //获取name
+        $(".deleteBtn").click(function(){
+        currentIndex = $(this).parent().index();
+        currentItem = homeData[currentIndex];
         var that = this;
-        var xmlhttp = new XMLHttpRequest();
+        // console.log(currentIndex);
+
+        ajaxFn("deleteOne/?name=" + currentItem.name , function(result){
+            // console.log(result);
+            $(that).parent().remove();
+        })
+        event.stopPropagation();
+
+    })
+    }
+
+    
+    
+    function ajaxFn(urlString , fn){
+        var xmlhttp=new XMLHttpRequest();
         xmlhttp.onreadystatechange=function()
         {
             if (xmlhttp.readyState==4 && xmlhttp.status==200)
             {
                 resultl = xmlhttp.responseText;
                 resultl = JSON.parse(resultl);
-                if(resultl.message == "ok"){
-                    console.log("删除成功。。。");
-                    $(that).parent().remove();
-                }
-
-                if(resultl.message == "error"){
-                    console.log("删除失败。。。");
-                    
-                }
+                fn(resultl);
             }
         }
-        // console.log(currentItem.name)
-
-        xmlhttp.open("GET","deleteOne/?name=" + currentItem.name , true);
+        xmlhttp.open("GET",urlString,true);
         xmlhttp.send();
-        // $(this).parent().remove();
+    }
 
-
-        event.stopPropagation();
-    });
+    function getDataFn(){
+        ajaxFn("getHomeData/" , function(result){
+            homeData = result;
+            parseHomeData(result);
+        })
+    }
+    
+    
+    
+    // $("li").click(function(){
+    //     console.log($(this).index());
+    // })
+    
+    $("#showData").click(function(){
+        getDataFn();
+        $(this).attr("disabled","disabled");    
+    })
+    
 
 </script>
 </html>

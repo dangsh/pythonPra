@@ -6,59 +6,74 @@ import json
 
 def hello(request):
     return HttpResponse("<h1>我是hello界面</h1>")
-
 def error(request):
     return HttpResponse("<h1>我是error界面</h1>")
-
 def home(request):
-    myArr = []
-    # return HttpResponse("<h1>我是home界面</h1>")
-
-    #插入10条数据
-    # for i in range(10):
-    #     MyStudent.objects.create(name = "名字" + str(i))
-
-
-    datas = MyStudent.objects.all()
-    # return render(request , "home.html" , {"data" : datas})
-    
-    # myDic = {"name":"zhangsan" , "age":13}
-    # return HttpResponse(json.dumps(myDic) , content_type="application/json")
-
-    #将数据传递给界面模板 和 js标签中
-    for data in datas:
-        temp = {"name":data.name , "age":data.age}
-        myArr.append(temp)
-    
-    
-    return render(request , "home.html" , {"allStudents" : json.dumps(myArr)})
-
-
-
+    return render(request , "home.html")
 def parse(request , aaa):
-
     return HttpResponse("<h1>我是parse界面....%s</h1>"%aaa)
 
-#添加一个联系人
-def addOne(request):
-    name = request.GET["name"]
-    age = request.GET["age"]
-    MyStudent.objects.create(name=name , age=age)
+#home 界面数据接口
+def getHomeData(request):
+    myArr = []
+    arr = MyStudent.objects.all()
+    for item in arr:
+        name = item.name
+        age = item.age
+        tempDic = {"name":name , "age":age}
+        myArr.append(tempDic)
+    return HttpResponse(json.dumps(myArr) , content_type="application/json")
 
-
-    return HttpResponse("添加成功")
 
 def deleteOne(request):
-    print("正在删除。。。。。。。。%s" , request.GET["name"])
+    print("正在删除。。。。。。。。" , request.GET["name"])
     deleteName = request.GET["name"]
-    print(deleteName)
-
+    
     c = MyStudent.objects.get(name=deleteName)
-    
+    # c = MyStudent.objects.all()
     c.delete()
-
-
-
-    
     statusDic = {"message":"ok"}
     return HttpResponse(json.dumps(statusDic) , content_type="application/json")
+
+def updateOne(request):
+    # name = request.GET["name"]
+    # newAge = request.GET["newAge"]
+    # print("(((((((((((((((((((((" + name , newAge)
+    # c = MyStudent.objects.get(name=name)
+    # c.age = newAge
+    # c.save()
+    # return HttpResponse("修改成功")
+    pass
+
+# # 添加一个联系人
+# def addOne(request):
+#     name = request.GET["name"]
+#     age = request.GET["age"]
+#     MyStudent.objects.create(name=name , age=age)
+#     return HttpResponse("添加成功")
+
+def addOne(request):
+    getName = request.GET["name"] #获取名字
+    getAge = request.GET["age"]    #获取年龄
+
+
+    dictArr = []        #创建字典数组
+    arr = MyStudent.objects.all()  #遍历数据库中的数据
+    for item in arr:    #获取每一个对象  将其添加到字典数组中
+        name1 = item.name    
+        age1 = item.age
+        dictArr.append({"name":name1 , "age":age1})
+    
+    print(dictArr)
+
+    for i in dictArr:
+        if i["name"] == getName:
+            c = MyStudent.objects.get(name=i["name"])
+            c.age = getAge
+            c.save()
+
+            return HttpResponse("更新成功")
+        else:
+            pass
+    MyStudent.objects.create(name=getName , age=getAge)
+    return HttpResponse("添加成功")
