@@ -55,6 +55,15 @@
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
 
+    var huancun = localStorage.getItem("sb")
+
+    if (huancun == undefined){
+        
+
+    }else if (huancun == "111"){
+        localStorage.setItem("sb" , "undefined");
+        window.location.reload();
+    }
     
 
     // lis = document.getElementsByTagName('li');
