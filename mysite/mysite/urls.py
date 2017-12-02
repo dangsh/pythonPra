@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from myfirst.views import hello
-from myfirst.views import home
+from myfirst.views import *
+
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$', hello),
-    url(r'^home/$', home)
+    url(r'^(?P<aaa>\d+)/$' , parse) ,
+    url(r'^$' , home) , #什么都不填 localhost：8000
+    url(r'^.', error) ,
+    
+    
 ]
