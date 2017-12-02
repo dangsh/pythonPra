@@ -38,3 +38,27 @@ def home(request):
 def parse(request , aaa):
 
     return HttpResponse("<h1>我是parse界面....%s</h1>"%aaa)
+
+#添加一个联系人
+def addOne(request):
+    name = request.GET["name"]
+    age = request.GET["age"]
+    MyStudent.objects.create(name=name , age=age)
+
+
+    return HttpResponse("添加成功")
+
+def deleteOne(request):
+    print("正在删除。。。。。。。。%s" , request.GET["name"])
+    deleteName = request.GET["name"]
+    print(deleteName)
+
+    c = MyStudent.objects.get(name=deleteName)
+    
+    c.delete()
+
+
+
+    
+    statusDic = {"message":"ok"}
+    return HttpResponse(json.dumps(statusDic) , content_type="application/json")

@@ -23,8 +23,12 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$', hello),
     url(r'^(?P<aaa>\d+)/$' , parse) ,
+    url(r'^addOne/$', addOne) ,
+    url(r'^deleteOne/$' , deleteOne),
+
     url(r'^$' , home) , #什么都不填 localhost：8000
     url(r'^.', error) ,
+    
     
     
 ]
