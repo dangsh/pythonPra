@@ -14,22 +14,36 @@ def home(request):
     # userName = request.GET["name"]
     # password = request.GET["password"]
 
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM user")
-    a = []
-    for row in cursor.fetchall():
-        b = {"userid":row}
-        a.append(b)
+    # (1552, 'wan', 'tou.jpg', '13587456984', '1234566', '13587456984',
+    #  '68.45', '98.54', '987654', 'red_back0012', '125', '456', 'fs', '8552', 
+    #  '88152584819494', '45', 'beijing', datetime.datetime(2017, 12, 4, 21, 25, 27))
+
+    # cursor = connection.cursor()
+    # cursor.execute("SELECT userid FROM user")
+    # a = []
+    # for row in cursor.fetchall():
+    #     b = {"userid":row[0]}
+    #     a.append(b)
  
-    print(a)
+    # print(a)
+    userName = "1552"
+    password = "wan"
 
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM user WHERE userid=\"%s\" AND usename=\"%s\"'%(userName , password))
+    a = cursor.fetchall()
+    # print(a)
 
-    # if selectName:
-    #     successMSG = {"status":"ok","message":"登陆成功"}
-    #     return HttpResponse(json.dumps(successMSG) , content_type="application/json")
-
+    if a:
+        print("aaaaaaaaaaaaaaaaaaaaa")
+        # successMSG = {"status":"ok","message":"登陆成功"}
+        # return HttpResponse(json.dumps(successMSG) , content_type="application/json")
+    else:
+        pass
+        print("bbbbbbbbbbbbbbbbbbbbbbb")
     # errorMSG = {"status":"error","message":"登录失败"}
     # return HttpResponse(json.dumps(errorMSG) , content_type="application/json")
+
 
 
 
@@ -77,16 +91,31 @@ def loginApi(request):
  
     userName = request.GET["name"]
     password = request.GET["password"]
-
     cursor = connection.cursor()
-    selectName = cursor.execute('SELECT * FROM manager WHERE adminname=%s AND adminpassword=%s'%(userName , password))
-
-    if selectName:
+    cursor.execute('SELECT * FROM user WHERE userid=\"%s\" AND usename=\"%s\"'%(userName , password))
+    a = cursor.fetchall()
+    # print(a)
+    if a:
         successMSG = {"status":"ok","message":"登陆成功"}
         return HttpResponse(json.dumps(successMSG) , content_type="application/json")
+    else:
+        errorMSG = {"status":"error","message":"登录失败"}
+        return HttpResponse(json.dumps(errorMSG) , content_type="application/json")
 
-    errorMSG = {"status":"error","message":"登录失败"}
-    return HttpResponse(json.dumps(errorMSG) , content_type="application/json")
+
+
+
+
+
+    # cursor = connection.cursor()
+    # selectName = cursor.execute('SELECT * FROM manager WHERE adminname=%s AND adminpassword=%s'%(userName , password))
+
+    # if selectName:
+    #     successMSG = {"status":"ok","message":"登陆成功"}
+    #     return HttpResponse(json.dumps(successMSG) , content_type="application/json")
+
+    # errorMSG = {"status":"error","message":"登录失败"}
+    # return HttpResponse(json.dumps(errorMSG) , content_type="application/json")
 
 
 
