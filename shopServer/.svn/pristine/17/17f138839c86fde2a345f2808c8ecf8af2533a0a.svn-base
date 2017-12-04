@@ -1,0 +1,53 @@
+from django.shortcuts import render
+
+
+from django.http import HttpResponse
+
+
+
+
+from django.db import connection
+
+# Create your views here.
+
+def home(request):
+
+
+
+   
+
+
+    # cursor = connection.cursor()
+
+    # cursor.execute('CREATE TABLE Persons(Id_P int,LastName varchar(255),FirstName varchar(255),Address varchar(255),City varchar(255))')
+
+  
+    # cursor.execute('create table xxx');
+
+
+    # return render(request , "home.html");\
+    return render(request , "home.html");
+
+
+def error(request):
+    return HttpResponse("我是404");
+
+
+
+def goodsManage(request):
+    return render(request , "goodsManage.html");
+
+
+def userManage(request):
+    return render(request , "userManage.html");
+
+def orderManage(request):
+    return render(request , "orderManage.html");
+
+def adManage(request):
+    return render(request , "adManage.html");
+
+def activeManage(request):
+    return render(request , "activeManage.html");
+
+

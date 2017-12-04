@@ -1,0 +1,66 @@
+from django.shortcuts import render
+
+
+from django.http import HttpResponse
+
+from myfirst.models import MyStudents
+
+
+import json
+
+
+# Create your views here.
+
+
+def hello(request):
+    return HttpResponse("我是hello界面")
+
+def home(request):
+    return render(request , "home.html");
+
+def parse(request , aaa):
+    return HttpResponse("我是parse界面.....%s" % aaa)
+
+def error(request):
+    return HttpResponse("我是error界面")
+
+
+# home界面数据接口
+def getHomeData(request):
+    myArr = [];
+    arr = MyStudents.objects.all();
+    for item in arr:
+        name = item.name;
+        age = item.age;
+        tempDic = {"name":name , "age":age}
+        myArr.append(tempDic);
+
+    return HttpResponse(json.dumps(myArr) , content_type="application/json");
+
+
+
+def deleteOne(request):
+    print("正在删除联系人.......%s........" , request.GET["name"]);
+
+    deleteName = request.GET["name"];
+    print(deleteName);
+
+    c = MyStudents.objects.get(name=deleteName)
+    c.delete();
+
+    starusDic = {"message":"ok"}
+
+    return HttpResponse(json.dumps(starusDic) , content_type="application/json");
+
+
+# 添加一个联系人
+def addOne(request):
+
+    name = request.GET["name"];
+    age = request.GET["age"];
+
+    MyStudents.objects.create(name=name , age=age);
+
+    print("*******************");
+    return HttpResponse("添加成功.........");
+

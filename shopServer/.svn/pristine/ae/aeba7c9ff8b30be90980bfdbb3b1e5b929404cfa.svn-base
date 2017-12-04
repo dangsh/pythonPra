@@ -1,0 +1,23 @@
+
+from django.conf.urls import url , include
+from django.contrib import admin
+
+
+from myfirst.views import *
+
+
+import django
+
+print(django.get_version());
+
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^hello/$' , hello) , 
+    url(r'^(?P<aaa>\d+)/$' , parse) , 
+    url(r'^addOne/$' , addOne) , 
+    url(r'^getHomeData/$' , getHomeData) , 
+    url(r'^deleteOne/$' , deleteOne) ,
+    url(r'^$' , home) , 
+    url(r'^.' , error)
+]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>我是home界面</h1>
+
+    <img src="static/myfile/anyixuan.jpg" >
+
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+</body>
+
+
+<script src="static/js/jquery.js"></script>
+<script src="static/js/home.js"></script>
+</html>
