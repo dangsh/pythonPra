@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商城后台管理</title>
+		<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/static/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!--<script src="http://127.0.0.1:8000/static/js/jquery.js"></script>
+        <script src="http://127.0.0.1:8000/static/js/bootstrap.min.js"></script>-->
+        
+		<style>
+			/* Custom Styles */
+			
+			ul.nav-tabs {
+				width: 140px;
+				margin-top: 20px;
+				border-radius: 4px;
+				border: 1px solid #ddd;
+				box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+			}
+			
+			ul.nav-tabs li {
+				margin: 0;
+				border-top: 1px solid #ddd;
+			}
+			
+			ul.nav-tabs li:first-child {
+				border-top: none;
+			}
+			
+			ul.nav-tabs li a {
+				margin: 0;
+				padding: 8px 16px;
+				border-radius: 0;
+			}
+			
+			ul.nav-tabs li.active a,
+			ul.nav-tabs li.active a:hover {
+				color: #fff;
+				background: #0088cc;
+				border: 1px solid #0088cc;
+			}
+			
+			ul.nav-tabs li:first-child a {
+				border-radius: 4px 4px 0 0; 
+			}
+			
+			ul.nav-tabs li:last-child a {
+				border-radius: 0 0 4px 4px;
+			}
+			
+			ul.nav-tabs.affix {
+				top: 30px;
+				/* Set the top position of pinned element */
+			}
+		</style>
+		
+	</head>
+
+	<body data-spy="scroll" data-target="#myScrollspy">
+		<div class="container">
+
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">我是头部</a>
+					</div>
+					<div>
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">iOS</a>
+							</li>
+							<li>
+								<a href="#">SVN</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Java
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">jmeter</a>
+									</li>
+									<li>
+										<a href="#">EJB</a>
+									</li>
+									<li>
+										<a href="#">Jasper Report</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#">分离的链接</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#">另一个分离的链接</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+			<div class="row">
+				<div class="col-xs-3" id="myScrollspy">
+					<ul class="nav nav-tabs nav-stacked" id="myNav">
+						<li class="active">
+							<a id="goodsManage">商品管理</a>
+						</li>
+						<li>
+							<a id="userManage">会员管理</a>
+						</li>
+						<li id="xxx">
+							<a id="orderManage">订单管理</a>
+						</li>
+						<li>
+							<a id="adManage">广告管理</a>
+						</li>
+						<li>
+							<a id="activeManage">活动管理</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-9" style="background-color: lightcyan;">
+					<div class="rt_content">
+						<div class="page_title">
+							<h2 class="fl">商品详情示例</h2>
+							<a class="fr top_rt_btn">返回产品列表</a>
+						</div>
+                        <section>
+                            <ul class="ulColumn2">
+                                <li>
+                                <span class="item_name" style="width:120px;">商品名称：</span>
+                                <input type="text" class="textbox textbox_295" placeholder="商品名称..."/>
+                                <span class="errorTips">错误提示信息...</span>
+                                </li>
+                                <li>
+                                <span class="item_name" style="width:120px;">商品编号：</span>
+                                <input type="text" class="textbox" placeholder="商品编号..."/>
+                                <span class="errorTips">错误提示信息...</span>
+                                </li>
+                                <li>
+                                <span class="item_name" style="width:120px;">单价：</span>
+                                <input type="text" class="textbox" placeholder="单价..."/>
+                                </select>
+                                <span class="errorTips">错误提示信息...</span>
+                                </li>
+                                <li>
+                                <span class="item_name" style="width:120px;">库存：</span>
+                                <input type="text" class="textbox" placeholder="库存..."/>
+                                <span class="errorTips">错误提示信息...</span>
+                                </li>
+                                <li>
+                                <span class="item_name" style="width:120px;">上传图片：</span>
+                                <label class="uploadImg">
+                                <input type="file"/>
+                                <span>上传图片</span>
+                                </label>
+                                </li>
+                                <li>
+                                <span class="item_name" style="width:120px;">产品详情：</span>
+                                <input type="text" class="textbox textbox_295" placeholder="产品详情..."/>
+                                </li>
+                                <li>
+                                <span class="item_name" style="width:120px;"></span>
+                                <input type="submit" class="link_btn"/>
+                                </li>
+                            </ul>
+                        </section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		$(function() {
+			
+			var addressArr = window.location.href.split("/");
+			var addressArrLen = addressArr.length;
+			
+			var addressFlag = addressArr[addressArrLen - 2];
+			if (addressFlag.indexOf("Manage") > 0) {
+				$("#myNav li").each(function (i , item) {
+					var aEelementId = $(item).children("a").attr("id");
+					if(addressFlag == aEelementId) {
+						$(item).addClass("active")
+					} else {
+						$(item).removeClass("active")
+					}
+				})
+			}
+
+			// 商品管理跳转按钮
+			$("#goodsManage").click(function() {
+				window.location.href = 'http://localhost:8000/goodsManage/'			
+			})
+
+			// 会员管理跳转按钮
+			$("#userManage").click(function() {
+				window.location.href = 'http://localhost:8000/userManage/'
+			})
+
+			// 订单管理跳转按钮
+			$("#orderManage").click(function() {
+				
+				window.location.href = 'http://localhost:8000/orderManage/'
+			})
+
+			// 广告管理跳转按钮
+			$("#adManage").click(function() {
+				window.location.href = 'http://localhost:8000/adManage/'
+			})
+
+			// 活动管理跳转按钮
+			$("#activeManage").click(function() {
+				window.location.href = 'http://localhost:8000/activeManage/'
+			})
+
+		})
+	</script>
+
+</html>
