@@ -14,24 +14,24 @@
 			<ul class="ulColumn2">
 				<li>
 					<span class="item_name" style="width:120px;">商品名称：</span>
-					<input type="text" class="textbox textbox_295" placeholder="商品名称..." />
-					<span class="errorTips">错误提示信息...</span>
+					<input type="text" class="textbox textbox_295" placeholder="商品名称..." id="a1"/>
+					<span id="b1"></span>
 				</li>
 				<li>
 					<span class="item_name" style="width:120px;">商品编号：</span>
-					<input type="text" class="textbox" placeholder="商品编号..." />
-					<span class="errorTips">错误提示信息...</span>
+					<input type="text" class="textbox" placeholder="商品编号..." id="a2"/>
+					<span id="b2"></span>
 				</li>
 				<li>
 					<span class="item_name" style="width:120px;">单价：</span>
-					<input type="text" class="textbox" placeholder="单价..." />
+					<input type="text" class="textbox" placeholder="单价..." id="a3"/>
 					</select>
-					<span class="errorTips">错误提示信息...</span>
+					<span id="b3"></span>
 				</li>
 				<li>
 					<span class="item_name" style="width:120px;">库存：</span>
-					<input type="text" class="textbox" placeholder="库存..." />
-					<span class="errorTips">错误提示信息...</span>
+					<input type="text" class="textbox" placeholder="库存..." id="a4"/>
+					<span id="b4"></span>
 				</li>
 				<li>
 					<span class="item_name" style="width:120px;">上传图片：</span>
@@ -42,7 +42,8 @@
 				</li>
 				<li>
 					<span class="item_name" style="width:120px;">产品详情：</span>
-					<input type="text" class="textbox textbox_295" placeholder="产品详情..." />
+					<input type="text" class="textbox textbox_295" placeholder="产品详情..." id="a5"/>
+					<span id="b5"></span>
 				</li>
 				<li>
 					<span class="item_name" style="width:120px;"></span>
@@ -53,6 +54,92 @@
 	</div>
 </div>
 <script type="text/javascript">
+
+
+	function check1(){
+		$("#b1").show
+		var reg = /^\s*$/g
+		if(reg.test($("#a1").val())){
+			$("#b1").text("商品名不能为空")
+		}
+		else{
+			$("#b1").text("")
+		}
+	}
+	$(function(){
+		$("#a1").blur(function(){
+		check1();
+		})
+	})
+
+
+
+
+	function check2(){
+		$("#b2").show
+		var reg = /^\d{6}$/
+		if(!reg.test($("#a2").val())){
+			$("#b2").text("商品编号需要为6位数字")
+		}
+		else{
+			$("#b2").text("")
+		}
+	}
+	$(function(){
+		$("#a2").blur(function(){
+		check2();
+		})
+	})
+
+	function check3(){
+		$("#b3").show
+		var reg = /^\d{6}$/
+		if(!reg.test($("#a3").val())){
+			$("#b3").text("商品编号需要为6位数字")
+		}
+		else{
+			$("#b3").text("")
+		}
+	}
+	$(function(){
+		$("#a3").blur(function(){
+		check3();
+		})
+	})
+
+	function check4(){
+		$("#b4").show
+		var reg = /^\d{6}$/
+		if(!reg.test($("#a4").val())){
+			$("#b4").text("商品编号需要为6位数字")
+		}
+		else{
+			$("#b4").text("")
+		}
+	}
+	$(function(){
+		$("#a4").blur(function(){
+		check4();
+		})
+	})
+
+	function check5(){
+		$("#b5").show
+		var reg = /^\d{6}$/
+		if(!reg.test($("#a5").val())){
+			$("#b5").text("商品编号需要为6位数字")
+		}
+		else{
+			$("#b5").text("")
+		}
+	}
+	$(function(){
+		$("#a5").blur(function(){
+		check5();
+		})
+	})
+
+
 	$(function() {
 			
 			var addressArr = window.location.href.split("/");
