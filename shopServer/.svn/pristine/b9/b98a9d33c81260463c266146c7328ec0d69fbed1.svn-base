@@ -58,9 +58,6 @@ def activeManage(request):
 
     return render(request , "activeManage.html");
 
-def addGoods(request):
-    return render(request, "goodsAdd.html")
-
 
 # 根据用户名创建属于他的表格
 def personal(request):

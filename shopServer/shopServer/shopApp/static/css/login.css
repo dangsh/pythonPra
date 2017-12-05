@@ -1,0 +1,114 @@
+
+.login .login_bg {
+	width:1200px;
+	height:600px;
+}
+.login .login_bg .login_banner {
+	width:65%;
+	height:600px;
+	float:left;
+}
+login .login_bg .login_banner a,.login .login_bg .login_banner img {
+	float:left;
+}
+.login .login_bg .login_box {
+	width:290px;
+	height:320px;
+	float:right;
+	padding:30px;
+	border:1px solid #ddd;
+	margin-top:150px;
+	margin-right:50px;
+}
+.login .login_bg .login_box ul {
+	width:100%;
+	padding:30px 0 0 0;
+	float:left;
+}
+.login .login_bg .login_box ul li {
+	width:100%;
+	clear:both;
+	color:#7b7b7b;
+}
+.login .login_bg .login_box ul li span {
+	height:30px;
+	line-height:30px;
+	display:block;
+	float:left;
+}
+.login .login_bg .login_box ul li input.text_name,.login .login_bg .login_box ul li input.text_password {
+	width:240px;
+	height:40px;
+	/* line-height:50px;
+	*/
+font-size:14px;
+	border:1px solid #dbdbdb;
+	text-indent:8px;
+	float:left;
+	margin-bottom:30px;
+	padding:0 10px 0 40px;
+	font-family:inherit;
+}
+.login .login_bg .login_box p {
+	color:#000;
+	font-weight:bold;
+	font-size:18px;
+}
+.login .login_bg .login_box p span {
+	color:#7b7b7b;
+	font-size:12px;
+	float:right;
+	line-height:27px;
+}
+.login .login_bg .login_box h4 a:hover {
+	text-decoration:none;
+}
+a.login {
+	background:none;
+	border:none;
+}
+i.login_user {
+	background:url(../image/input.png) no-repeat 0px 0px;
+	width:21px;
+	height:21px;
+	position:absolute;
+	left:12px;
+	top:67px;
+	border-right:1px solid #ddd;
+	padding-right:6px;
+}
+i.login_password {
+	background:url(../image/input.png) no-repeat 0px -21px;
+	width:21px;
+	height:21px;
+	position:absolute;
+	left:12px;
+	top:138px;
+	border-right:1px solid #ddd;
+	padding-right:6px;
+}
+.login_more dd {
+	display:block;
+	width:50%;
+	float:left;
+}
+/*	.login_more dd i {
+	margin-left:4px;
+}
+*/
+	.login_login {
+	width:100%;
+	line-height:40px;
+	text-align:center;
+	display:inline-block;
+	border:1px solid #e23c40;
+	background:#e23c40;
+	color:#fff;
+	font-size:18px;
+	/* font-weight:bold;
+	*/
+border-radius:5px;
+}
+.registerform {
+	position:relative
+}

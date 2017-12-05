@@ -34,10 +34,6 @@ urlpatterns = [
     url(r'^adManageJsonDelete/$' , adManageJsonDelete), # 广告删除的接口
 
     url(r'^goodsManageJsonAdd/$' , goodsManageJsonAdd),  # 商品添加接口
-    url(r'^goodsManageJsonSelect/$' , goodsManageJsonSelect),  # 商品查询接口   
-    url(r'^addGoods/$' , addGoods),  # 添加商品接口
-
-
     url(r'^goodsManageJsonSelect/$' , goodsManageJsonSelect),  # 商品列表接口   
     url(r'^goodsManageJsonUpdata/$' , goodsManageJsonUpdata), # 商品列表修改接口
     url(r'^goodsManageJsonDelete/$' , goodsManageJsonDelete),  # 商品列表删除接口
@@ -54,7 +50,6 @@ urlpatterns = [
     url(r'^ordertableManageJsonSelete/$' , ordertableManageJsonSelete), # 订单列表接口
 
     #url(r'^personal/$' , personal),      
-
     url(r'^$' , home),
     url(r'^.' , error),
 ]

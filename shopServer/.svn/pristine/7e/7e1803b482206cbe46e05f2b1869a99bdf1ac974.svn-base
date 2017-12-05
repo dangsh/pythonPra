@@ -28,33 +28,11 @@ urlpatterns = [
     url(r'^register/$' , userManageJsonAdd), # 添加用户接口 
     url(r'^userManageJsonAdd/$' , userManageJsonAdd), # 添加用户接口
     url(r'^activeManage/$' , activeManage),
-
     url(r'^adManageJsonAdd/$' , adManageJsonAdd), # 广告添加的接口
-    url(r'^adManageJsonSelect/$' , adManageJsonSelect), # 广告列表的接口  
-    url(r'^adManageJsonDelete/$' , adManageJsonDelete), # 广告删除的接口
-
+    url(r'^adManageJsonSelect/$' , adManageJsonSelect), # 广告查询的接口 
     url(r'^goodsManageJsonAdd/$' , goodsManageJsonAdd),  # 商品添加接口
     url(r'^goodsManageJsonSelect/$' , goodsManageJsonSelect),  # 商品查询接口   
-    url(r'^addGoods/$' , addGoods),  # 添加商品接口
-
-
-    url(r'^goodsManageJsonSelect/$' , goodsManageJsonSelect),  # 商品列表接口   
-    url(r'^goodsManageJsonUpdata/$' , goodsManageJsonUpdata), # 商品列表修改接口
-    url(r'^goodsManageJsonDelete/$' , goodsManageJsonDelete),  # 商品列表删除接口
-    url(r'^goodsSelectByid/$' , goodsSelectByid), # 根据商品id查找商品
-    url(r'^commodityQuery/$' , commodityQuery), # 商品模糊查询接口查找商品
-
-    
-    url(r'^activetableManageJsonAdd/$' , activetableManageJsonAdd),  # 活动添加接口
-    url(r'^activeManageJsonSelect/$' , activeManageJsonSelect), # 活动列表接口
-    url(r'^activetableManageJsonDelete/$' , activetableManageJsonDelete), # 活动删除接口接口
-
-    url(r'^ordertableManageJsonAdd/$' , ordertableManageJsonAdd), # 订单添加接口
-    url(r'^ordertableDelete/$' , ordertableDelete), # 订单删除接口
-    url(r'^ordertableManageJsonSelete/$' , ordertableManageJsonSelete), # 订单列表接口
-
-    #url(r'^personal/$' , personal),      
-
+    #url(r'^personal/$' , personal),
     url(r'^$' , home),
     url(r'^.' , error),
 ]

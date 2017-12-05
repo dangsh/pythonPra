@@ -1,0 +1,81 @@
+{% extends "home.html" %} {% block content %}
+
+
+
+
+<div class="posts">
+
+	<div class="rt_content">
+		<div class="page_title">
+			<h2 class="fl">商品详情示例</h2>
+			<a id="backTo" class="fr top_rt_btn">返回产品列表</a>
+		</div>
+		<section>
+			<ul class="ulColumn2">
+				<li>
+					<span class="item_name" style="width:120px;">商品名称：</span>
+					<input type="text" class="textbox textbox_295" placeholder="商品名称..." />
+					<span class="errorTips">错误提示信息...</span>
+				</li>
+				<li>
+					<span class="item_name" style="width:120px;">商品编号：</span>
+					<input type="text" class="textbox" placeholder="商品编号..." />
+					<span class="errorTips">错误提示信息...</span>
+				</li>
+				<li>
+					<span class="item_name" style="width:120px;">单价：</span>
+					<input type="text" class="textbox" placeholder="单价..." />
+					</select>
+					<span class="errorTips">错误提示信息...</span>
+				</li>
+				<li>
+					<span class="item_name" style="width:120px;">库存：</span>
+					<input type="text" class="textbox" placeholder="库存..." />
+					<span class="errorTips">错误提示信息...</span>
+				</li>
+				<li>
+					<span class="item_name" style="width:120px;">上传图片：</span>
+					<label class="uploadImg">
+                                <input type="file"/>
+                                <span>上传图片</span>
+                                </label>
+				</li>
+				<li>
+					<span class="item_name" style="width:120px;">产品详情：</span>
+					<input type="text" class="textbox textbox_295" placeholder="产品详情..." />
+				</li>
+				<li>
+					<span class="item_name" style="width:120px;"></span>
+					<input type="submit" class="link_btn" />
+				</li>
+			</ul>
+		</section>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+			
+			var addressArr = window.location.href.split("/");
+			var addressArrLen = addressArr.length;
+			
+			var addressFlag = addressArr[addressArrLen - 2];
+			if (addressFlag.indexOf("Manage") > 0) {
+				$("#myNav li").each(function (i , item) {
+					var aEelementId = $(item).children("a").attr("id");
+					if(addressFlag == aEelementId) {
+						$(item).addClass("active")
+					} else {
+						$(item).removeClass("active")
+					}
+				})
+			}
+
+			// 商品管理跳转按钮
+			$("#backTo").click(function() {
+				window.location.href = 'http://localhost:8000/goodsManage/'			
+			})
+
+
+		})
+</script>
+{% endblock %}
