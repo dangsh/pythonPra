@@ -93,9 +93,9 @@
 
 	function check3(){
 		$("#b3").show
-		var reg = /^\d{6}$/
+		var reg = /^\d+$/
 		if(!reg.test($("#a3").val())){
-			$("#b3").text("商品编号需要为6位数字")
+			$("#b3").text("商品单价必须为数字")
 		}
 		else{
 			$("#b3").text("")
@@ -109,9 +109,9 @@
 
 	function check4(){
 		$("#b4").show
-		var reg = /^\d{6}$/
+		var reg = /^\d+$/
 		if(!reg.test($("#a4").val())){
-			$("#b4").text("商品编号需要为6位数字")
+			$("#b4").text("商品库存只能为非空数字")
 		}
 		else{
 			$("#b4").text("")
@@ -125,9 +125,9 @@
 
 	function check5(){
 		$("#b5").show
-		var reg = /^\d{6}$/
-		if(!reg.test($("#a5").val())){
-			$("#b5").text("商品编号需要为6位数字")
+		var reg = /^\s*$/g
+		if(reg.test($("#a5").val())){
+			$("#b5").text("商品详情不能为空")
 		}
 		else{
 			$("#b5").text("")
