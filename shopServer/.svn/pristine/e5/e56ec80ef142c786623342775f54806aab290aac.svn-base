@@ -59,31 +59,22 @@
 			}
 			
 			
-			#right-head {
-				position:absolute;
-				right:0;
-			}
 			
 		</style>
-		
 		
 		
 		
 	</head>
 
 	<body data-spy="scroll" data-target="#myScrollspy">
-		<div class="container-fluid">
+		<div class="container">
 
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="#">商家后台</a>
+						<a class="navbar-brand" href="#">我是头部</a>
 					</div>
-					
-					<div class="navbar-header" id="right-head">
-						<a class="navbar-brand" href="#">商家：张三</a>
-					</div>
-					<!--<div>
+					<div>
 						<ul class="nav navbar-nav">
 							<li class="active">
 								<a href="#">iOS</a>
@@ -117,12 +108,12 @@
 								</ul>
 							</li>
 						</ul>
-					</div>-->
+					</div>
 				</div>
 			</nav>
 
 			<div class="row">
-				<div class="col-xs-2" id="myScrollspy">
+				<div class="col-xs-3" id="myScrollspy">
 					<ul class="nav nav-tabs nav-stacked" id="myNav">
 						<li class="active">
 							<a id="goodsManage">商品管理</a>
@@ -141,12 +132,9 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col-xs-8" style="background-color: lightcyan;">
+				<div class="col-xs-9" style="background-color: lightcyan;">
 
 					我们是内容区域 {% block content %} {% endblock %}
-				</div>
-				<div class="col-xs-2">
-					
 				</div>
 			</div>
 		</div>

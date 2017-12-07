@@ -1,4 +1,4 @@
-{% extends "home2.html" %}
+{% extends "home.html" %}
 
 {% block content %}
 <div class="posts">
