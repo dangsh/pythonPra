@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<button type="button" class="btn btn-primary" style="margin:5px;">+ 添加</button>
+<div class="container-fluid col-sm-12">
+    <a class="col-sm-12" style="margin:5px; padding-left:0; color: black;margin-right:0;"><strong>轮播图列表</strong></a>
+    <table id="table" class="table table-bordered" >
+        <tr name="row">
+            <th>自然序号</th>
+            <th>图片</th>
+            <th>位置</th>
+            <th>广告状态</th>
+            <th>编辑</th>
+        </tr>
+        <tr name="row">
+            <td id="item">1</td>
+            <td>
+                <div id="images">
+                    <img src="static/images/11.jpg" style="height: 130px;"/>
+                </div>
+            </td>
+            <td>首页录播图</td>
+            <td>上架</td>
+            <td>
+                <button class="btn btn-success">编 辑</button>
+                <button class="btn btn-danger">删 除</button> 
+            </td>
+        </tr>
+        <tr name="row">
+            <td id="item">2</td>
+            <td>
+                <div id="images">
+                    <img src="static/images/11.jpg" style="height: 130px;"/>
+                </div>
+            </td>
+            <td>首页录播图</td>
+            <td>上架</td>
+            <td>
+                <button class="btn btn-success">编 辑</button>
+                <button class="btn btn-danger">删 除</button> 
+            </td>
+        </tr>
+        <tr name="row">
+            <td id="item">3</td>
+            <td>
+                <div id="images">
+                    <img src="static/images/11.jpg" style="height: 130px;"/>
+                </div>
+            </td>
+            <td>首页录播图</td>
+            <td>上架</td>
+            <td style="pad: 40px;">
+                <button class="btn btn-success">编 辑</button>
+                <button class="btn btn-danger">删 除</button> 
+            </td>
+        </tr>
+        <tr name="row">
+            <td id="item">4</td>
+            <td>
+                <div id="images">
+                    <img src="static/images/11.jpg" style="height: 130px;"/>
+                </div>
+            </td>
+            <td>首页录播图</td>
+            <td>上架</td>
+            <td>
+                <button class="btn btn-success">编 辑</button>
+                <button class="btn btn-danger">删 除</button> 
+            </td>
+        </tr>
+        
+    </table>
+</div>
+
+{% endblock %}

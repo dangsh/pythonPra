@@ -16,8 +16,9 @@ import json
 
 def home(request):
 
-    cursor = connection.cursor()
+    # cursor = connection.cursor()
 
+ 
 
     # name = "liu";
 
@@ -33,7 +34,7 @@ def home(request):
 
 
     # cursor.execute('create table xxx');
-    return render(request , "home.html");
+    return render(request , "base.html");
 
 
 def error(request):
@@ -44,11 +45,15 @@ def error(request):
 def goodsManage(request):
     return render(request , "goodsManage.html");
 
+def adPage(request):
+    return render(request , "adPage.html");
+
 
 def userManage(request):
     return render(request , "userManage.html");
 
 def orderManage(request):
+    print("*****************");
     return render(request , "orderManage.html");
 
 def adManage(request):
@@ -308,7 +313,7 @@ def goodsSelectByid(request):
         return HttpResponse(json.dumps({'data':allGoodMes, 'status':'error'}), content_type="application/json")
 
 # 商品模糊查询接口有待测试 黄景召
-def commodityQuery(request , commName):
+def commodityQuery(request):
     myData = []
     cursor = connection.cursor()
     cursor.execute("select goodsname from goods where goodsname like '%xiaomi%'")
@@ -320,12 +325,14 @@ def commodityQuery(request , commName):
 
 
 # 商品修改列表修改接口 有待测试 黄景召
-def goodsManageJsonUpdata(request , **ang):
-    for key in ang:
+def goodsManageJsonUpdata(request):
+    datas = request.POST
+    for key in list(datas):
         cursor = connection.cursor()
-        cursor.execute("update goods set %s='%s' where goodsid='%s'"%(key , ang[key] , ang["goods"]))
-    myData = {"static":"success"}
-    return HttpResponse(json.dumps(myData) , content_type="application/json");
+        cursor.execute("update goods set %s='%s' where goodsid='%s'"%(key , datas[key] , datas["goodsid"]))
+    data = {'data':'success', 'status':'ok'}
+    return HttpResponse(json.dumps(data) , content_type="application/json");
+
 
 # 订单添加接口 有待测试 胡亚洲
 def ordertableManageJsonAdd(request):

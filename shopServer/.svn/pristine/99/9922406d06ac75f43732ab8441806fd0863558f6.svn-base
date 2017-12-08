@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row" style="height: 60px;">
+		
+		<div class="col-md-12" style="text-align: center;">
+			<form class="form-inline"  action="#" >
+			  <div class="form-group">
+				<label for="exampleInputName2">商品名称:</label>
+				<input type="text" class="form-control" id="exampleInputName2" placeholder="商品名">
+			  </div>
+			  <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>商品查询</button>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="row" style="height: 50px;">
+		<div class="col-md-6" style="text-align: left;">
+			<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>批量删除</button>
+			<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加商品</button>
+		</div>
+		<div class="col-md-6" style="text-align: right;">
+			<p>共有数据:<strong>15</strong>条</p>
+		</div>
+	</div>
+	
+	<div class="" style="background-color: #F2F9FE">
+		<div class="">
+			<table class="table table-bordered">
+				<caption><strong style="color: #000000;">商品列表</strong></caption>
+				<thead>
+					<tr class="biaojuzhong">
+						<th>#</th>
+						<th>序号</th>
+						<th>商品名称</th>
+						<th>所属商家</th>
+						<th>商家类别</th>
+						<th>已售件数</th>
+						<th>上架状态</th>
+						<th>上架处理</th>
+						<th>轮播图</th>
+						<th>商品图文信息</th>
+						<th>编辑</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<th scope="row">1</th>
+						<td>手机充电器</td>
+						<td>小米一号店</td>
+						<td>小米手机</td>
+						<td></td>
+						<td>已上架</td>
+						<td>
+							<span class="glyphicon glyphicon-upload" aria-hidden="true">上架 </span>
+							<span class="glyphicon glyphicon-download" aria-hidden="true">下架</span>
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-picture" aria-hidden="true"> </span>  
+							<span class="glyphicon glyphicon-pencil"  aria-hidden="true"></span>
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}
+
+
+
+
