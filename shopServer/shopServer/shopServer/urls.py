@@ -25,9 +25,11 @@ urlpatterns = [
     url(r'^userManage/$' , userManage),
     url(r'^orderManage/$' , orderManage),
     url(r'^adManage/$' , adManage),
+    url(r'^changePic/$' , changePic),#改变轮播图界面
     url(r'^loginApi/$' , loginApi),  # 登录接口 
     url(r'^register/$' , userManageJsonAdd), # 添加用户接口 
     url(r'^userManageJsonAdd/$' , userManageJsonAdd), # 添加用户接口
+    url(r'^userManageJsonSelect/$' , userManageJsonSelect), # 查询用户接口
     url(r'^activeManage/$' , activeManage),
 
     url(r'^adManageJsonAdd/$' , adManageJsonAdd), # 广告添加的接口
@@ -54,7 +56,7 @@ urlpatterns = [
     url(r'^ordertableDelete/$' , ordertableDelete), # 订单删除接口
     url(r'^ordertableManageJsonSelete/$' , ordertableManageJsonSelete), # 订单列表接口
 
-    #url(r'^personal/$' , personal),      
+    url(r'^personal/$' , personal),      
 
     url(r'^$' , home),
     url(r'^.' , error),
