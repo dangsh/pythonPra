@@ -68,8 +68,7 @@ def activeManage(request):
 def addGoods(request):
     return render(request, "goodsAdd.html")
 
-def changePic(request):
-	return render(request, "changePic.html")
+
 
 #改变轮播图界面
 def changePic(request):
@@ -372,32 +371,25 @@ def goodsManageJsonAdd(request):
 def goodsManageJsonSelect(request):
     myData=[];
     cursor = connection.cursor();
-    cursor.execute("SELECT * FROM goods");
+    cursor.execute("SELECT rebate,standard,images,details,shopname,status,uptime,downtime FROM goods");
     datas=cursor.fetchall();
     try:
-        for row in datas:
-            goods = {
-                'goodsid':row[0],
-                'rebate':row[1],
-                'lookhistoryid':row[2],
-                'standard':row[3],
-                'images':row[4],
-                'details':row[5],
-                'shopname':row[6],
-                'status':row[7],
-                'uptime':row[8].strftime('%Y-%m-%d %H:%M:%S'),
-                'downtime':row[9].strftime('%Y-%m-%d %H:%M:%S'),
-                'price':row[10],
-                'goodsname':row[11],
-                'stock':row[12],
-            }
-            myData.append(goods);
-        cursor.close();
+        for data in datas:
+            rebate=data[0],
+            standard=data[1],
+            images=data[2],
+            details=data[3],
+            shopname=data[4],
+            status = data[5],
+            uptime = str(data[6]),
+            downtime = str(data[7]),
+            tempDic={"rebate":rebate,"standard":standard,"images":images,"details":details,"shopname":shopname,"status":status,"uptime":uptime,"downtime":downtime};
+            myData.append(tempDic);
+            cursor.close();
         return HttpResponse(json.dumps({'data':myData, 'status':'ok'}), content_type="application/json")
     
-    except Exception as e: 
-        raise e   
-        return HttpResponse(json.dumps({'data':myData, 'status':'error'}), content_type="application/json");
+    except Exception as e:    
+            return HttpResponse(json.dumps({'data':myData, 'status':'error'}), content_type="application/json");
 
 # 商品列表删除接口
 def goodsManageJsonDelete(request):

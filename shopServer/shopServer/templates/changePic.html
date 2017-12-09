@@ -1,6 +1,32 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block css%}
+<style type="text/css">
+	tr td {
+		background-color: white;
+	}
+	
+	table {
+		margin-top: 100px;
+	}
+	
+	img {
+		height: 100px;
+		width: 200px;
+	}
+</style>
+{%endblock%} {% block contentRight %}
+
+<ol class="breadcrumb">
+	<li>
+		<a href="http://localhost:8000"><i class="fa fa-dashboard"></i> Home</a>
+	</li>
+	<li>商品列表</li>
+	<li class="active">轮播图</li>
+</ol>
+
+{% endblock %} {% block contentLeft %} 轮播图
+<small>Version 5.0</small> {% endblock %} {% block content %}
 <div class="center-middle">
-	<table class="table table-bordered">
+	<table class="table table-bordered userTable">
 		<tr>
 			<th colspan="15" style="background-color:#E0EEEE;">商品图片修改</th>
 		</tr>
@@ -10,19 +36,66 @@
 			<td width="20%"><b>顺序</b></td>
 			<td width="20%"><b>编辑</b></td>
 		</tr>
-		<tr>
+		
+		<!--<tr>
 			<td style="text-align: center;vertical-align: middle;" width="10%">1</td>
-			<td style="text-align: center;vertical-align: middle;" width="50%"><img src="123.jpg" /></td>
+			<td style="text-align: center;vertical-align: middle;" width="50%"><img src="http://localhost:8000/static/dist/img/photo3.jpg" /></td>
 			<td style="text-align: center;vertical-align: middle;" width="20%">1</td>
-			<td style="text-align: center;vertical-align: middle;" width="20%"><img width="40px" src="qianbi.png" /><img width="15px" src="lajitong.jpg" /></td>
-		</tr>
-		<tr>
-			<td style="text-align: center;vertical-align: middle;" width="10%">2</td>
-			<td style="text-align: center;vertical-align: middle;" width="50%"><img src="123.jpg" /></td>
-			<td style="text-align: center;vertical-align: middle;" width="20%">1</td>
-			<td style="text-align: center;vertical-align: middle;" width="20%"><img width="40px" src="qianbi.png" /><img width="15px" src="lajitong.jpg" /></td>
-		</tr>
-
+			<td style="text-align: center;vertical-align: middle;" width="20%">
+				<span class="glyphicon glyphicon-pencil"></span>
+				<span class="glyphicon glyphicon-trash" style="margin-left: 10px;"></span>
+			</td>
+		</tr>-->
+		
+		
+		
+		
+		
 	</table>
 </div>
 {% endblock %}
+
+{%block script %}
+	
+	<script type="text/javascript">
+		function getUrlParam(name){
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r!=null) return unescape(r[2]); return null;
+			}
+		
+		
+		var url="http://localhost:8000/goodsManageJsonSelect/";
+		$.ajax({
+			url: url, 
+			type: 'POST', 
+			success:"success",
+			success: function (data) {
+//				console.log(data.data)
+//				获取get的goodsid
+				a = getUrlParam("goodsid")
+				for(var i=0;i<data.data.length;i++){
+//					console.log(data.data[i])
+//					console.log(data.data[i].goodsid)
+					if(data.data[i].goodsid == a){
+						
+						var number = 1;
+						var picName = data.data[i].images;
+						var order = 1;
+						console.log(picName)
+				
+						var ele = '<tr><td style="text-align: center;vertical-align: middle;" width="10%">'+number+'</td><td style="text-align: center;vertical-align: middle;" width="50%"><img src="http://localhost:8000/static/dist/img/'+ picName +'" /></td><td style="text-align: center;vertical-align: middle;" width="20%">'+order+'</td><td style="text-align: center;vertical-align: middle;" width="20%"><span class="glyphicon glyphicon-pencil"></span><span class="glyphicon glyphicon-trash" style="margin-left: 10px;"></span></td></tr>'
+						console.log(ele)
+						$(".userTable").append(ele);
+						
+					}
+				}
+			}, 
+			error: function (msg) {
+				console.log("error 加载数据失败")
+		
+			}
+		});    
+		
+	</script>
+{% endblock%}

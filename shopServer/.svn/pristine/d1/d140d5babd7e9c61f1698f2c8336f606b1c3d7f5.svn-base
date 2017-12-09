@@ -68,12 +68,12 @@ def activeManage(request):
 def addGoods(request):
     return render(request, "goodsAdd.html")
 
-def changePic(request):
-	return render(request, "changePic.html")
-
 #改变轮播图界面
 def changePic(request):
 	return render(request,"changePic.html")
+
+
+
 
 
 # 根据用户名创建属于他的表格
@@ -261,14 +261,11 @@ def randomString():
 
 
 def adManageJsonAdd(request):
-    
     imgs = request.FILES["imgsFile"];
     # print(imgs);
     # print(type(imgs));
     # print(imgs.__dict__);    
     imgsName = randomString() + ".jpg";
-
-    imagePath = imgsName;
 
     filepath = "./shopApp/static/myfile";
     filename = os.path.join(filepath,imgsName)
@@ -287,7 +284,7 @@ def adManageJsonAdd(request):
 
     statusDic = "";
     if result == 1:
-        statusDic = {"status" : "ok" , "message" : "添加成功" , "imagePath":imagePath};
+        statusDic = {"status" : "ok" , "message" : "添加成功"};
     else :
         statusDic = {"status" : "error" , "message" : "添加失败"};
     return HttpResponse(json.dumps(statusDic) , content_type = "application/json");
@@ -448,6 +445,7 @@ def goodsSelectByid(request):
         cursor.close()
         return HttpResponse(json.dumps({'data':allGoodMes, 'status':'ok'}), content_type="application/json")
     except Exception as e:
+        raise e
         return HttpResponse(json.dumps({'data':allGoodMes, 'status':'error'}), content_type="application/json")
 
 # 商品模糊查询接口有待测试 黄景召
@@ -461,7 +459,8 @@ def commodityQuery(request):
     for goodsname in datas:
         temDat = {"goodsname":goodsname[0]};
         myData.append(temDat);
-    return HttpResponse(json.dumps(myData) , content_type="application/json");
+    data = {'data':myData, 'status':'ok'}
+    return HttpResponse(json.dumps(data) , content_type="application/json");
 
 
 # 商品修改列表修改接口 有待测试 黄景召
@@ -506,25 +505,25 @@ def ordertableManageJsonAdd(request):
 
 # 订单列表接口  有待测试 胡亚洲
 def ordertableManageJsonSelete(request):
-    userid = request.POST["userid"]
     # 获取游标
     cursor = connection.cursor()
-    sql = "SELECT ordertableid,userid,ordertime,isaudit,ispass,iscancel,ispay,issend,ispaydone,isclose FROM xxx WHERE userid = '%s'" % userid
+    sql = "SELECT userid,orderid,price,ordertime,isaudit,ispass,iscancel,ispay,issend,ispaydone,isclose FROM ordertable "
     allOrdertables = []
     try:
         cursor.execute(sql)
         for row in cursor.fetchall():
             ordertable = {
-                'ordertableid':row[0],
-                'userid':row[1],
-                'ordertime':row[2].strftime('%Y-%m-%d %H:%M:%S'),
-                'isaudit':row[3],
-                'ispass':row[4],
-                'iscancel':row[5],
-                'ispay':row[6],
-                'issend':row[7],
-                'ispaydone':row[8],
-                'isclose':row[9],
+                'userid':row[0],
+                'orderid':row[1],
+                'price':row[2],
+                'ordertime':row[3].strftime('%Y-%m-%d %H:%M:%S'),
+                'isaudit':row[4],
+                'ispass':row[5],
+                'iscancel':row[6],
+                'ispay':row[7],
+                'issend':row[8],
+                'ispaydone':row[9],
+                'isclose':row[10],
             }
             allOrdertables.append(ordertable)
             

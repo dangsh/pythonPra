@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% load staticfiles %}
 
 {% block css %}
@@ -12,7 +11,7 @@
 		text-align: center;
 	}
 	
-	.sumdiv {
+	.sumdiv{
 		background-color: #fff;
 		display: inline-block;
 		padding: 6px 12px;
@@ -25,12 +24,12 @@
 		border-radius: 4px;
 	}
 	
-	#bigdiv {
+	#bigdiv{
 		background-color: #fff;
 		border: 1px solid #ccc;
 		border-collapse: collapse;
 	}
-	
+
 	.black_overlay {
 		display: none;
 		position: absolute;
@@ -57,22 +56,24 @@
 		z-index: 1002;
 		overflow: auto;
 	}
+
+
 </style>
-{% endblock %} 
+{% endblock %}
+
+
 {% block content %}
 <div class="row" style="height: 60px;">
-	<div class="col-md-12" style="text-align: center;">
-		<form class="form-inline" action="#">
-			<div class="form-group">
-				<label for="exampleInputName2">商品名称:</label>
-				<input type="text" class="form-control" id="exampleInputName2" placeholder="商品名">
-			</div>
-			<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>商品查询</button>
-		</form>
+		<div class="col-md-12" style="text-align: center;">
+			<form class="form-inline" action="#">
+				<div class="form-group">
+					<label for="exampleInputName2">商品名称:</label>
+					<input type="text" class="form-control" id="exampleInputName2" placeholder="商品名">
+				</div>
+				<button type="submit" class="btn btn-success" id="goodsSelectBtn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>商品查询</button>
+			</form>
+		</div>
 	</div>
-</div>
-<div class="row">
-		
 	<div class="row" >
 		<div class="row" style="height: 50px;">
 			<div class="col-md-6" style="text-align: left;">
@@ -105,75 +106,121 @@
 					</tr>
 				</thead>
 				<tbody class="myListTable">
+					<!--<tr class="biaojuzhong">
+						<td>
+							<input type="checkbox" class="checkbox-one">
+						</td>
+						<th scope="row">1</th>
+						<td>手机充电器</td>
+						<td>小米一号店</td>
+						<td>小米手机</td>
+						<td></td>
+						<td>已上架</td>
+						<td>
+							<span class="glyphicon glyphicon-upload up" aria-hidden="true">上架 </span> &nbsp;
+							<span class="glyphicon glyphicon-download down" aria-hidden="true">下架</span>
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-picture demo3" aria-hidden="true"></span> &nbsp;
+							<span class="glyphicon glyphicon-pencil demo4" aria-hidden="true"></span>
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-plus demo5" aria-hidden="true"></span> &nbsp;
+							<span class="glyphicon glyphicon-list-alt demo6"  aria-hidden="true"></span>
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-file demo7"  aria-hidden="true"></span> &nbsp;
+							<span class="glyphicon glyphicon-trash demo8"  aria-hidden="true"></span>
+						</td>
+					</tr>-->
 					
 				</tbody>
 			</table>
 			
 			<div class="row" id="div3" style=" padding: 1% 0;">
 				<div class="col-md-12" style="text-align: left;">
-
+						<!--<nav aria-label="...">
+							<ul class="pagination">
+								<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+								<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+								<span class="sumdiv">共2页,当前第一页,共15条数据</span>
+							</ul>
+						</nav>-->
 						<div class="text-center">
 							<ul id="visible-pages-example"></ul>
 						</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="fade" class="black_overlay">
-	</div>
-	<div id="MyDiv" class="white_content">
-		<div style="text-align: right; cursor: default; height: 40px;" id="move">
-			<span style="font-size: 16px;" onclick="CloseDiv('MyDiv','fade')">关闭</span>
+
+
+		<div id="fade" class="black_overlay">
 		</div>
-		<!--目前来说，我还是喜欢这个自己改造的弹出层。自己在项目中也用的是这个。-->
-		<div id="">
-			<div>
-				<h1>商品信息添加：</h1>
-				<script id="editor" type="text/plain" style="width:100%;height:300px;"></script>
+		<div id="MyDiv" class="white_content">
+			<div style="text-align: right; cursor: default; height: 40px;" id="move">
+				<span style="font-size: 16px;" onclick="CloseDiv('MyDiv','fade')">关闭</span>
 			</div>
-			<div id="btns">
-				<div id="" style="height: 300px;border: 2px solid red;width: 100%;">
+			<!--目前来说，我还是喜欢这个自己改造的弹出层。自己在项目中也用的是这个。-->
+			<div id="">
+				<div>
+					<h1>商品信息添加：</h1>
+					<script id="editor" type="text/plain" style="width:100%;height:300px;"></script>
+				</div>
+				<div id="btns">
+					<div id="" style="height: 300px;border: 2px solid red;width: 100%;">
+
+					</div>
+					<br />
+					<div align="center">
+						<input type="file" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*" />
+
+						<button onclick="tianjiatupian()">添加图片</button>
+
+					</div>
+					<br />
+					<div id="" align="center">
+						<button style="background-color: red;height: 30px;width: 50px;">添加</button>
+					</div>
 
 				</div>
-				<br />
-				<div align="center">
-					<input type="file" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*" />
-
-					<button onclick="tianjiatupian()">添加图片</button>
-
-				</div>
-				<br />
-				<div id="" align="center">
-					<button style="background-color: red;height: 30px;width: 50px;">添加</button>
-				</div>
-
 			</div>
+
+			<script type="text/javascript">
+				
+			</script>
 		</div>
+{% endblock %}
 
-		<script type="text/javascript">
-		</script>
-	</div>
-{% endblock %} 
+
 {% block contentRight %}
 
-	<ol class="breadcrumb">
-		<li>
-			<a href="#"><i class="fa fa-dashboard"></i> Home</a>
-		</li>
-		<li class="active">商品列表</li>
-	</ol>
+<ol class="breadcrumb">
+        <li>
+            <a href="#"><i class="fa fa-dashboard"></i> Home</a>
+        </li>
+        <li class="active">商品列表</li>
+    </ol>
 
-{% endblock %} 
-{% block contentLeft %} 
+{% endblock %}
+
+
+{% block contentLeft %}
 商品列表
-<small>Version 5.0</small> 
-{% endblock %} 
+<small>Version 5.0</small>
 
+{% endblock %}
 
 {% block script %}
 <script>
 	
+var ue = UE.getEditor('editor'); //勿删
+//  <img src="https://gss0.baidu.com/8_BXsjip0QIZ8tyhnq/timg?wh_rate=0&wapiknow&quality=100&size=w250&sec=0&di=e3c3ae2ef7382d567d05f2b09bef85d1&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fzhidao%2Fwh%253D800%252C450%2Fsign%3Dd6fc97b0b1a1cd1105e37a288922e4c8%2F3801213fb80e7bec7ac77061242eb9389b506b14.jpg>
 function tianjiatupian() {
 	console.log("添加图片按钮")
 	ue.setContent('<img src="https://gss0.baidu.com/8_BXsjip0QIZ8tyhnq/timg?wh_rate=0&wapiknow&quality=100&size=w250&sec=0&di=e3c3ae2ef7382d567d05f2b09bef85d1&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fzhidao%2Fwh%253D800%252C450%2Fsign%3Dd6fc97b0b1a1cd1105e37a288922e4c8%2F3801213fb80e7bec7ac77061242eb9389b506b14.jpg">', true);
