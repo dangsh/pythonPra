@@ -1,102 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="../../favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="jumbotron.css" rel="stylesheet">
-		
-		
+		<title>Jumbotron Template for Bootstrap</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap.min.css" rel="stylesheet">
+		<link href="jumbotron.css" rel="stylesheet">
+
 		<style type="text/css">
-			.myinput{
+			.myinput {
 				height: 400px;
 				width: 100%;
 			}
+			a{
+				margin-top: 5px;
+			}
 		</style>
-  </head>
+	</head>
 
-  <body>
+	<body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          
-          <a class="navbar-brand" href="#">删除空格</a>
-        </div>
-        
-      </div>
-    </nav>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>删除空格!</h1>
-        <p>用来删除空格</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
+					<a class="navbar-brand" href="#">删除空格</a>
+				</div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-6">
-          <h2>原文字</h2>
-          <textarea id="text1" class="form-control myinput" rows="20" name=textarea></textarea>
-          <p><a class="btn btn-default" href="#" role="button">清空 </a></p>
-          <p><a class="btn btn-default changeBtn" href="#" role="button" >去空格 &raquo;</a></p>
-        </div>
-        <div class="col-md-6">
-          <h2>删除空格</h2>
-          <textarea id="text2" class="form-control myinput" rows="20" name=textarea></textarea>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        
+			</div>
+		</nav>
 
-      <hr>
+		
 
-    </div> <!-- /container -->
+		<div class="container">
+			<!-- Example row of columns -->
+			<div class="row">
+				<div class="col-md-6">
+					<h2>原文字</h2>
+					<textarea id="text1" class="form-control myinput" rows="20" name=textarea></textarea>
+					<a class="btn btn-default clearBtn" href="#" role="button">清空 </a>
+					<a class="btn btn-default changeBtn" href="#" role="button" style="margin-left: 10px;">完全去空格 &raquo;</a>
+					<a class="btn btn-default changeBtn2" href="#" role="button" style="margin-left: 10px;">保留单空格 &raquo;</a>
+				</div>
+				<div class="col-md-6">
+					<h2>删除空格</h2>
+					<textarea id="text2" class="form-control myinput" rows="20" name=textarea></textarea>
+					<a class="btn btn-default copyBtn" href="#" role="button">复制内容</a>
+				</div>
 
+				<hr>
 
-    <!-- Bootstrap core JavaScript
+			</div>
+			<!-- /container -->
+
+			<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="jquery.js"></script>
-    <script src="bootstrap.min.js"></script>
-		<script type="text/javascript">
-				$(".changeBtn").click(function(){
-//					var str = "{'   retmsg':'success   ',\n'  trans_date':'   20170906'}";
-//					str = str.replace(/\ +/g,"");  
-//					str = str.replace(/[\r\n]/g,""); 
-//					console.log(str);
-					
-						var text1 = $("#text1").val()
-						
-						
-						 
-						//替换所有的换行符
-						text1 = text1.replace(/\r\n/g,"")
-						text1 = text1.replace(/\n/g,"");
-						 
-						//替换所有的空格（中文空格、英文空格都会被替换）
-						text1 = text1.replace(/\s/g,"");
+			<!-- Placed at the end of the document so the pages load faster -->
+			<script src="jquery.js"></script>
+			<script src="layer/layer.js"></script>
+			<script src="bootstrap.min.js"></script>
+			<script type="text/javascript">
+				$(".changeBtn").click(function() {
+					var text1 = $("#text1").val()
+					//替换所有的换行符
+					text1 = text1.replace(/\r\n/g, "")
+					text1 = text1.replace(/\n/g, "");
+					//替换所有的空格（中文空格、英文空格都会被替换）
+					text1 = text1.replace(/\s/g, "");
+					document.getElementById('text2').value = text1
+				})
+								
+				$(".changeBtn2").click(function() {
+					var text1 = $("#text1").val()
+					//替换所有的换行符
+					text1 = text1.replace(/\r\n/g, "")
+					text1 = text1.replace(/\n/g, "");
+					//替换所有的空格（中文空格、英文空格都会被替换）
+					text1 = text1.replace(/\s+/g, ' ');
+					document.getElementById('text2').value = text1
+				})
 
-						
-						document.getElementById('text2').value=text1
+				$(".clearBtn").click(function() {
+					document.getElementById('text1').value = ""
+					document.getElementById('text2').value = ""
 				})
 				
-				
-				
-		</script>
-  </body>
+				$(".copyBtn").click(function() {
+					copyTextAreaCt()
+				})
+				function copyTextAreaCt()
+					{
+						var oContent=document.getElementById("text2");
+						oContent.select(); // 选择对象
+						document.execCommand("Copy"); // 执行浏览器复制命令
+						layer.msg('复制成功');
+						 
+					}
+		
+			</script>
+	</body>
+
 </html>
 
 
