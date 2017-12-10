@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>开始使用layer</title>
+</head>
+<body>
+	<button id="test1">aaa</button>
+</body> 
+  
+  <script src="jquery.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
+  <script src="layer/layer.js"></script>
+  
+  <script>
+  
+  //弹出一个提示层
+  $('#test1').on('click', function(){
+  	console.log("sssssssssss")
+    layer.msg('hello');
+  });
+  </script>
 
-    <!-- Bootstrap -->
-    <link href="bootstrap.min.css" rel="stylesheet">
 
-  </head>
-  <body>
-    <div class="container-fluid">
-		<div class = "row">
-			<div class="col-md-6">1111111111</div>
-			<div class="col-md-6">2222222222</div>
-		</div>
-	</div>
 
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+
 </html>

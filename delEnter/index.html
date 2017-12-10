@@ -50,12 +50,13 @@
       <div class="row">
         <div class="col-md-6">
           <h2>原文字</h2>
-          <textarea class="form-control myinput" rows="20" name=textarea></textarea>
-          <p><a class="btn btn-default" href="#" role="button">操作 &raquo;</a></p>
+          <textarea id="text1" class="form-control myinput" rows="20" name=textarea></textarea>
+          <p><a class="btn btn-default" href="#" role="button">清空 </a></p>
+          <p><a class="btn btn-default changeBtn" href="#" role="button" >去空格 &raquo;</a></p>
         </div>
         <div class="col-md-6">
           <h2>删除空格</h2>
-          <textarea class="form-control myinput" rows="20" name=textarea></textarea>
+          <textarea id="text2" class="form-control myinput" rows="20" name=textarea></textarea>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>
         
@@ -70,6 +71,32 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="jquery.js"></script>
     <script src="bootstrap.min.js"></script>
+		<script type="text/javascript">
+				$(".changeBtn").click(function(){
+//					var str = "{'   retmsg':'success   ',\n'  trans_date':'   20170906'}";
+//					str = str.replace(/\ +/g,"");  
+//					str = str.replace(/[\r\n]/g,""); 
+//					console.log(str);
+					
+						var text1 = $("#text1").val()
+						
+						
+						 
+						//替换所有的换行符
+						text1 = text1.replace(/\r\n/g,"")
+						text1 = text1.replace(/\n/g,"");
+						 
+						//替换所有的空格（中文空格、英文空格都会被替换）
+						text1 = text1.replace(/\s/g,"");
 
+						
+						document.getElementById('text2').value=text1
+				})
+				
+				
+				
+		</script>
   </body>
 </html>
+
+
