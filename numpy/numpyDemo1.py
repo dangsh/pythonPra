@@ -19,13 +19,30 @@ import numpy as np
 # print(a[1][1])
 # print(a[:,0])
 
-
+arr = []
 def getData():
     with open('fangziData.txt' , encoding='utf-8') as f:
-        for i in range(47):
-            line = f.readline()
-            print(line)
+        for line in f.readlines():
+            arr.append(line.split(','))
+        num = np.array(arr , dtype=np.int)
     f.close()
+    return num 
+
+data = getData()
+
+# print(data)
+'''改变temp会改变data ， 所以可推断temp ， x 指向同一块内存空间'''
+# temp = data[:,1]
+# print(temp)
+# temp[0] = 10
+# print(temp)
+# print(data)
 
 
-getData()
+arr = np.arange(10)
+print(arr)
+print(type(arr))
+print(arr[4])
+print(arr[3:6])
+arr[3:6] = 12
+print(arr)
