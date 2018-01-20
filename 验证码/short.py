@@ -2,8 +2,8 @@ import json
 import re
 
 def getNameTel():
-    with open('12_16.json' , encoding='utf-8') as f:
-        for i in range(10):
+    with open('3.json' , encoding='utf-8') as f:
+        for i in range(6300):
             line = f.readline()
             d = json.loads(line)
             try:
@@ -14,3 +14,6 @@ def getNameTel():
             except:
                 pass
     f.close()
+
+
+getNameTel()
