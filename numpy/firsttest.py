@@ -29,11 +29,11 @@ df = pd.DataFrame(np.random.randn(6 , 4) , index = dates , columns=list('ABCD'))
 
 
 # 查看数据
-print(df);
-# # 参数可有可无 没有的话,代表前/后 5条
-print(df.head(3));
-print("-----")
-print(df.tail(1));
+# print(df);
+# # # 参数可有可无 没有的话,代表前/后 5条
+# print(df.head());
+# print("-----")
+# print(df.tail());
 
 # 显示索引,列,和底层的numpy数据
 # print(df);
@@ -51,16 +51,16 @@ print(df.tail(1));
 
 # 按轴进行排序
 # print(df);
-# print(df.sort_index(axis=1 , ascending=False)); # 0 行号  1 列号
+# print(df.sort_index(axis=0 , ascending=False)); # 0 行号  1 列号
 
 # 按值排序
 # print(df);
-# print(df.sort_values(by='B' , ascending=False)); # 默认是升序
+# print(df.sort_values(by='C' , ascending=False)); # 默认是升序
 
 # 获取一列或一行数据
 # print(df);
-# # print(df["A"]); # 或者 print(df.A);
-# # print(df[0:2]); # df[0:1] df[0:2] 如果只获取一行数据的时候,不能写成df[0] 要写成df[0:1]
+# print(df["A"]); # 或者 print(df.A);
+# print(df[0:2]); # df[0:1] df[0:2] 如果只获取一行数据的时候,不能写成df[0] 要写成df[0:1]
 # # 也可以用一下方式来获取
 # print(df['20130102':'20130104']);  # 但不要这样写 df["20130102"]
 # # 如果只想获取一行,可以这样写: df["20130102":"20130102"]
@@ -69,13 +69,14 @@ print(df.tail(1));
 # 通过标签获取交叉数据
 # print(df)
 # print(df.loc[dates[0]]); # 相当于 print(df["20130101":"20130101"])
+# print(df["20130101":"20130101"])
 # 只获取A , B 两列数据
 # print(df.loc[: , ["A" , "B"]])  # 注意 ":," 一定不能少
-# 从第二行到第四行,并且 只有A , B 两列的数据
+# # 从第二行到第四行,并且 只有A , B 两列的数据
 # print(df.loc['20130102':'20130104',['A','B']])
-# 获取第一行的且只有A , B 两列数据
+# # 获取第一行的且只有A , B 两列数据
 # print(df.loc['20130101',['A','B']])
-# 获取一个标量
+# # 获取一个标量
 # print(df.loc[dates[0],'A'])
 # 快速访问一个标量,与上面方法等价
 # print(df.at[dates[0],'A'])
@@ -114,8 +115,8 @@ print(df.tail(1));
 
 #  设置
 # print(df)
-# 设置一个新的列
-# s1 = pd.Series([1,2,3,4,5,6], index=pd.date_range('20130102', periods=6))
+# # 设置一个新的列
+# s1 = pd.Series([1,2,3,4,5,6], index=pd.date_range('20130101', periods=6))
 # print(s1)
 # print(df)
 # df['F'] = s1
@@ -136,32 +137,36 @@ print(df.tail(1));
 
 
 # 缺失值处理(会返回新的结果)
-# 在pandas中，使用np.nan来代替缺失值，这些值将默认不会包含在计算中
-# reindex()方法可以对指定轴上的索引进行改变/增加/删除操作，这将返回原始数据的一个拷贝：
+# print(df)
+# # 在pandas中，使用np.nan来代替缺失值，这些值将默认不会包含在计算中
+# # reindex()方法可以对指定轴上的索引进行改变/增加/删除操作，这将返回原始数据的一个拷贝：
 # df1 = df.reindex(index=dates[0:4], columns=list(df.columns) + ['E'])
 # print(df1)
 # df1.loc[dates[0]:dates[1],'E'] = 1
 # print(df1)
-# 去掉包含缺失值的行：
+# # 去掉包含缺失值的行：
 # print(df1.dropna(how='any'))
 # print(df1)
-# 对缺失值进行填充：
+# # 对缺失值进行填充：
 # print(df1.fillna(value=5))
 # print(df1)
-# 对数据进行布尔填充：
-# print(pd.isna(df1))
+# # 对数据进行布尔填充：
+# # print(pd.isna(df1))
 
-
+#---------------------------------------
+#---------1.20--------------------------
+#---------------------------------------
 
 
 # 相关操作
 # 统计（相关操作通常情况下不包括缺失值）
 # print(df)
-# 执行描述性统计
-# print(df.mean())
-# 在其他轴上进行相同的操作：
-# print(df.mean(1))
-# 对于拥有不同维度，需要对齐的对象进行操作。Pandas会自动的沿着指定的维度进行广播：
+# # 执行描述性统计
+# # print(df.mean())
+
+# # 在其他轴上进行相同的操作：
+# # print(df.mean(1))
+# # 对于拥有不同维度，需要对齐的对象进行操作。Pandas会自动的沿着指定的维度进行广播：
 # s = pd.Series([1,3,5,np.nan,6,8], index=dates).shift(2)
 # print(s)
 # print(df.sub(s, axis='index'))
@@ -169,20 +174,20 @@ print(df.tail(1));
 
 # 应用
 # print(df)
-# 对数据应用函数
-# print(df.apply(np.cumsum))
-# print(df.apply(lambda x: x.max() - x.min()))
-# 直方图
+# # 对数据应用函数
+# # print(df.apply(np.cumsum)) #累加和
+# # print(df.apply(lambda x: x.max() - x.min()))
+# # 直方图
 # s = pd.Series(np.random.randint(0, 7, size=10))
 # print(s)
-# print(s.value_counts())
+# print(s.value_counts()) #计数
 
 
 # 字符串方法
 # Series对象在其str属性中配备了一组字符串处理方法，可以很容易的应用到数组中的每个元素，如下段代码所示
 # s = pd.Series(['A', 'B', 'C', 'Aaba', 'Baca', np.nan, 'CABA', 'dog', 'cat'])
 # print(s)
-# print(s.str.lower())
+# print(s.str.lower()) #变为小写
 
 
 
@@ -191,8 +196,9 @@ print(df.tail(1));
 # Concat
 # df = pd.DataFrame(np.random.randn(10, 4))
 # print(df)
-# pieces = [df[:3], df[3:7], df[7:]]
-# print(pd.concat(pieces))
+# pieces = [df[:3], df[3:7]]
+# print(pieces)
+# print(pd.concat(pieces)) #合并
 # Join 类似于SQL类型的合并
 # left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
 # right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
@@ -217,7 +223,7 @@ print(df.tail(1));
 
 #  （Applying）对于每组数据分别执行一个函数；
 
-#  （Combining）将结果组合到一个数据结构中；
+# #  （Combining）将结果组合到一个数据结构中；
 # df = pd.DataFrame({'A' : ['foo', 'bar', 'foo', 'bar',
 #                          'foo', 'bar', 'foo', 'foo'],
 #                    'B' : ['one', 'one', 'two', 'three',
@@ -226,14 +232,14 @@ print(df.tail(1));
 #                     'D' : np.random.randn(8)})
 # print(df)
 
-# 分组并对每个分组执行sum函数
+# # 分组并对每个分组执行sum函数
 # print(df.groupby('A').sum())
 
-# 通过多个列进行分组形成一个层次索引，然后执行函数：
-# print(df.groupby(['A','B']).sum())
+# # 通过多个列进行分组形成一个层次索引，然后执行函数：
+# # print(df.groupby(['A','B']).sum())
 
-
-
+#----------------------------------
+#---------------------------------
 
 # Reshaping
 # Stack
@@ -331,29 +337,22 @@ print(df.tail(1));
 # http://pandas.pydata.org/pandas-docs/stable/visualization.html#visualization
 # ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
 # ts = ts.cumsum()
-# # # print(ts)
+# print(ts)
 # print(ts.plot())
 
 
+from matplotlib.font_manager import FontProperties 
+font = FontProperties(fname=r"./simsun/simsun.ttc", size=14) 
+df = pd.DataFrame({"山东省": [3872.18, 5960.42, 6650.02, 7162.2, 7662.1, 8542.44] , 
+            "江苏省": [4057.39, 6004.21, 6680.34, 7199.95, 7697.82, 8582.727627]},
+            index=["1995年", "1996年", "1997年", "1998年", "1999年", "2000年"])
 
-
-# from matplotlib.font_manager import FontProperties 
-
-# font = FontProperties(fname=r"./simsun/simsun.ttc", size=14) 
-
-# df = pd.DataFrame({"山东省": [3872.18, 5960.42, 6650.02, 7162.2, 7662.1, 8542.44] , 
-#             "江苏省": [4057.39, 6004.21, 6680.34, 7199.95, 7697.82, 8582.727627]},
-#             index=["1995年", "1996年", "1997年", "1998年", "1999年", "2000年"])
-
-# ax = df.plot(color=["g", "r"],style=["--","-"], title=u"山东江苏GDP(单位:亿元)")
-
+ax = df.plot(color=["g", "r"],style=["--","-"], title=u"山东江苏GDP(单位:亿元)")
 # # 加上下面两行  让中文显示
-# labels = ax.get_xticklabels()+ax.legend().texts+[ax.title]
-# for label in labels : 
-#     label.set_fontproperties(font) 
-
-    
-# plt.show()
+labels = ax.get_xticklabels()+ax.legend().texts+[ax.title]
+for label in labels : 
+    label.set_fontproperties(font) 
+plt.show()
 
 # # 对于DataFrame来说，plot是一种将所有列及其标签进行绘制的简便方法
 # df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index,
