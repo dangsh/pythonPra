@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>张潇港</title>
+</head>
+<body>
+    <h1>天王盖地虎</h1>
+    <h1>宝塔镇河妖</h1>
+    <h1>mohamoha</h1>
+    <button id="startBtn">获取config包</button>
+</body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+
+<script>
+var appid = "wx92ea8e9ff56b61f2"
+var secret = "60bda386e88dd52fef0b838d33ac1a63"
+var access_token = "6_4fEwH9qP95IzVYGrzZoUkx3WIPfspOGM0hjWhRBHgB3b90EMNR3H9jvqOvdb4FX42W-wT2c7TG99VXASSrKmZ9fogoQRqMQxsoGfiVIfyDkijK9d3zrsLvuS2LTHKSoZaUwLzjoDYByaoSjsBTOhAHAKCX"
+var ticket = "HoagFKDcsGMVCIY2vOjf9tnICaIwZqZQePVs76U_x6wSTbvjukOPPUJmBSCBQh5HuWMmDyAYZGzTF3Npa802wg"
+// {"errcode":0,
+// "errmsg":"ok",
+// "ticket":"HoagFKDcsGMVCIY2vOjf9tnICaIwZqZQePVs76U_x6wSTbvjukOPPUJmBSCBQh5HuWMmDyAYZGzTF3Npa802wg",
+// "expires_in":7200}
+
+// {"data": 
+// {"jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9tnICaIwZqZQePVs76U_x6wSTbvjukOPPUJmBSCBQh5HuWMmDyAYZGzTF3Npa802wg",
+//  "noncestr": "j4GDlQ83Zk9qYAhX", 
+//  "timestamp": "1516951264", 
+//  "url": "http://www.dangsh.top/getJSSDKConfigPackage/", 
+//  "sign": "42e314831352c13ba4983ae70606437f87516eff"}, 
+//  "status": "ok"}
+
+document.getElementById("startBtn").onclick = function(){
+    
+}
+
+function myPost (url , data , fn) {
+    var sendStr = ""
+        for (key in data) {
+            sendStr = sendStr + key + "=" + data[key] + "&"
+        }
+        sendStr = sendStr.substring(0 , sendStr.length - 1)
+    var xmlhttp;
+    if (window.XMLHttpRequest){
+        // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    } else {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          fn(xmlhttp.responseText)
+        }
+    }
+    xmlhttp.open("POST",url,true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(sendStr);
+}
+
+
+// var aaa = Date.parse(new Date()) / 1000
+// var randomString = Math.random().toString(16).substring(2)
+
+//从服务器获取configPackage 包
+
+myPost("http://www.dangsh.top/getJSSDKConfigPackage/" , 
+    {
+        "appid":appid ,
+        "secret":secret ,
+        "access_token":access_token,
+        "ticket":ticket
+    } , 
+    function(data){
+        data = JSON.parse(data)
+        wx.config({
+        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: appid, // 必填，公众号的唯一标识
+        timestamp: data.timestamp, // 必填，生成签名的时间戳
+        nonceStr: data.nonceStr, // 必填，生成签名的随机串
+        signature: data.sigh,// 必填，签名，见附录1
+        jsApiList: [
+            'onMenuShareTimeline'
+        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+         // 微信分享朋友圈
+        wx.onMenuShareTimeline({
+            title: '第一次', // 分享标题
+            link: 'http://www.dangsh.top', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://pic18.nipic.com/20120203/2457331_104836021342_2.jpg', // 分享图标
+            success: function (data) {
+            // 用户确认分享后执行的回调函数
+                alert("分享配置成功")
+                alert(data)
+                alert(JSON.stringify(data))
+        },
+        cancel: function (err) {
+            // 用户取消分享后执行的回调函数
+            alert("用户取消分享")
+                alert(err)
+                alert(JSON.stringify(err))
+            }
+        });
+})
+
+
+
+
+</script>
+</html>

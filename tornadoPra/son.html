@@ -1,0 +1,11 @@
+{% extends 'mom.html' %}
+{% block RenderBody %}
+<h1>Index</h1>
+<ul>
+    {% for item in list_info %}
+        <li>{{item}}</li>
+    {% end %}
+</ul>
+
+
+{% end %}
