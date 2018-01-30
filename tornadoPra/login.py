@@ -1,7 +1,11 @@
+import re
 import os
 import tornado.ioloop
 import tornado.web
 from settings import db
+
+def get_tag(content):
+    r = re.compile()
 
 class BaseHandler(tornado.web.RequestHandler):
     def get_current_user(self):
