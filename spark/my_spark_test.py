@@ -14,10 +14,57 @@ rdd = sc.newAPIHadoopRDD("org.apache.hadoop.hbase.mapreduce.TableInputFormat",
                          "org.apache.hadoop.hbase.io.ImmutableBytesWritable",
                          "org.apache.hadoop.hbase.client.Result",
                          conf=conf, keyConverter=keyConv, valueConverter=valueConv)
+a = rdd.take(2)[1]
 import json
-print type(rdd.first())
-s = rdd.first()
-s = json.loads(s[1])
-print type(s)
-print s
-print s["value"]
+import pyquery
+import pymongo
+url = a[0]
+mongo_client = pymongo.MongoClient("192.168.14.90", 27017)
+db = mongo_client["test"]
+def get_unicode(s):
+    try:
+        return '' if not s else (eval('''"%s"''' % (s.replace('"', '\\"').replace("'", "\\'")))).decode("utf-8")
+    except:
+        return s
+content = ''
+try:
+    content = json.loads(a[1])["value"]
+except:
+    pass
+if not content:
+    continue
+try:
+    content = get_unicode(content)
+except:
+    pass
+doc = pyquery.PyQuery(content)
+if "_" in url:
+    try:
+        for i in doc('.relate-product .relate-list li').items():
+            url = i('a').attr('href')
+            try:
+                db['spark_test'].insert({'_id':url})
+            except:
+                try:
+                    mongo_client = pymongo.MongoClient("192.168.14.90", 27017)
+                    db = mongo_client["test"]
+                    db['spark_test'].insert({'_id':url})
+                except:
+                    pass    
+    except:
+	    pass
+else:
+    try:
+        for i in doc('.hotproword a').items():
+            url = i('a').attr('href')
+            try:
+                db['spark_test'].insert({'_id':url})
+            except:
+                try:
+                    mongo_client = pymongo.MongoClient("192.168.14.90", 27017)
+                    db = mongo_client["test"]
+                    db['spark_test'].insert({'_id':url})
+                except:
+                    pass    
+    except:
+        pass
