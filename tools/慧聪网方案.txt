@@ -1,0 +1,45 @@
+1.访问主页 https://www.hc360.com
+2.获取页面最下方，按字母分类的链接，例：
+	<a href=//top.hc360.com/a-1.html
+3.访问每一个url，在页面的最下方，可以获取到页数，例：
+	<span class="total">共252页</span>
+4.两层循环，访问到所有分类的所有页数的页面，从页面中提取出关键词，例：
+	安全称重，安全撑杆，安全承诺，安全诚信，安全匙，安全匙扣
+	（我们在这里只取关键词，不取出url，因为这个url是无用的）
+	（访问只有一页数据，在页面最下方有  “查看更多安全称重商机”  ）
+	（点击还是会跳转到搜索页，所以没必要取这个url）
+5.搜索 ， https://s.hc360.com/?w=安全称重 ，从页面中提取商品的url
+	页数为1-100页，101就会bug
+	https://s.hc360.com/?w=安全称重&mc=seller&ee=3
+	（mc 为搜索类型，seller是卖家 ， ee为页数，修改ee翻页）
+
+	（因为信息异步加载，所以请求接口
+	https://s.hc360.com/?w=%B0%B2%C8%AB%B3%C6%D6%D8&mc=seller&ee=2&ap=B&pab=B&t=1&af=1&afadprenum=0&afadbeg=1
+
+	https://s.hc360.com/?w=%B0%B2%C8%AB%B3%C6%D6%D8&mc=seller&ap=B&pab=B&t=1&af=1&afadprenum=0&afadbeg=21
+
+	https://s.hc360.com/?w=%B0%B2%C8%AB%B3%C6%D6%D8&mc=seller&ap=B&pab=B&t=1&af=2&afadprenum=0&afadbeg=41
+
+	...................
+
+	https://s.hc360.com/?w=%B0%B2%C8%AB%B3%C6%D6%D8&mc=seller&ee=100&ap=B&pab=B&t=1&af=2&afadprenum=0&afadbeg=5981
+
+	https://s.hc360.com/?w=%B0%B2%C8%AB%B3%C6%D6%D8&mc=seller&af=1&afadbeg=1
+	）
+
+6.拿到商品详情页之后，请求页面获取数据。
+	页面中的基本信息是实时加载的，请求页面就可以获取
+	详细说明是异步加载的，需要请求接口
+	https://wsdetail.b2b.hc360.com/XssFilter?bcid=620114854
+	（所以存的时候三个字段，_id:url ，content:html ， data:接口返回的数据）
+
+
+（商户信息接口备用：https://wsdetail.b2b.hc360.com/qqser?providerId=100014319849）
+
+3级分类已经拿到，
+在网页源代码中有分类信息
+一级分类 ： "firstSupcatName":"涂料/表面处理"
+二级分类 ： "secondSupcatName":"涂料"
+
+或者：
+"supCatClass":[{"catName":"涂料/表面处理","listUrl":"http://b2b.hc360.com/supermarket/tl/bmcl/supply.html","sortTag":"1","webName":"tl/bmcl"},{"catName":"涂料","listUrl":"http://b2b.hc360.com/supplylist/ts065019p.html","sortTag":"1","webName":""},{"catName":"乳胶漆","listUrl":"http://b2b.hc360.com/supplylist/ts065019058p.html","sortTag":"1","webName":""}]
