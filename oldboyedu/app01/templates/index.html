@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/plugins/bxSlider/jquery.bxslider.css"/>
+</head>
+<body>
+    <ul class="bxslider">
+        {% for item in queryset_dict %}
+        <li>
+            <a href="{{item.href}}">
+                <img src="/{{ item.img}}" alt="{{item.name}}" />
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/plugins/bxSlider/jquery.bxslider.js"></script>
+    <script>
+        $(function(){
+            $('.bxslider').bxSlider({
+                auto:true
+            });
+        })
+    </script>
+</body>
+</html>
