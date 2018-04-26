@@ -4,6 +4,7 @@ html2 = """
 
 
 
+
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -15,11 +16,11 @@ html2 = """
 <meta name="renderer" content="webkit">
 <script type="text/javascript">document.domain = 'huangye88.com';var staticurl = 'http://static.huangye88.cn';var flag=0;</script>
 
-<title>焦作市光明影视设备有限责任公司简介，地址</title>
-<meta name="Keywords" content="焦作市光明影视设备有限责任公司介绍,焦作市光明影视设备有限责任公司详细资料" />
-<meta name="Description" content="焦作市光明影视设备有限责任公司详情！包括焦作市光明影视设备有限责任公司介绍、主营行业产品、经营模式、企业类型等详细情况，全方位的展示焦作市光明影视设备有限责任公司详情信息。" />
-<meta name="location" content="province=河南;city=焦作" /> 
-<meta name="mobile-agent" content="format=html5;url=http://m.huangye88.com/qiye_jzgmys/detail.html">
+<title>哈尔滨铭瑞德晟装饰工程有限公司简介，地址</title>
+<meta name="Keywords" content="哈尔滨铭瑞德晟装饰工程有限公司介绍,哈尔滨铭瑞德晟装饰工程有限公司详细资料" />
+<meta name="Description" content="哈尔滨铭瑞德晟装饰工程有限公司详情！包括哈尔滨铭瑞德晟装饰工程有限公司介绍、主营行业产品、经营模式、企业类型等详细情况，全方位的展示哈尔滨铭瑞德晟装饰工程有限公司详情信息。" />
+<meta name="location" content="province=黑龙江;city=哈尔滨" /> 
+<meta name="mobile-agent" content="format=html5;url=http://m.huangye88.com/qiye_610179894/detail.html">
 <link href="http://static.huangye88.cn/images/qiye/0/css.css?v=201701222" rel="stylesheet" type="text/css" media="all" />
 <link href="http://static.huangye88.cn/css/jquery.autosuggest.css?v=2018042104" rel="stylesheet" type="text/css" />
 <script language="javascript" type="text/javascript" src="http://static.huangye88.cn/js/jquery.js"></script>
@@ -53,20 +54,19 @@ jQuery(document).ready(function(){
 <div class="headercont">
 	<div class="header">
     	<div class="title">
-    	<h1 class="big">焦作市光明影视设备有限责任公司
-    	    	<a class="faicon" href="http://my.huangye88.com/fafa/" target="_blank" title="用户已开通發發商铺"><img src="http://static.huangye88.cn/images/qiye/0/fafa.png" alt="用户已开通發發商铺"></a><span id="fafats"></span>
+    	<h1 class="big">哈尔滨铭瑞德晟装饰工程有限公司
     	    	</h1>
-    	<p class="small" style="float:left;">演播室灯光,演播室装饰,演播室设计,恒力铰链吊杆</p><span id="aaction" style="float:left;margin-left:10px;"></span></div>
-        <div class="right"><div class="telephone"><i class="icon tele"></i>18939169098</div></div>
+    	<p class="small" style="float:left;">门窗维修,塑钢窗维修,纱窗制作,中空玻璃制作</p><span id="aaction" style="float:left;margin-left:10px;"></span></div>
+        <div class="right"><div class="telephone"><i class="icon tele"></i>15245047995</div></div>
     </div>
 </div>
 <div class="nav">
 	<ul class="meun">
-		<a href="http://jzgmys.b2b.huangye88.com/" title="焦作市光明影视设备有限责任公司首页"><li>公司首页</li></a>
-		<a href="http://jzgmys.b2b.huangye88.com/company_detail.html" title="焦作市光明影视设备有限责任公司介绍"><li class="current">公司介绍</li></a>
-			<a href="http://jzgmys.b2b.huangye88.com/product/" title="焦作市光明影视设备有限责任公司供应产品"  rel="nofollow"><li>供应产品</li></a>
-				<a href="http://jzgmys.b2b.huangye88.com/company_map.html" title="焦作市光明影视设备有限责任公司地址"  rel="nofollow" ><li>公司地址</li></a>
-		<a href="http://jzgmys.b2b.huangye88.com/company_contact.html" title="联系焦作市光明影视设备有限责任公司"  rel="nofollow"><li>联系我们</li></a>
+		<a href="http://610179894.b2b.huangye88.com/" title="哈尔滨铭瑞德晟装饰工程有限公司首页"><li>公司首页</li></a>
+		<a href="http://610179894.b2b.huangye88.com/company_detail.html" title="哈尔滨铭瑞德晟装饰工程有限公司介绍"><li class="current">公司介绍</li></a>
+			<a href="http://610179894.b2b.huangye88.com/product/" title="哈尔滨铭瑞德晟装饰工程有限公司供应产品"  rel="nofollow"><li>供应产品</li></a>
+				<a href="http://610179894.b2b.huangye88.com/company_map.html" title="哈尔滨铭瑞德晟装饰工程有限公司地址"  rel="nofollow" ><li>公司地址</li></a>
+		<a href="http://610179894.b2b.huangye88.com/company_contact.html" title="联系哈尔滨铭瑞德晟装饰工程有限公司"  rel="nofollow"><li>联系我们</li></a>
 	</ul>
 </div>
 <!--cont-->
@@ -76,9 +76,9 @@ jQuery(document).ready(function(){
     	<div class="w-layer">
         	<div class="l-title"><span>公司信息</span></div>
             <div class="l-content">
-            	<ul class="l-txt"><li>焦作市光明影视设备有限责任公司</li><li class="gray">光明影视设备</li></ul>
-                <ul class="l-txt"><li class="company-rz" style="overflow: inherit;">公司认证：<i class="icon rz company" alt="com"><div class="iprz five rzcom">已认证</div></i></li><li>企业类型：私营有限责任公司</li><li class="contro-num">主营产品：演播室灯光,演播室装饰,演播室设计,恒力铰链吊杆</li><li>公司地址：<a href="http://b2b.huangye88.com/henan/" title="河南企业名录">河南</a> <a href="http://b2b.huangye88.com/jiaozuo/" title="焦作企业名录">焦作</a> 焦作市中站区跃进路东段<a href="http://jzgmys.b2b.huangye88.com/company_map.html" title="焦作市光明影视设备有限责任公司地址" rel="nofollow"><i class="icon address"></i></a></li></ul>
-                                <ul class="l-txt none"><li><a rel="nofollow" class="follow" onClick="hidezd('http://sf.huangye88.com/companysc.do?t=3&id=350542');clickbtn(14);" title="收藏" id="scang">+ 关注该企业</a></li><li class="shares"><div class="bdsharebuttonbox"><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_more" data-cmd="more"></a></div>
+            	<ul class="l-txt"><li>哈尔滨铭瑞德晟装饰工程有限公司</li><li class="gray">塑钢门窗维修制作</li></ul>
+                <ul class="l-txt"><li class="company-rz" style="overflow: inherit;">公司认证：<i class="icon rz company" alt="com"><div class="iprz five rzcom">已认证</div></i></li><li>企业类型：有限责任公司</li><li class="contro-num">主营产品：门窗维修,塑钢窗维修,纱窗制作,中空玻璃制作</li><li>公司地址：<a href="http://b2b.huangye88.com/heilongjiang/" title="黑龙江企业名录">黑龙江</a> <a href="http://b2b.huangye88.com/haerbin/" title="哈尔滨企业名录">哈尔滨</a> 哈尔滨道里<a href="http://610179894.b2b.huangye88.com/company_map.html" title="哈尔滨铭瑞德晟装饰工程有限公司地址" rel="nofollow"><i class="icon address"></i></a></li></ul>
+                                <ul class="l-txt none"><li><a rel="nofollow" class="follow" onClick="hidezd('http://sf.huangye88.com/companysc.do?t=3&id=166375');clickbtn(14);" title="收藏" id="scang">+ 关注该企业</a></li><li class="shares"><div class="bdsharebuttonbox"><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_more" data-cmd="more"></a></div>
 </li></ul>
 			</div>
         </div>
@@ -86,14 +86,31 @@ jQuery(document).ready(function(){
 			<div class="l-title"><span>联系方式</span></div>
 			<div class="l-content">
 				<ul class="l-txt none">
-					<li><label>联系人：</label><a href="http://jzgmys.b2b.huangye88.com/company_contact.html" rel="nofollow">李振海</a></li>
-					<li style="overflow: inherit;" class="user-rz"><label>用户认证：</label><i class="icon rz iphone-h" alt="phone"><div class="iprz-h one rzphone">未认证</div></i><i class="icon rz personal" alt="person"><div class="iprz two rzperson">已认证</div></i><i class="icon rz weixin" alt="wx"><div class="iprz three rzwx">已认证</div></i><i class="icon rz email" alt="mail"><div class="iprz  four rzmail">已认证</div></i></li>
-					<li><label>最新登录：</label>2018-04-24</li><li><label>电话：</label>0391-3938846</li><li><label>手机：</label>18939169098</li><li><a href="http://wpa.qq.com/msgrd?v=3&uin=471127305&site=qq&menu=yes" rel="nofollow" class="qqred" target="_blank"><i class="icon qq"></i>QQ</a></li>				</ul>
+					<li><label>联系人：</label><a href="http://610179894.b2b.huangye88.com/company_contact.html" rel="nofollow">李野</a></li>
+					<li style="overflow: inherit;" class="user-rz"><label>用户认证：</label><i class="icon rz iphone" alt="phone"><div class="iprz one rzphone">已认证</div></i><i class="icon rz personal" alt="person"><div class="iprz two rzperson">已认证</div></i><i class="icon rz weixin" alt="wx"><div class="iprz three rzwx">已认证</div></i><i class="icon rz email" alt="mail"><div class="iprz  four rzmail">已认证</div></i></li>
+					<li><label>最新登录：</label>2018-04-20</li><li><label>电话：</label>15245047995</li><li><a href="http://wpa.qq.com/msgrd?v=3&uin=610179894&site=qq&menu=yes" rel="nofollow" class="qqred" target="_blank"><i class="icon qq"></i>QQ</a></li>				</ul>
 			</div>
 		</div>
 <div>
 
 
+<div class="related-product">
+	<div class="l-title"><h3>相关产品</h3></div>
+	<div class="l-content">
+		<ul class="l-txt none">
+											<li class="visitor"><a href="http://www.huangye88.com/product/menchuangweixiu14820765.html" title="门窗维修" target="_blank">门窗维修</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/menchuangweixiu6957154.html" title="门窗维修安装" target="_blank">门窗维修安装</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/lvhejinmen18262283.html" title="铝合金门窗维修" target="_blank">铝合金门窗维修</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/word16012508.html" title="塑钢​‌‌门窗维修" target="_blank">塑钢​‌‌门窗维修</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/hashisugang16368485.html" title="哈市塑钢门窗维修" target="_blank">哈市塑钢门窗维修</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/tianjinmuqiang16955726.html" title="天津幕墙门窗维修" target="_blank">天津幕墙门窗维修</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/xianboli17021012.html" title="西安玻璃门窗维修" target="_blank">西安玻璃门窗维修</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/yimenweixiu17122350.html" title="移门维修门窗维修" target="_blank">移门维修门窗维修</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/zhuanyeboli17241021.html" title="专业玻璃门窗维修" target="_blank">专业玻璃门窗维修</a></li>
+														<li class="visitor"><a href="http://www.huangye88.com/product/caigangfangmen17482269.html" title="彩钢房门窗维修" target="_blank">彩钢房门窗维修</a></li>
+								</ul>
+	</div>
+</div>
 
 		
         </div>
@@ -106,37 +123,38 @@ jQuery(document).ready(function(){
 		<div class="w-layer">
 			<div class="r-title"><i class="icon tit"></i>公司资料<span class="eng"><em>Company Information</em></span></div>
 			<div class="r-content">
-				<div class="data"><p class="com-name">焦作市光明影视设备有限责任公司</p>
-				<ul class="con-txt"><li><label>企业法人：</label>程希印</li><li><label>所在地：</label>河南 焦作</li><li><label>企业类型：</label>私营有限责任公司</li><li><label>成立时间：</label>1995-01-01</li><li><label>注册资金：</label>人民币100万</li><li><label>员工人数：</label>5 - 10 人</li><li><label>主营行业：</label><a href="http://guangdian.huangye88.com/wutaidengguangshebei/wutaiguangyuan/" title="舞台光源"target="_blank">舞台光源</a></li><li><label>主营产品：</label>演播室灯光,演播室装饰,演播室设计,恒力铰链吊杆</li></ul></div>
+				<div class="data"><p class="com-name">哈尔滨铭瑞德晟装饰工程有限公司</p>
+				<ul class="con-txt"><li><label>企业法人：</label>李洪财</li><li><label>所在地：</label>黑龙江 哈尔滨</li><li><label>企业类型：</label>有限责任公司</li><li><label>成立时间：</label>2001-05-08</li><li><label>主营行业：</label><a href="http://www.huangye88.com/jiaju/menchuangxingcai-sugangmenchuang/" title="塑钢门窗"target="_blank">塑钢门窗</a></li><li><label>主营产品：</label>门窗维修,塑钢窗维修,纱窗制作,中空玻璃制作</li></ul></div>
 			</div>
 		</div>
 		<div class="w-layer">
 			<div class="r-title"><i class="icon tit"></i>公司介绍<span class="eng"><em>Company Introduction</em></span></div>
-			<div class="r-content"><span  class="pic"><img src="http://image9.huangye88.cn/2017/05/24/bb08ef1eba0491457a0a889f969e9376_350_350.gif" alt="焦作市光明影视设备有限责任公司"></span><p class="txt">焦作市光明影视设备有限责任公司（焦作市影视照明灯具厂），是集影视照明设备科研开发、生产 、经销、工程安装、技术服务于一体的高技术企业。演播室灯光工程免费设计，演播室灯光工程专业生产，演播室灯光工程专业配件，演播室灯光专业生产厂家。为国内影视照明成套设备的专业生产制造公司，并承担电视演播厅（室）、电影摄影棚、体育场馆、舞台舞厅、电教馆等特种照明工程的设计安装及售后服务。连年获省、市“重合同守信用企业”称号。<br />
-公司目前已形成机械、杆控 、数字控制三大系列，五十多个品种，一百多种规格的影视照明灯具及配套设备、部件。包括：聚（回）光灯、泛光灯、天（地）幕灯、双反射柔光灯、三基色冷光灯、演播室专业LED灯具等产品。<br />
-公司设备齐全：拥有包括车、铣、刨、磨、镗、滚齿、剪切、折弯、锻造、点焊、液压成型、表面处理等主要加工设备，并配备有电子仪器、仪表及先进的数控设备、计算机控制加工系统。<br />
-技术力量雄厚：拥有电子、计算机、机械、仪表、光学等专业科技人员，负责企业产品的科技开发、研究与生产控制。生产经营部门配备有各类微机、绘图仪器，控制和监督产品生产各环节的生产质量与进度，并专门设立测试产品质量的模拟演播室和光学测试室。<br />
-公司产品行销全国各地，产品质量受到了客户的普遍赞誉。公司的经营理念是：务实、创新；服务宗旨是：完善、及时。我公司愿给您提供一流的产品和一流的服务。</p>
-		<table border="0" cellspacing="1"><p class="com-detailed">详细资料</p><tr><td><span>主营地区</span>中站区跃进路东段</td></tr><tr><td><span>研发部门人数</span>5 - 10 人</td></tr><tr><td><span>经营模式</span>生产型</td></tr><tr><td><span>经营期限</span>1949-01-01 至 2024-01-01</td></tr><tr><td><span>最近年检时间</span>2014年</td></tr><tr><td><span>企业状态</span>开业</td></tr><tr><td><span>主要客户群</span>所有人群</td></tr><tr><td><span>年营业额</span>人民币 10 万元/年以下</td></tr><tr><td><span>年营出口额</span>人民币 10 万元/年以下</td></tr><tr><td><span>年营进口额</span>人民币 10 万元/年以下</td></tr><tr><td><span>经营范围</span><font>演播室灯光,演播室装饰,演播室设计,恒力铰链吊杆</font></td></tr><tr><td><span>是否提供OEM</span>否</td></tr><tr><td><span>质量控制</span>内部</td></tr><tr><td><span>公司邮编</span>454006</td></tr><tr><td><span>公司电话</span>0391-3938846</td></tr><tr><td><span>公司网站</span>http://www.jzgmys.cn/</td></tr><tr><td><span>行政区域</span>河南焦作</td></tr><tr><td><span>公司地址</span>焦作市中站区跃进路东段</td></tr></table></div>
+			<div class="r-content"><span  class="pic"><img src="http://image5.huangye88.com/2014/08/13/e639bd059bb43e40_350_350.jpg" alt="哈尔滨铭瑞德晟装饰工程有限公司"></span><p class="txt">哈尔滨市各企事业单位塑钢门窗的维修、电话15245047995 长期提供门窗维修、设计制作、处理漏气、透风、漏水，玻璃损坏各种疑难问题。塑钢配件承接哈尔滨地区业务.<br />
+<br />
+服务说明：塑钢门窗使用3-5年后，就会出现胶条老化，锁点磨损，室内温度低等，经过专业维修后能修复如新，我公司作出下列承诺：保修两年，两年之内免费维修，上门服务，随叫随到。<br />
+业塑钢维修项目：制作中空玻璃、安装玻璃、安装平开上悬、维修玻璃漏气、换汽车级胶条、传动器、把手、铰链、锁块、漏雨漏风门窗关不严，调门窗掉角，制作隐形纱窗、防盗纱窗，制作铝镁隔断拉门，安装风撑。承揽住家及单位维修服务。 白钢门。玻璃门。地弹簧 <br />
+包 门:材质有普通革、高级革、真皮，具有隔音、保暖、美观的功能。<br />
+定做纱窗：免费上门量尺安装，保修三年，一年包换。有三防纱窗（防蚊、防坠楼、防盗），有全铝、塑钢高中低档免洗抗强风隐形纱窗</p>
+		<table border="0" cellspacing="1"><p class="com-detailed">详细资料</p><tr><td><span>采购产品</span>门窗附件，胶条，玻璃</td></tr><tr><td><span>主营地区</span>哈尔滨</td></tr><tr><td><span>经营模式</span>服务型</td></tr><tr><td><span>经营期限</span>长期</td></tr><tr><td><span>企业状态</span>存续</td></tr><tr><td><span>主要客户群</span>所有人群</td></tr><tr><td><span>经营范围</span><font>门窗维修,塑钢窗维修,纱窗制作,中空玻璃制作</font></td></tr><tr><td><span>公司邮编</span>150000</td></tr><tr><td><span>公司电话</span>0451-15245047995</td></tr><tr><td><span>行政区域</span>黑龙江哈尔滨</td></tr><tr><td><span>公司地址</span>哈尔滨道里</td></tr></table></div>
 		</div>
 		<div class="w-layer">
 			<div class="sou">
 			<form id="searchform" name="searchform" method="POST" onSubmit="return chkskw();">
-                <div class="sech"><a class="dang_q" rel="nofollow" onClick="changeTarget(1, jQuery(this));" title="找产品">找产品</a><a class="grey" rel="nofollow" onClick="changeTarget(2, jQuery(this));" title="找求购">找求购</a><a class="grey" rel="nofollow" onClick="changeTarget(3, jQuery(this));" title="找公司">找公司</a><input type="hidden" name="cattrace" value=",1,7172,7209,7213,"/><input type="hidden" name="pagetype" value="11"/><input type="hidden" id="type" value="sale"/></div>
+                <div class="sech"><a class="dang_q" rel="nofollow" onClick="changeTarget(1, jQuery(this));" title="找产品">找产品</a><a class="grey" rel="nofollow" onClick="changeTarget(2, jQuery(this));" title="找求购">找求购</a><a class="grey" rel="nofollow" onClick="changeTarget(3, jQuery(this));" title="找公司">找公司</a><input type="hidden" name="cattrace" value=",547,6270,6307,6310,"/><input type="hidden" name="pagetype" value="11"/><input type="hidden" id="type" value="sale"/></div>
                 <div class="search"><input class="se" type="text" name="kw" id="kw"/><input class="but" type="submit" value="搜索" /></div>
                 	    		<div style="height:30px; line-height: 30px; margin-top:6px;" class="diqu">
 	    			<span style="color:#000;font-size:14px;">热搜：</span>
-					    				<a href="http://www.huangye88.com/product/yingyuxuexi23659.html" title="英语学习机" target="_blank">英语学习机</a>
-					    				<a href="http://jixie.huangye88.com/dianhanqiegeshebei/dengliziqiegeji/" title="等离子切割机" target="_blank">等离子切割</a>
-					    				<a href="http://www.huangye88.com/product/word3787735.html" title="保水剂" target="_blank">保水剂</a>
-					    				<a href="http://jixie.huangye88.com/beng/qianshuibeng/" title="潜水泵" target="_blank">潜水泵</a>
-					    				<a href="http://www.huangye88.com/product/kebikeshu3891762.html" title="可比克薯片" target="_blank">可比克薯片</a>
-					    				<a href="http://jixie.huangye88.com/beng/paiwubeng/" title="排污泵" target="_blank">排污泵</a>
-					    				<a href="http://www.huangye88.com/product/jumofensui21898.html" title="锯末粉碎机" target="_blank">锯末粉碎机</a>
-					    				<a href="http://shuiguo.huangye88.com/tag/516373/" title="红富士苹果价格" target="_blank">红富士苹果</a>
-					    				<a href="http://www.huangye88.com/product/word3725116.html" title="儿茶素" target="_blank">儿茶素</a>
-					    				<a href="http://shipin.huangye88.com/guoshujixie/guoshuzhazhiji/" title="果蔬榨汁机" target="_blank">果蔬榨汁机</a>
-					    				<a href="http://jixie.huangye88.com/shusongshebei/shusongxian/" title="输送线" target="_blank">输送线</a>
+					    				<a href="http://www.huangye88.com/product/huodonggeqiang9578664.html" title="活动隔墙" target="_blank">活动隔墙</a>
+					    				<a href="http://www.huangye88.com/product/tanhuamuzhuo3971060.html" title="碳化木桌椅" target="_blank">碳化木桌椅</a>
+					    				<a href="http://www.huangye88.com/product/zhihuwangpian3874739.html" title="支护网片" target="_blank">支护网片</a>
+					    				<a href="http://www.huangye88.com/product/word3908672.html" title="黑片" target="_blank">黑片</a>
+					    				<a href="http://www.huangye88.com/product/tinghuaxiangshui3681910.html" title="听话香水" target="_blank">听话香水</a>
+					    				<a href="http://www.huangye88.com/product/daxingdami247461.html" title="大型打米机" target="_blank">大型打米机</a>
+					    				<a href="http://www.huangye88.com/product/zhusujishe9139058.html" title="注塑机射嘴" target="_blank">注塑机射嘴</a>
+					    				<a href="http://www.huangye88.com/product/rihaijigui4960692.html" title="日海机柜" target="_blank">日海机柜</a>
+					    				<a href="http://www.huangye88.com/product/delianjiyou3743413.html" title="德联机油" target="_blank">德联机油</a>
+					    				<a href="http://www.huangye88.com/product/jiadaigeimei308122.html" title="甲带给煤机" target="_blank">甲带给煤机</a>
+					    				<a href="http://www.huangye88.com/product/yinpinzhanshi4984391.html" title="饮品展示柜" target="_blank">饮品展示柜</a>
 					    		</div>
 	    		            </form>
             </div>
@@ -153,13 +171,13 @@ jQuery(document).ready(function(){
 	
 </div>
 <!--cont end-->
-<div class="bread"><a href="http://b2b.huangye88.com" title="企业名录">企业名录</a> &raquo; <a href="http://b2b.huangye88.com/jiaozuo/" title="焦作企业名录">焦作企业名录</a> &raquo; <a href="http://b2b.huangye88.com/jiaozuo/guangdian/" title="焦作广电企业名录">焦作广电企业名录</a> &raquo;  <a href="http://jzgmys.b2b.huangye88.com/" title="焦作市光明影视设备有限责任公司首页"><h3>焦作市光明影视设备有限责任公司</h3></a> &raquo; <a href="http://jzgmys.b2b.huangye88.com/company_detail.html" title="焦作市光明影视设备有限责任公司介绍">公司介绍</a></div>
+<div class="bread"><a href="http://b2b.huangye88.com" title="企业名录">企业名录</a> &raquo; <a href="http://b2b.huangye88.com/haerbin/" title="哈尔滨企业名录">哈尔滨企业名录</a> &raquo; <a href="http://b2b.huangye88.com/haerbin/jiaju/" title="哈尔滨家居企业名录">哈尔滨家居企业名录</a> &raquo;  <a href="http://610179894.b2b.huangye88.com/" title="哈尔滨铭瑞德晟装饰工程有限公司首页"><h3>哈尔滨铭瑞德晟装饰工程有限公司</h3></a> &raquo; <a href="http://610179894.b2b.huangye88.com/company_detail.html" title="哈尔滨铭瑞德晟装饰工程有限公司介绍">公司介绍</a></div>
 <!--bottom-->
 <div class="bottom">
 	<div class="bottomcont">
-    	<dl class="bottom"><dt>关于我们</dt><dd><a href="http://jzgmys.b2b.huangye88.com/company_detail.html" title="焦作市光明影视设备有限责任公司详情" rel="nofollow">企业介绍</a></dd><dd><a href="http://jzgmys.b2b.huangye88.com/product/" title="焦作市光明影视设备有限责任公司供应产品" rel="nofollow">供应产品</a></dd></dl>
-        <dl class="bottom"><dt>联系我们</dt><dd>名称：焦作市光明影视设备有限责任公司</dd><dd>电话：0391-3938846</dd><dd>手机：18939169098</dd><dd>地址：焦作市中站区跃进路东段<a href="http://jzgmys.b2b.huangye88.com/company_map.html" title="焦作市光明影视设备有限责任公司地址" rel="nofollow"><i class="icon address-bot"></i></a></dd></dl>
-	        <dl class="bottom"><dt>主营产品</dt><dd>演播室灯光,演播室装饰,演播室设计,恒力铰链吊杆</dd></dl>
+    	<dl class="bottom"><dt>关于我们</dt><dd><a href="http://610179894.b2b.huangye88.com/company_detail.html" title="哈尔滨铭瑞德晟装饰工程有限公司详情" rel="nofollow">企业介绍</a></dd><dd><a href="http://610179894.b2b.huangye88.com/product/" title="哈尔滨铭瑞德晟装饰工程有限公司供应产品" rel="nofollow">供应产品</a></dd></dl>
+        <dl class="bottom"><dt>联系我们</dt><dd>名称：哈尔滨铭瑞德晟装饰工程有限公司</dd><dd>电话：15245047995</dd><dd>地址：哈尔滨道里<a href="http://610179894.b2b.huangye88.com/company_map.html" title="哈尔滨铭瑞德晟装饰工程有限公司地址" rel="nofollow"><i class="icon address-bot"></i></a></dd></dl>
+	        <dl class="bottom"><dt>主营产品</dt><dd>门窗维修,塑钢窗维修,纱窗制作,中空玻璃制作</dd></dl>
 	        <div class="scan"><a rel="nofollow" href="http://my.huangye88.com/company/"><p class="shop">管理商铺</p></a></div>
     </div>
 </div>
@@ -183,8 +201,8 @@ function changeTarget(id, obj) {
 	obj.addClass('dang_q');
 }
 function chkskw(){var chk=true;var kw=jQuery('#kw').val();if(!kw){alert('请输入关键词');return false;}else{var formobj=document.searchform;formobj.action='http://www.'+document.domain+'/search.html?kw='+encodeURI(kw)+'&type='+jQuery('#type').val();return true;}}
-document.write('<scr'+'ipt type="text/javascript" src="http://sf.huangye88.com/company.js?v=2018042104&s=1&st=&cpid=&u=358403&c=350542&m=0&p=detail&t=un&r='+encodeURIComponent(document.referrer)+'"></scr'+'ipt>');
-var wpadomain = "jzgmys.b2b.huangye88.com";
+document.write('<scr'+'ipt type="text/javascript" src="http://sf.huangye88.com/company.js?v=2018042104&s=1&st=&cpid=&u=99709&c=166375&m=0&p=detail&t=un&r='+encodeURIComponent(document.referrer)+'"></scr'+'ipt>');
+var wpadomain = "610179894.b2b.huangye88.com";
 </script>
 <!--footer-->
 <div class="footer">© 2018 huangye88.com </div>
@@ -197,9 +215,9 @@ var wpadomain = "jzgmys.b2b.huangye88.com";
         <li class=top><p class=titZx>欢迎来到我们网站</p></li>
 		<ul class="consultation">
 				  		<li class="online"><i class="icon on-line"></i>在线咨询</li>
-						<li class="txqq"><a rel="nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=471127305&site=qq&menu=yes" target="_blank"><i class="icon on-qq"></i>李振海</a></li>
+						<li class="txqq"><a rel="nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=610179894&site=qq&menu=yes" target="_blank"><i class="icon on-qq"></i>李野</a></li>
 															<li class="online"><i class="icon on-iphone"></i>手机咨询</li>
-			<li class="iphone-number">18939169098</li>
+			<li class="iphone-number">15245047995</li>
 				  	</ul>
       </ul>
     </div>
@@ -305,7 +323,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-11926988-1', 'auto');
 ga('send', 'pageview');
 </script>
-<area href="/pepp4_thunder" style="position:absolute;left:-100px;" /></body>
+<area href="/pepp4_thunder" /></body>
 </html>
 
 
@@ -315,8 +333,12 @@ ga('send', 'pageview');
 from lxml import etree
 selector = etree.HTML(html2)
 
+comdesc = ""
 com_pic = ""
-com_pic = selector.xpath('//span[@class="pic"]/img/@src')
-# for i in com_pic:
-# 	print(i.xpath('@href'))
-print(com_pic)
+try:
+    for i in selector.xpath('//div[@class="r-content"]/p[@class="txt"]'):
+        comdesc = i.xpath('string(.)')
+    com_pic = selector.xpath('//span[@class="pic"]/img/@src')[0]
+except:
+    pass
+print(comdesc , com_pic)
