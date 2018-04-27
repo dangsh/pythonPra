@@ -284,108 +284,111 @@ def map_func(iter_x):
         except:
             pass
         #当企业页面为钻石VIP，等特殊页面时
-        if not selector.xpath('//div[@class="w-layer"]'):
-            try:
-                for i in selector.xpath('//div[@class="card-text mt5"]'):
-                    comname = i.xpath('p[1]/text()')[0]
-                    contact = i.xpath('p[2]/text()')[0]
-                    mobile = i.xpath('p[3]/text()')[0]
-                    tel = i.xpath('p[4]/text()')[0]
-                com_pic = selector.xpath('//div[@class="text-image"]/img/@src')[0]
-                comdesc = selector.xpath('//div[@class="pro-text"]/p/text()')[0]
-                for i in selector.xpath('//td'):
-                    data = i.xpath('string(.)')
-                    try:
-                        if u'公司主营：' in data:
-                            product = i.xpath('text()')[0]
-                        if u'主营行业：' in data:
-                            main_industry = i.xpath('a/text()')[0]
-                        if u'采购产品：' in data:
-                            buy_goods = i.xpath('text()')[0]
-                        if u'主营地区：' in data:
-                            main_addr = i.xpath('text()')[0]
-                        if u'研发部门人数：' in data:
-                            rdnum = i.xpath('text()')[0]
-                        if u'经营模式：' in data:
-                            busmode = i.xpath('text()')[0]
-                        if u'经营期限：' in data:
-                            period = i.xpath('text()')[0]
-                        if u'最近年检时间：' in data:
-                            survey = i.xpath('text()')[0]
-                        if u'登记机关：' in data:
-                            regist = i.xpath('text()')[0]
-                        if u'企业状态：' in data:
-                            com_status = i.xpath('text()')[0]
-                        if u'开户银行：' in data:
-                            bank_type = i.xpath('text()')[0]
-                        if u'银行账号：' in data:
-                            bank_num = i.xpath('text()')[0]
-                        if u'开户人：' in data:
-                            bank_people = i.xpath('text()')[0]
-                        if u'品牌名称：' in data:
-                            brand_name = i.xpath('text()')[0]
-                        if u'主要客户群：' in data:
-                            customer = i.xpath('text()')[0]
-                        if u'年营业额：' in data:
-                            annulsale = i.xpath('text()')[0]
-                        if u'年营出口额：' in data:
-                            annulexport = i.xpath('text()')[0]
-                        if u'年营进口额：' in data:
-                            annulimport = i.xpath('text()')[0]
-                        if u'经营范围：' in data:
-                            business = i.xpath('text()')[0]
-                        if u'厂房面积：' in data:
-                            com_area = i.xpath('text()')[0]
-                        if u'月产量：' in data:
-                            monthly_production = i.xpath('text()')[0]
-                        if u'是否提供OEM：' in data:
-                            OEM = i.xpath('text()')[0]
-                        if u'公司邮编：' in data:
-                            zip = i.xpath('text()')[0]
-                        if u'公司电话：' in data:
-                            com_tel = i.xpath('text()')[0]
-                        if u'公司传真：' in data:
-                            fax = i.xpath('text()')[0]
-                        if u'公司邮箱：' in data:
-                            email = i.xpath('text()')[0]
-                        if u'公司网站：' in data:
-                            website = i.xpath('text()')[0]
-                        if u'行政区域：' in data:
-                            aministration_area = i.xpath('text()')[0]
-                        if u'公司地址：' in data:
-                            com_addr2 = i.xpath('text()')[0]
-                        if u'质量控制：' in data:
-                            qc = i.xpath('text()')[0]
-                        if u'主要经营地点：' in data:
-                            address = i.xpath('text()')[0]
-                        if u'公司所在地：' in data:
-                            com_location = i.xpath('text()')[0]
-                        if u'公司注册地址：' in data:
-                            com_reg_addr = i.xpath('text()')[0]
-                        if u'工商注册号：' in data:
-                            business_num = i.xpath('text()')[0]
-                        if u'税务登记证号：' in data:
-                            tax_num = i.xpath('text()')[0]
-                        if u'企业类型：' in data:
-                            comtype = i.xpath('text()')[0]
-                        if u'注册资金：' in data:
-                            regcapital = i.xpath('text()')[0]
-                        if u'成立时间：' in data:
-                            regyear = i.xpath('text()')[0]
-                        if u'员工人数：' in data:
-                            employ = i.xpath('text()')[0]
-                        if u'管理体系：' in data:
-                            management_system = i.xpath('text()')[0]
-                        if u'联系人性别：' in data:
-                            conn_peopel_sex = i.xpath('text()')[0]
-                        if u'联系人部门：' in data:
-                            conn_peopel_department = i.xpath('text()')[0]
-                        if u'联系人职位：' in data:
-                            conn_peopel_position = i.xpath('text()')[0]
-                    except:
-                        pass
-            except:
-                pass
+        try:
+            if not selector.xpath('//div[@class="w-layer"]'):
+                try:
+                    for i in selector.xpath('//div[@class="card-text mt5"]'):
+                        comname = i.xpath('p[1]/text()')[0]
+                        contact = i.xpath('p[2]/text()')[0]
+                        mobile = i.xpath('p[3]/text()')[0]
+                        tel = i.xpath('p[4]/text()')[0]
+                    com_pic = selector.xpath('//div[@class="text-image"]/img/@src')[0]
+                    comdesc = selector.xpath('//div[@class="pro-text"]/p/text()')[0]
+                    for i in selector.xpath('//td'):
+                        data = i.xpath('string(.)')
+                        try:
+                            if u'公司主营：' in data:
+                                product = i.xpath('text()')[0]
+                            if u'主营行业：' in data:
+                                main_industry = i.xpath('a/text()')[0]
+                            if u'采购产品：' in data:
+                                buy_goods = i.xpath('text()')[0]
+                            if u'主营地区：' in data:
+                                main_addr = i.xpath('text()')[0]
+                            if u'研发部门人数：' in data:
+                                rdnum = i.xpath('text()')[0]
+                            if u'经营模式：' in data:
+                                busmode = i.xpath('text()')[0]
+                            if u'经营期限：' in data:
+                                period = i.xpath('text()')[0]
+                            if u'最近年检时间：' in data:
+                                survey = i.xpath('text()')[0]
+                            if u'登记机关：' in data:
+                                regist = i.xpath('text()')[0]
+                            if u'企业状态：' in data:
+                                com_status = i.xpath('text()')[0]
+                            if u'开户银行：' in data:
+                                bank_type = i.xpath('text()')[0]
+                            if u'银行账号：' in data:
+                                bank_num = i.xpath('text()')[0]
+                            if u'开户人：' in data:
+                                bank_people = i.xpath('text()')[0]
+                            if u'品牌名称：' in data:
+                                brand_name = i.xpath('text()')[0]
+                            if u'主要客户群：' in data:
+                                customer = i.xpath('text()')[0]
+                            if u'年营业额：' in data:
+                                annulsale = i.xpath('text()')[0]
+                            if u'年营出口额：' in data:
+                                annulexport = i.xpath('text()')[0]
+                            if u'年营进口额：' in data:
+                                annulimport = i.xpath('text()')[0]
+                            if u'经营范围：' in data:
+                                business = i.xpath('text()')[0]
+                            if u'厂房面积：' in data:
+                                com_area = i.xpath('text()')[0]
+                            if u'月产量：' in data:
+                                monthly_production = i.xpath('text()')[0]
+                            if u'是否提供OEM：' in data:
+                                OEM = i.xpath('text()')[0]
+                            if u'公司邮编：' in data:
+                                zip = i.xpath('text()')[0]
+                            if u'公司电话：' in data:
+                                com_tel = i.xpath('text()')[0]
+                            if u'公司传真：' in data:
+                                fax = i.xpath('text()')[0]
+                            if u'公司邮箱：' in data:
+                                email = i.xpath('text()')[0]
+                            if u'公司网站：' in data:
+                                website = i.xpath('text()')[0]
+                            if u'行政区域：' in data:
+                                aministration_area = i.xpath('text()')[0]
+                            if u'公司地址：' in data:
+                                com_addr2 = i.xpath('text()')[0]
+                            if u'质量控制：' in data:
+                                qc = i.xpath('text()')[0]
+                            if u'主要经营地点：' in data:
+                                address = i.xpath('text()')[0]
+                            if u'公司所在地：' in data:
+                                com_location = i.xpath('text()')[0]
+                            if u'公司注册地址：' in data:
+                                com_reg_addr = i.xpath('text()')[0]
+                            if u'工商注册号：' in data:
+                                business_num = i.xpath('text()')[0]
+                            if u'税务登记证号：' in data:
+                                tax_num = i.xpath('text()')[0]
+                            if u'企业类型：' in data:
+                                comtype = i.xpath('text()')[0]
+                            if u'注册资金：' in data:
+                                regcapital = i.xpath('text()')[0]
+                            if u'成立时间：' in data:
+                                regyear = i.xpath('text()')[0]
+                            if u'员工人数：' in data:
+                                employ = i.xpath('text()')[0]
+                            if u'管理体系：' in data:
+                                management_system = i.xpath('text()')[0]
+                            if u'联系人性别：' in data:
+                                conn_peopel_sex = i.xpath('text()')[0]
+                            if u'联系人部门：' in data:
+                                conn_peopel_department = i.xpath('text()')[0]
+                            if u'联系人职位：' in data:
+                                conn_peopel_position = i.xpath('text()')[0]
+                        except:
+                            pass
+                except:
+                    pass
+        except:
+            pass
         try:
             image_to_upyun(base_url, com_pic)
         except:
@@ -461,4 +464,4 @@ def map_func(iter_x):
                 pass
 rdd.foreachPartition(map_func)
 
-scan 'spider_hy88_company_json',{LIMIT=>5}
+  

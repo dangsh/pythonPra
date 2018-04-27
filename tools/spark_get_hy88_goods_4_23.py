@@ -29,4 +29,4 @@ rdd3 = rdd3.map(map_func)
 final_rdd = rdd3.subtract(rdd)
 final_rdd.saveAsTextFile('/python/test/myresult/')
 
-create 'spider_hy88_zxg',{NAME => 'info', VERSIONS => 1,COMPRESSION => 'SNAPPY'}
+# create 'spider_hy88_zxg',{NAME => 'info', VERSIONS => 1,COMPRESSION => 'SNAPPY'}
