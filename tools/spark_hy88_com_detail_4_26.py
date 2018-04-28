@@ -16,6 +16,10 @@ rdd = sc.newAPIHadoopRDD("org.apache.hadoop.hbase.mapreduce.TableInputFormat",
 
 def map_func(iter_x):
     import json
+    import hashlib
+    import urlparse
+    import collections
+    import re
     from lxml import etree
     from celery.app import Celery
     import happybase
@@ -28,6 +32,33 @@ def map_func(iter_x):
             return '' if not s else (eval('''"%s"''' % (s.replace('"', '\\"').replace("'", "\\'")))).decode("utf-8")
         except:
             return s
+    def md5(str, hex=True):
+        '获取字符串的md5校验'
+        m = hashlib.md5()
+        m.update(str)
+        if hex == True:
+            return m.hexdigest()
+        else:
+            return m.digest()
+    def img_url_handle(img_url):
+        try:
+            _ = img_url.split(".")
+            a, b = ".".join(_[:-1]), _[-1]
+            if b.startswith("jpg"):
+                return a + ".jpg"
+            if b.startswith("jpeg"):
+                return a + ".jpeg"
+            if b.startswith("png"):
+                return a + ".png"
+            if b.startswith("gif"):
+                return a + ".gif"
+            if b.startswith("JPEG"):
+                return a + ".JPEG"
+            if b.startswith("JPG"):
+                return a + ".JPG"
+            raise Exception()
+        except:
+            return img_url
     def image_to_upyun(page_url, img_url):
         try:
             img_url = urlparse.urljoin(page_url, img_url)
@@ -46,6 +77,8 @@ def map_func(iter_x):
             new_url = ''
         return new_url
     for x in iter_x:
+        content = ""
+        base_url = ""
         comname = ""
         comname_short = ""
         com_auth = ""
@@ -69,6 +102,7 @@ def map_func(iter_x):
         wechat = ""
         comdesc = ""
         com_pic = ""
+        com_pic_upyun = ""
         buy_goods = ""
         main_addr = ""
         rdnum = ""
@@ -390,7 +424,9 @@ def map_func(iter_x):
         except:
             pass
         try:
-            image_to_upyun(base_url, com_pic)
+            if com_pic:
+                com_pic_upyun = img_url_handle(com_pic)
+                com_pic_upyun = image_to_upyun(base_url, com_pic_upyun)
         except:
             pass
         data = {
@@ -415,6 +451,7 @@ def map_func(iter_x):
                 'wechat' : wechat ,
                 'comdesc' : comdesc ,
                 'com_pic' : com_pic ,
+                'com_pic_upyun' : com_pic_upyun ,
                 'buy_goods' : buy_goods ,
                 'rdnum' : rdnum ,
                 'busmode' : busmode ,
