@@ -6,8 +6,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="mysite" />
-    <orderEntry type="module" module-name="oldboyedu" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Twisted Trial" />
