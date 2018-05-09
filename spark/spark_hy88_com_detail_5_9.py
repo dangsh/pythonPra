@@ -3,17 +3,18 @@ __author__ = 'dangsh'
 # create by 张霄港(dangsh) 2018 4 25
 from pyspark.context import SparkContext
 from pyspark.sql import SparkSession
+
 spark = SparkSession.builder.appName('hy88_get_detail').getOrCreate()
 sc = spark.sparkContext
 
-conf = {"hbase.zookeeper.quorum":  "192.168.14.1:2181", "hbase.mapreduce.inputtable": "spider_hy88_company", "hbase.client.scanner.timeout.period":"1000000"}
+conf = {"hbase.zookeeper.quorum": "192.168.14.1:2181", "hbase.mapreduce.inputtable": "spider_hy88_company",
+        "hbase.client.scanner.timeout.period": "1000000"}
 valueConv = "org.apache.spark.examples.pythonconverters.HBaseResultToStringConverter"
 keyConv = "org.apache.spark.examples.pythonconverters.ImmutableBytesWritableToStringConverter"
 rdd = sc.newAPIHadoopRDD("org.apache.hadoop.hbase.mapreduce.TableInputFormat",
                          "org.apache.hadoop.hbase.io.ImmutableBytesWritable",
                          "org.apache.hadoop.hbase.client.Result",
                          conf=conf, keyConverter=keyConv, valueConverter=valueConv)
-
 def map_func(iter_x):
     import json
     import hashlib
@@ -23,7 +24,9 @@ def map_func(iter_x):
     from lxml import etree
     from celery.app import Celery
     import happybase
-    from happybase_monkey.monkey import monkey_path;monkey_path()
+    from happybase_monkey.monkey import monkey_path;
+    monkey_path()
+    from gcpy_utils.spider.handle import image_to_upyun, data_to_online
     app = Celery(broker="redis://192.168.8.185:6379/6")
     app.conf.task_queue_max_priority = 255
     app.conf.task_ignore_result = True
@@ -32,50 +35,6 @@ def map_func(iter_x):
             return '' if not s else (eval('''"%s"''' % (s.replace('"', '\\"').replace("'", "\\'")))).decode("utf-8")
         except:
             return s
-    def md5(str, hex=True):
-        '获取字符串的md5校验'
-        m = hashlib.md5()
-        m.update(str)
-        if hex == True:
-            return m.hexdigest()
-        else:
-            return m.digest()
-    def img_url_handle(img_url):
-        try:
-            _ = img_url.split(".")
-            a, b = ".".join(_[:-1]), _[-1]
-            if b.startswith("jpg"):
-                return a + ".jpg"
-            if b.startswith("jpeg"):
-                return a + ".jpeg"
-            if b.startswith("png"):
-                return a + ".png"
-            if b.startswith("gif"):
-                return a + ".gif"
-            if b.startswith("JPEG"):
-                return a + ".JPEG"
-            if b.startswith("JPG"):
-                return a + ".JPG"
-            raise Exception()
-        except:
-            return img_url
-    def image_to_upyun(page_url, img_url):
-        try:
-            img_url = urlparse.urljoin(page_url, img_url)
-            url_md5 = md5(img_url)
-            new_url = "//imgse.cn.gcimg.net/" + url_md5 + "." + img_url.split(".")[-1]
-            while 1:
-                try:
-                    app.send_task("rawhttp.image_spider.crawl_to_upyun", (
-                        img_url,), kwargs={"page_url": page_url},
-                                  queue="rawhttp.image_spider")
-                except:
-                    pass
-                else:
-                    break
-        except:
-            new_url = ''
-        return new_url
     for x in iter_x:
         content = ""
         base_url = ""
@@ -173,12 +132,12 @@ def map_func(iter_x):
                     if u'主营产品' in data:
                         product = i.xpath('string(.)')
                         product = product.encode('utf-8')
-                        product = product.replace('主营产品：','')
+                        product = product.replace('主营产品：', '')
                         product = product.decode('utf-8')
                     if u'公司地址' in data:
                         com_addr1 = i.xpath('string(.)')
                         com_addr1 = com_addr1.encode('utf-8')
-                        com_addr1 = com_addr1.replace('公司地址：','')
+                        com_addr1 = com_addr1.replace('公司地址：', '')
                         com_addr1 = com_addr1.decode('utf-8')
                 except:
                     pass
@@ -212,7 +171,7 @@ def map_func(iter_x):
                 if u'用户认证' in data:
                     user_auth = i.xpath('string(.)')
                     user_auth = user_auth.encode('utf-8')
-                    user_auth = user_auth.replace('用户认证：','')
+                    user_auth = user_auth.replace('用户认证：', '')
                     user_auth = user_auth.decode('utf-8')
                 if u'最新登录' in data:
                     new_login = i.xpath('text()')[0]
@@ -317,7 +276,7 @@ def map_func(iter_x):
                     pass
         except:
             pass
-        #当企业页面为钻石VIP，等特殊页面时
+        # 当企业页面为钻石VIP，等特殊页面时
         try:
             if not selector.xpath('//div[@class="w-layer"]'):
                 try:
@@ -425,78 +384,70 @@ def map_func(iter_x):
             pass
         try:
             if com_pic:
-                com_pic_upyun = img_url_handle(com_pic)
-                com_pic_upyun = image_to_upyun(base_url, com_pic_upyun)
+                com_pic_upyun = image_to_upyun(base_url, com_pic)
         except:
             pass
         data = {
-                'comname' : comname ,
-                'comname_short' : comname_short ,
-                'com_auth' : com_auth ,
-                'comtype' : comtype ,
-                'product' : product ,
-                'com_addr1' : com_addr1 ,
-                'ceo' : ceo ,
-                'provinces_and_cities' : provinces_and_cities ,
-                'regyear' : regyear ,
-                'regcapital' : regcapital ,
-                'employ' : employ ,
-                'main_industry' : main_industry ,
-                'main_addr' : main_addr ,
-                'contact' : contact ,
-                'user_auth' : user_auth ,
-                'new_login' : new_login ,
-                'tel' : tel ,
-                'mobile' : mobile ,
-                'wechat' : wechat ,
-                'comdesc' : comdesc ,
-                'com_pic' : com_pic ,
-                'com_pic_upyun' : com_pic_upyun ,
-                'buy_goods' : buy_goods ,
-                'rdnum' : rdnum ,
-                'busmode' : busmode ,
-                'period' : period ,
-                'survey' : survey ,
-                'regist' : regist ,
-                'com_status' : com_status ,
-                'bank_type' : bank_type ,
-                'bank_num' : bank_num ,
-                'bank_people' : bank_people ,
-                'brand_name' : brand_name ,
-                'customer' : customer ,
-                'annulsale' : annulsale ,
-                'annulexport' : annulexport ,
-                'annulimport' : annulimport ,
-                'business' : business ,
-                'com_area' : com_area ,
-                'monthly_production' : monthly_production ,
-                'OEM' : OEM ,
-                'zip' : zip ,
-                'com_tel' : com_tel ,
-                'fax' : fax ,
-                'email' : email ,
-                'website' : website ,
-                'aministration_area' : aministration_area ,
-                'com_addr2' : com_addr2 ,
-                'qc' : qc ,
-                'address' : address ,
-                'com_location' : com_location ,
-                'com_reg_addr' : com_reg_addr ,
-                'business_num' : business_num ,
-                'tax_num' : tax_num ,
-                'regcapital' : regcapital ,
-                'management_system' : management_system ,
-                'conn_peopel_sex' : conn_peopel_sex ,
-                'conn_peopel_department' : conn_peopel_department ,
-                'conn_peopel_position' : conn_peopel_position ,
-            }
-        conn = happybase.Connection("192.168.14.2", 9090)
-        try:
-            conn.table('spider_hy88_company_json').put(x[0], {'info:json': json.dumps(data)})
-        except:
-            try:
-                conn = happybase.Connection("192.168.14.2", 9090)
-                conn.table('spider_hy88_company_json').put(x[0], {'info:json': json.dumps(data)})
-            except:
-                pass
+            'comname': comname,
+            'comname_short': comname_short,
+            'com_auth': com_auth,
+            'comtype': comtype,
+            'product': product,
+            'com_addr1': com_addr1,
+            'ceo': ceo,
+            'provinces_and_cities': provinces_and_cities,
+            'regyear': regyear,
+            'regcapital': regcapital,
+            'employ': employ,
+            'main_industry': main_industry,
+            'main_addr': main_addr,
+            'contact': contact,
+            'user_auth': user_auth,
+            'new_login': new_login,
+            'tel': tel,
+            'mobile': mobile,
+            'wechat': wechat,
+            'comdesc': comdesc,
+            'com_pic': com_pic,
+            'com_pic_upyun': com_pic_upyun,
+            'buy_goods': buy_goods,
+            'rdnum': rdnum,
+            'busmode': busmode,
+            'period': period,
+            'survey': survey,
+            'regist': regist,
+            'com_status': com_status,
+            'bank_type': bank_type,
+            'bank_num': bank_num,
+            'bank_people': bank_people,
+            'brand_name': brand_name,
+            'customer': customer,
+            'annulsale': annulsale,
+            'annulexport': annulexport,
+            'annulimport': annulimport,
+            'business': business,
+            'com_area': com_area,
+            'monthly_production': monthly_production,
+            'OEM': OEM,
+            'zip': zip,
+            'com_tel': com_tel,
+            'fax': fax,
+            'email': email,
+            'website': website,
+            'aministration_area': aministration_area,
+            'com_addr2': com_addr2,
+            'qc': qc,
+            'address': address,
+            'com_location': com_location,
+            'com_reg_addr': com_reg_addr,
+            'business_num': business_num,
+            'tax_num': tax_num,
+            'regcapital': regcapital,
+            'management_system': management_system,
+            'conn_peopel_sex': conn_peopel_sex,
+            'conn_peopel_department': conn_peopel_department,
+            'conn_peopel_position': conn_peopel_position,
+        }
+        data_to_online("hy88_company",x[0],data)
 rdd.foreachPartition(map_func)
+

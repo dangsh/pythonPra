@@ -12,7 +12,7 @@ rdd = sc.newAPIHadoopRDD("org.apache.hadoop.hbase.mapreduce.TableInputFormat",
                          "org.apache.hadoop.hbase.io.ImmutableBytesWritable",
                          "org.apache.hadoop.hbase.client.Result",
                          conf=conf, keyConverter=keyConv, valueConverter=valueConv)
-def map_func0(iter_x):
+def map_func0(x):
     import json
     content = ''
     data = []
@@ -28,9 +28,7 @@ def map_func0(iter_x):
     if content:
         for i in content["goods"]:
             data.append(i[1])
-        return data
-    else:
-        return []
+    return data
 rdd_more = rdd.flatMap(map_func0).distinct().filter(lambda x: x != None)
 rdd_more.persist(StorageLevel(True,True,False,False))
 def map_func3(x):
