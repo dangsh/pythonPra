@@ -11,11 +11,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="handle.py" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Desktop/gcpy_utils/spider/handle.py">
+      <file leaf-file-name="spark_hy88_com_detail_5_9.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1869">
-              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            <state relative-caret-position="-11769">
+              <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spark_hy88_get_url_5_8.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_get_url_5_8.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-743">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spark_hy88_product_detail_5_10.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_product_detail_5_10.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2061">
+              <caret line="121" column="35" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -53,6 +71,8 @@
         <option value="$USER_HOME$/Desktop/gcpy_utils/spark_hy88_com_detail_5_9.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hy88_com_detail_4_26.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py" />
+        <option value="$PROJECT_DIR$/../spark/spark_hy88_get_url_5_8.py" />
+        <option value="$PROJECT_DIR$/../spark/spark_hy88_product_detail_5_10.py" />
       </list>
     </option>
   </component>
@@ -67,6 +87,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -87,7 +108,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,6 +296,13 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Desktop/gcpy_utils/spider/handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../oldboyedu/app01/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -527,39 +554,13 @@
         <state relative-caret-position="-143" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_get_hy88_goods_4_23.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/refine_hy88.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-563" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../spark/query_test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/query_test1.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/quchong_4_17.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_get_data_4_17.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../tools/to_mongo_shop.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -577,13 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="33" lean-forward="true" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/words.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -593,8 +587,41 @@
     </entry>
     <entry file="file://$USER_HOME$/Desktop/gcpy_utils/spider/handle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1869">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        <state relative-caret-position="750">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/refine_hy88.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1013" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_get_url_5_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="36" column="160" lean-forward="true" selection-start-line="36" selection-end-line="36" selection-end-column="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_get_url_5_8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-743">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11769">
+          <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_product_detail_5_10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2061">
+          <caret line="121" column="35" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
         </state>
       </provider>
     </entry>
