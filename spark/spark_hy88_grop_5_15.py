@@ -42,7 +42,6 @@ def map_func(iter_x):
     update_time = ""
     max_price = ""
     com_name = ""
-    scan = ""
     data = json.loads(iter_x)
     doc = ""
     try:
@@ -77,7 +76,6 @@ def map_func(iter_x):
         update_time = data['update_time']
         max_price = data['max_price']
         com_name = data['com_name']
-        scan = data['scan']
     except:
         pass
     try:
@@ -127,7 +125,6 @@ def map_func(iter_x):
         'update_time' : update_time ,
         'max_price' : max_price ,
         'com_name' : com_name ,
-        'scan' : scan ,
     }
     return cate_name_3 , final_data
 rdd2 = rdd1.map(map_func)
@@ -139,6 +136,9 @@ def map_func2(iter_x):
         client = MongoClient('192.168.14.90', 27017)
         myDb = client['hy88']
         myCollection = myDb['some_data']
-        myCollection.insert(x)
+        try:
+            myCollection.insert(x)
+        except:
+            pass
 result.foreachPartition(map_func2)
 
