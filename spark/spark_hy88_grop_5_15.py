@@ -6,9 +6,11 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName('hy88_get_product_detail').getOrCreate()
 sc = spark.sparkContext
 
-rdd1 = spark.read.format("com.mongodb.spark.sql.DefaultSource").option("uri","mongodb://192.168.14.90/final_field.hy88").load()
+rdd1 = sc.textFile('/final_field.json')
+# rdd1 = spark.read.format("com.mongodb.spark.sql.DefaultSource").option("uri","mongodb://192.168.14.90/final_field.hy88").load()
 def map_func(iter_x):
     from pyquery import PyQuery as pq
+    import json
     _id = ""
     cate_name_3 = ""
     cate_name_2 = ""
@@ -41,7 +43,7 @@ def map_func(iter_x):
     max_price = ""
     com_name = ""
     scan = ""
-    data = iter_x.asDict()
+    data = json.loads(iter_x)
     doc = ""
     try:
         _id = data['_id']
@@ -128,7 +130,7 @@ def map_func(iter_x):
         'scan' : scan ,
     }
     return cate_name_3 , final_data
-rdd2 = rdd1.rdd.map(map_func)
+rdd2 = rdd1.map(map_func)
 rdd2 = rdd2.groupByKey()
 result = rdd2.flatMap(lambda x:list(x[1])[:1000])
 def map_func2(iter_x):
