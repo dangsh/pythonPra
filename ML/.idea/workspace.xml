@@ -11,29 +11,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hy88_field_pick_all.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../spark/hy88_field_pick_all.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1080">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="24" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="spark_hy88_com_detail_5_9.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="118" column="16" lean-forward="true" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+            <state relative-caret-position="270">
+              <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="83" />
+              <folding>
+                <element signature="e#71#111#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spark_hc_detail_5_18.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py">
+      <file leaf-file-name="spark_hy88_com_detail_5_19.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_19.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+            <state relative-caret-position="720">
+              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+              <folding>
+                <element signature="e#71#111#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,9 +47,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>com_pic</find>
       <find>com_pic_upyun</find>
       <find>cate</find>
+      <find>image_to</find>
+      <find>img_url_handle</find>
+      <find>com_pic</find>
+      <find>base_url</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -69,17 +69,20 @@
         <option value="$PROJECT_DIR$/../oldboyedu/app01/templates/index.html" />
         <option value="$PROJECT_DIR$/../oldboyedu/app01/models.py" />
         <option value="$USER_HOME$/Desktop/gcpy_utils/spark_hy88_com_detail_5_9.py" />
-        <option value="$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hy88_get_url_5_8.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hy88_product_detail_5_10.py" />
         <option value="$PROJECT_DIR$/../spark/quchong_4_17.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hy88_grop_5_11.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hy88_grop_5_15.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hy88_online_5_15.py" />
-        <option value="$PROJECT_DIR$/../spark/spark_hy88_com_detail_4_26.py" />
         <option value="$USER_HOME$/Desktop/uptest1.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hy88_online_5_16.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py" />
+        <option value="$PROJECT_DIR$/../spark/spark_hy88_com_detail_4_26.py" />
+        <option value="$PROJECT_DIR$/../spark/spark_com_new_detail_5__19.py" />
+        <option value="$PROJECT_DIR$/../spark/hy88_field_pick_all.py" />
+        <option value="$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py" />
+        <option value="$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_19.py" />
       </list>
     </option>
   </component>
@@ -94,6 +97,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,7 +118,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,6 +277,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17760417" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3209352" />
@@ -303,20 +307,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../oldboyedu/app01/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oldboyedu/app01/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../oldboyedu/oldboyedu/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -519,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_4_25.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8881">
-          <caret line="36" column="2" lean-forward="true" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../spark/quchong_4_17.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -554,56 +537,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_get_url_5_8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="13" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_4_26.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="14" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_product_detail_5_10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3810">
-          <caret line="127" selection-start-line="127" selection-end-line="127" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/uptest1.py" />
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_online_5_15.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_online_5_16.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="16" column="83" lean-forward="true" selection-start-line="2" selection-end-line="16" selection-end-column="83" />
-          <folding>
-            <element signature="e#33#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_grop_5_15.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_grop_5_11.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -614,24 +552,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/hy88_field_pick_all.py">
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_4_26.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1080">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="24" selection-end-column="51" />
+        <state relative-caret-position="450">
+          <caret line="148" column="51" lean-forward="true" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py">
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_online_5_15.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="118" column="16" lean-forward="true" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        <state>
+          <caret selection-end-line="2" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_online_5_16.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="55" column="35" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="55" selection-end-column="35" />
+          <folding>
+            <element signature="e#33#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_product_detail_5_10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="90" column="57" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="90" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_com_new_detail_5__19.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#71#111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/hy88_field_pick_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="369" column="45" selection-start-line="369" selection-start-column="31" selection-end-line="369" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+        <state relative-caret-position="441">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_4_25.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="36" column="2" lean-forward="true" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_9.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="83" />
+          <folding>
+            <element signature="e#71#111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_grop_5_11.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3510">
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_get_url_5_8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spark/spark_hy88_com_detail_5_19.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding>
+            <element signature="e#71#111#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
