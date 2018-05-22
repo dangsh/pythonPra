@@ -23,6 +23,7 @@ def map_func2(iter_x):
     from lxml import etree
     import json
     from gcpy_utils.spider.handle import image_to_upyun, data_to_online
+    import re
     def get_unicode(s):
         try:
             return '' if not s else (eval('''"%s"''' % (s.replace('"', '\\"').replace("'", "\\'")))).decode("utf-8")
@@ -46,7 +47,7 @@ def map_func2(iter_x):
         detail = ""
         thumb_1 = ""
         thumb_2 = ""
-        thumb_3 = ""
+        thumb = ""
         cate_name_1 = ""
         cate_name_2 = ""
         cate_name_3 = ""
@@ -67,9 +68,11 @@ def map_func2(iter_x):
             pass
         try:
             title = selector_content.xpath('//h1[@class="proTitle"]/text()')[0]
-            for i in selector_content.xpath('//div[@class="topPriceRig"]'):
-                price = i.xpath('text()')[1]
-            price = price.replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+            try:
+                price = selector_content.xpath('//div[@class="topPriceRig"]/text()')[1]
+                price = price.replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+            except:
+                pass
             offer_num = selector_content.xpath('//span[@class="supply-numb"]/text()')[0]
             for i in selector_content.xpath('//div[@class="item-row-w"]'):
                 row = i.xpath('string(.)')
@@ -78,35 +81,71 @@ def map_func2(iter_x):
             send_time = send_time.replace('\r','').replace('\n','').replace('\t','').replace(' ','')
             try:
                 send_money = selector_content.xpath('//span[@class="i-txt"]')[0]
-                com_name = selector_content.xpath('//div[@class="comply-name"]/p/a/text()')[0]
+            except:
+                pass
+            try:
                 buy_sell_num = selector_content.xpath('//li[@class="line-btm"]/div/a/text()')[0]
             except:
                 pass
-            for i in selector_content.xpath('//div[@class="item-mmt-txt"]/ul/li'):
-                row = i.xpath('string(.)')
-                if u'所在地区' in row:
-                    com_addr = i.xpath('div/p/text()')[0]
-                if u'认证信息' in row:
-                    try:
-                        auth = i.xpath('div/a/text()')[0]
-                    except:
-                        auth = i.xpath('div/text()')[0]
-            com_url = selector_content.xpath('//p[@class="cName"]/a/@href')[0]
-            mobile = selector_content.xpath('//em[@class="c-red"]/text()')[0][1:]
-            telephone = selector_content.xpath('//div[@class="p tel1"]/em/text()')[0]
-            telephone = telephone[1:].split(' ')[0]
-            seller = selector_content.xpath('//div[@class="p name"]/em/text()')[0][1:]
-            for i in selector_content.xpath('//div[@id="pdetail"]/div/table/tr'):
-                key = i.xpath('th/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')[:-1]
-                value = i.xpath('td/div/p/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')
-                str = key + '|' + value
-                attrs_kv.append(str)
-            detail = json.loads(data[1:-1])["html"]
+            try:
+                com_name = selector_content.xpath('//div[@class="comply-name"]/p/a/text()')[0]
+                for i in selector_content.xpath('//div[@class="item-mmt-txt"]/ul/li'):
+                    row = i.xpath('string(.)')
+                    if u'所在地区' in row:
+                        com_addr = i.xpath('div/p/text()')[0]
+                    if u'认证信息' in row:
+                        try:
+                            auth = i.xpath('div/a/text()')[0]
+                        except:
+                            auth = i.xpath('div/text()')[0]
+                com_url = selector_content.xpath('//p[@class="cName"]/a/@href')[0]
+            except:
+                pass
+            try:
+                mobile = selector_content.xpath('//em[@class="c-red"]/text()')[0][1:]
+                telephone = selector_content.xpath('//div[@class="p tel1"]/em/text()')[0]
+                telephone = telephone[1:].split(' ')[0]
+                seller = selector_content.xpath('//div[@class="p name"]/em/text()')[0][1:]
+            except:
+                pass
+            try:
+                for i in selector_content.xpath('//div[@id="pdetail"]/div/table/tr'):
+                    key = i.xpath('th/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')[:-1]
+                    value = i.xpath('td/div/p/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+                    str = key + '|' + value
+                    attrs_kv.append(str)
+            except:
+                pass
+            try:
+                detail = json.loads(data[1:-1])["html"]
+            except:
+                pass
+            try:
+                thumb = selector_content.xpath('//ul[@id="thumblist"]/li[1]/div/a/@rel')[0]
+                thumb = re.findall(r"largeimage: '(.*?)'",thumb)[0]
+                thumb_1 = selector_content.xpath('//ul[@id="thumblist"]/li[2]/div/a/@rel')[0]
+                thumb_1 = re.findall(r"largeimage: '(.*?)'",thumb_1)[0]
+                thumb_2 = selector_content.xpath('//ul[@id="thumblist"]/li[3]/div/a/@rel')[0]
+                thumb_2 = re.findall(r"largeimage: '(.*?)'",thumb_2)[0]
+            except:
+                pass
+            try:
+                json_data = re.findall(r'"supCatClass":(.*?),"supcatId"',content)[0]
+                json_data = json.loads(json_data)
+                cate_name_1 = json_data[0]["catName"]
+                cate_name_2 = json_data[1]["catName"]
+                cate_name_3 = json_data[2]["catName"]
+            except:
+                pass
         except:
             pass
         try:
-            if com_pic:
-                com_pic_upyun = image_to_upyun(base_url, com_pic)
+            if thumb:
+                thumb = image_to_upyun(x[0], thumb)
+            if thumb_1:
+                thumb_1 = image_to_upyun(x[0], thumb_1)
+            if thumb_2:
+                thumb_2 = image_to_upyun(x[0], thumb_2)
         except:
             pass
         data = {
@@ -127,11 +166,10 @@ def map_func2(iter_x):
             'detail' : detail ,
             'thumb_1' : thumb_1 ,
             'thumb_2' : thumb_2 ,
-            'thumb_3' : thumb_3 ,
+            'thumb' : thumb ,
             'cate_name_1' : cate_name_1 ,
             'cate_name_2' : cate_name_2 ,
             'cate_name_3' : cate_name_3 ,
         }
-        data_to_online("hy88_company",x[0],data)
-
-rdd.foreachPartition(map_func)
+        data_to_online("huicong_product",x[0],data)
+rdd.foreachPartition(map_func2)
