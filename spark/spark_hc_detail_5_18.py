@@ -66,79 +66,155 @@ def map_func2(iter_x):
             selector_data = etree.HTML(data)
         except:
             pass
-        try:
-            title = selector_content.xpath('//h1[@class="proTitle"]/text()')[0]
+        if selector_content.xpath('//h1[@class="proTitle"]/text()'):
             try:
-                price = selector_content.xpath('//div[@class="topPriceRig"]/text()')[1]
-                price = price.replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+                try:
+                    title = selector_content.xpath('//h1[@class="proTitle"]/text()')[0]
+                except:
+                    pass
+                try:
+                    price = selector_content.xpath('//div[@class="topPriceRig"]/text()')[1]
+                    price = price.replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+                except:
+                    pass
+                try:
+                    offer_num = selector_content.xpath('//span[@class="supply-numb"]/text()')[0]
+                except:
+                    pass
+                try:
+                    for i in selector_content.xpath('//div[@class="item-row-w"]'):
+                        row = i.xpath('string(.)')
+                        if u'发货期限' in row:
+                            send_time = i.xpath('text()')[1]
+                    send_time = send_time.replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+                except:
+                    pass
+                try:
+                    send_money = selector_content.xpath('//span[@class="i-txt"]')[0]
+                except:
+                    pass
+                try:
+                    buy_sell_num = selector_content.xpath('//li[@class="line-btm"]/div/a/text()')[0]
+                except:
+                    pass
+                try:
+                    com_name = selector_content.xpath('//div[@class="comply-name"]/p/a/text()')[0]
+                    for i in selector_content.xpath('//div[@class="item-mmt-txt"]/ul/li'):
+                        row = i.xpath('string(.)')
+                        if u'所在地区' in row:
+                            com_addr = i.xpath('div/p/text()')[0]
+                        if u'认证信息' in row:
+                            try:
+                                auth = i.xpath('div/a/text()')[0]
+                            except:
+                                auth = i.xpath('div/text()')[0]
+                    com_url = selector_content.xpath('//p[@class="cName"]/a/@href')[0]
+                except:
+                    pass
+                try:
+                    mobile = selector_content.xpath('//em[@class="c-red"]/text()')[0][1:]
+                    telephone = selector_content.xpath('//div[@class="p tel1"]/em/text()')[0]
+                    telephone = telephone[1:].split(' ')[0]
+                    seller = selector_content.xpath('//div[@class="p name"]/em/text()')[0][1:]
+                except:
+                    pass
+                try:
+                    for i in selector_content.xpath('//div[@id="pdetail"]/div/table/tr'):
+                        key = i.xpath('th/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')[:-1]
+                        value = i.xpath('td/div/p/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+                        str = key + '|' + value
+                        attrs_kv.append(str)
+                except:
+                    pass
+                try:
+                    detail = json.loads(data[1:-1])["html"]
+                except:
+                    pass
+                try:
+                    thumb = selector_content.xpath('//ul[@id="thumblist"]/li[1]/div/a/@rel')[0]
+                    thumb = re.findall(r"largeimage: '(.*?)'",thumb)[0]
+                    thumb_1 = selector_content.xpath('//ul[@id="thumblist"]/li[2]/div/a/@rel')[0]
+                    thumb_1 = re.findall(r"largeimage: '(.*?)'",thumb_1)[0]
+                    thumb_2 = selector_content.xpath('//ul[@id="thumblist"]/li[3]/div/a/@rel')[0]
+                    thumb_2 = re.findall(r"largeimage: '(.*?)'",thumb_2)[0]
+                except:
+                    pass
+                try:
+                    json_data = re.findall(r'"supCatClass":(.*?),"supcatId"',content)[0]
+                    json_data = json.loads(json_data)
+                    cate_name_1 = json_data[0]["catName"]
+                    cate_name_2 = json_data[1]["catName"]
+                    cate_name_3 = json_data[2]["catName"]
+                except:
+                    pass
             except:
                 pass
-            offer_num = selector_content.xpath('//span[@class="supply-numb"]/text()')[0]
-            for i in selector_content.xpath('//div[@class="item-row-w"]'):
-                row = i.xpath('string(.)')
-                if u'发货期限' in row:
-                    send_time = i.xpath('text()')[1]
-            send_time = send_time.replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+        # 另一种页面的情况
+        if not selector_content.xpath('//h1[@class="proTitle"]/text()'):
             try:
-                send_money = selector_content.xpath('//span[@class="i-txt"]')[0]
+                try:
+                    title = selector_content.xpath('//h1[@id="comTitle"]/text()')[0]
+                except:
+                    pass
+                try:
+                    price = selector_content.xpath('//span[@id="oriPriceTop"]/text()')[0][1:]
+                except:
+                    pass
+                try:
+                    offer_num = selector_content.xpath('//span[@id="supplyInfoNum"]/text()')[0]
+                except:
+                    pass
+                try:
+                    send_time = selector_content.xpath('//div[@class="adress-wrap payf"]/text()')[0]
+                except:
+                    pass
+                try:
+                    com_name = selector_content.xpath('//div[@class="goods-tit goods-tit-blue"]/a/text()')[0]
+                    com_url = selector_content.xpath('//div[@class="goods-tit goods-tit-blue"]/a/@href')[0]
+                except:
+                    pass
+                try:
+                    com_addr = selector_content.xpath('//p[@class="sate"]/span/text()')[0]
+                except:
+                    pass
+                try:
+                    telephone = re.findall(r'"telephone":"(.*?)"',content)[0]
+                except:
+                    pass
+                try:
+                    mobile = re.findall(r'"mp":"(.*?)"',content)[0]
+                except:
+                    pass
+                try:
+                    seller = selector_content.xpath('//p[@class="name"]/span/text()')[0]
+                except:
+                    pass
+                try:
+                    for i in selector_content.xpath('//div[@class="d-vopy"]/table/tr'):
+                        key = i.xpath('th/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')[:-1]
+                        value = i.xpath('td/div/p/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+                        str = key + '|' + value
+                        attrs_kv.append(str)
+                except:
+                    pass
+                try:
+                    detail = json.loads(data[1:-1])["html"]
+                except:
+                    pass
+                try:
+                    thumb = selector_content.xpath('//div[@class="vertical-img"]/a/img/@src')[0]
+                except:
+                    pass
+                try:
+                    json_data = re.findall(r'"supCatClass":(.*?),"supcatId"',content)[0]
+                    json_data = json.loads(json_data)
+                    cate_name_1 = json_data[0]["catName"]
+                    cate_name_2 = json_data[1]["catName"]
+                    cate_name_3 = json_data[2]["catName"]
+                except:
+                    pass
             except:
                 pass
-            try:
-                buy_sell_num = selector_content.xpath('//li[@class="line-btm"]/div/a/text()')[0]
-            except:
-                pass
-            try:
-                com_name = selector_content.xpath('//div[@class="comply-name"]/p/a/text()')[0]
-                for i in selector_content.xpath('//div[@class="item-mmt-txt"]/ul/li'):
-                    row = i.xpath('string(.)')
-                    if u'所在地区' in row:
-                        com_addr = i.xpath('div/p/text()')[0]
-                    if u'认证信息' in row:
-                        try:
-                            auth = i.xpath('div/a/text()')[0]
-                        except:
-                            auth = i.xpath('div/text()')[0]
-                com_url = selector_content.xpath('//p[@class="cName"]/a/@href')[0]
-            except:
-                pass
-            try:
-                mobile = selector_content.xpath('//em[@class="c-red"]/text()')[0][1:]
-                telephone = selector_content.xpath('//div[@class="p tel1"]/em/text()')[0]
-                telephone = telephone[1:].split(' ')[0]
-                seller = selector_content.xpath('//div[@class="p name"]/em/text()')[0][1:]
-            except:
-                pass
-            try:
-                for i in selector_content.xpath('//div[@id="pdetail"]/div/table/tr'):
-                    key = i.xpath('th/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')[:-1]
-                    value = i.xpath('td/div/p/text()')[0].replace('\r','').replace('\n','').replace('\t','').replace(' ','')
-                    str = key + '|' + value
-                    attrs_kv.append(str)
-            except:
-                pass
-            try:
-                detail = json.loads(data[1:-1])["html"]
-            except:
-                pass
-            try:
-                thumb = selector_content.xpath('//ul[@id="thumblist"]/li[1]/div/a/@rel')[0]
-                thumb = re.findall(r"largeimage: '(.*?)'",thumb)[0]
-                thumb_1 = selector_content.xpath('//ul[@id="thumblist"]/li[2]/div/a/@rel')[0]
-                thumb_1 = re.findall(r"largeimage: '(.*?)'",thumb_1)[0]
-                thumb_2 = selector_content.xpath('//ul[@id="thumblist"]/li[3]/div/a/@rel')[0]
-                thumb_2 = re.findall(r"largeimage: '(.*?)'",thumb_2)[0]
-            except:
-                pass
-            try:
-                json_data = re.findall(r'"supCatClass":(.*?),"supcatId"',content)[0]
-                json_data = json.loads(json_data)
-                cate_name_1 = json_data[0]["catName"]
-                cate_name_2 = json_data[1]["catName"]
-                cate_name_3 = json_data[2]["catName"]
-            except:
-                pass
-        except:
-            pass
         try:
             if thumb:
                 thumb = image_to_upyun(x[0], thumb)

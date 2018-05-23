@@ -35,8 +35,8 @@
       <file leaf-file-name="spark_hc_detail_5_18.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3570">
-              <caret line="119" column="55" lean-forward="true" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
+            <state relative-caret-position="510">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -59,6 +59,8 @@
       <find>img_url_handle</find>
       <find>com_pic</find>
       <find>base_url</find>
+      <find>proTitle</find>
+      <find>#</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -94,9 +96,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1562" />
-    <option name="y" value="-116" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1703" />
+    <option name="y" value="-167" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
@@ -315,13 +317,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../oldboyedu/app01/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../django_test/mysite/mysite/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -634,10 +629,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/aaa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="1097" column="89" selection-start-line="1097" selection-start-column="81" selection-end-line="1097" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3570">
-          <caret line="119" column="55" lean-forward="true" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
+        <state relative-caret-position="510">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
