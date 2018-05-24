@@ -74,7 +74,25 @@ def map_func2(iter_x):
                     pass
                 try:
                     price = selector_content.xpath('//div[@class="topPriceRig"]/text()')[1]
-                    price = price.replace('\r','').replace('\n','').replace('\t','').replace(' ','')
+                except:
+                    pass
+                if not price:
+                    try:
+                        price = selector_content.xpath('//div[@class="topPriceRig"]/text()')[0]
+                    except:
+                        pass
+                if not price:
+                    try:
+                        price = selector_content.xpath('//div[@class="topPriceRig telBra"]/text()')[0]
+                    except:
+                        pass
+                try:
+                    price = price.replace('\r', '').replace('\n', '').replace('\t', '').replace(' ', '')
+                except:
+                    pass
+                try:
+                    if u'¥' in price:
+                        price = price.replace(u'¥','')
                 except:
                     pass
                 try:
@@ -157,7 +175,12 @@ def map_func2(iter_x):
                 except:
                     pass
                 try:
-                    price = selector_content.xpath('//span[@id="oriPriceTop"]/text()')[0][1:]
+                    price = selector_content.xpath('//span[@id="oriPriceTop"]/text()')[0]
+                    try:
+                        if u'¥' in price:
+                            price = price.replace(u'¥', '')
+                    except:
+                        pass
                 except:
                     pass
                 try:
