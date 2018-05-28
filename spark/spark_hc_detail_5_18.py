@@ -6,7 +6,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName('hc_get_product_detail').getOrCreate()
 sc = spark.sparkContext
 
-conf = {"hbase.zookeeper.quorum":  "192.168.14.1:2181",
+conf = {"hbase.zookeeper.quorum":  "192.168.14.2:2181",
         "hbase.mapreduce.inputtable": "spider_hc360", "hbase.client.scanner.timeout.period":"1000000"}
 valueConv = "org.apache.spark.examples.pythonconverters.HBaseResultToStringConverter"
 keyConv = "org.apache.spark.examples.pythonconverters.ImmutableBytesWritableToStringConverter"
