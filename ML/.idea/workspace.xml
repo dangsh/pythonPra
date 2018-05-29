@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="spark_hc_detail_5_18.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py">
+      <file leaf-file-name="t1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../app_test/t1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2271">
-              <caret line="271" column="9" lean-forward="true" selection-start-line="271" selection-start-column="9" selection-end-line="271" selection-end-column="9" />
+            <state relative-caret-position="607">
+              <caret line="46" column="50" lean-forward="true" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -79,6 +79,7 @@
         <option value="$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/settings.py" />
         <option value="$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/spiders/hcc.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py" />
+        <option value="$PROJECT_DIR$/../app_test/t1.py" />
       </list>
     </option>
   </component>
@@ -98,7 +99,7 @@
           <expand>
             <path>
               <item name="ML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark" type="462c0819:PsiDirectoryNode" />
+              <item name="app_test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -109,7 +110,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/hive/scrapySpider/huicong_com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../app_test" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
@@ -134,7 +135,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.get_huicong_level3_5_24">
+  <component name="RunManager" selected="Python.t1">
     <configuration name="get_huicong_level3_5_24" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ML" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,6 +149,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/xizhi/tools/get_huicong_level3_5_24.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="t1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="app_test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../app_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../app_test/t1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -255,9 +274,11 @@
     <list>
       <item itemvalue="Python.test" />
       <item itemvalue="Python.get_huicong_level3_5_24" />
+      <item itemvalue="Python.t1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.t1" />
         <item itemvalue="Python.get_huicong_level3_5_24" />
         <item itemvalue="Python.test" />
       </list>
@@ -287,8 +308,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17760417" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17760417" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3209352" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32943678" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
@@ -318,21 +340,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/spiders/hcc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/spiders/hcc.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -626,9 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -650,16 +656,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="831">
           <caret line="115" column="21" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
-          <folding>
-            <element signature="e#169#195#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2271">
-          <caret line="271" column="9" lean-forward="true" selection-start-line="271" selection-start-column="9" selection-end-line="271" selection-end-column="9" />
+        <state relative-caret-position="831">
+          <caret line="271" column="9" selection-start-line="271" selection-start-column="9" selection-end-line="271" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app_test/t1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="46" column="50" lean-forward="true" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
         </state>
       </provider>
     </entry>

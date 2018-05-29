@@ -9,6 +9,7 @@
     <orderEntry type="module" module-name="gcpy_utils" />
     <orderEntry type="module" module-name="spark" />
     <orderEntry type="module" module-name="huicong_com" />
+    <orderEntry type="module" module-name="app_test" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Twisted Trial" />
