@@ -1,31 +1,9 @@
-# from appium import webdriver
-#
-# server = 'http://localhost:4723/wd/hub'
-# desired_caps = {
-#     'platformName': 'Android',
-#     'deviceName': 'MI_NOTE_Pro',
-#     'appPackage': 'com.tencent.mm',
-#     'appActivity': '.ui.LauncherUI'
-# }
-#
-#
-# el4 = driver.find_element_by_id("com.tencent.mm:id/d2z")
-# el4.click()
-# el5 = driver.find_element_by_id("com.tencent.mm:id/ht")
-# el5.send_keys("18613723052")
-# el6 = driver.find_element_by_id("com.tencent.mm:id/ak_")
-# el6.click()
-# el7 = driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.EditText")
-# el7.send_keys("5801200zxg")
-# TouchAction(driver).tap(x=521, y=1143).perform()
-# TouchAction(driver).tap(x=614, y=1198).perform()
-
-
 # This sample code uses the Appium python client
 # pip install Appium-Python-Client
 # Then you can paste this into a file and simply run with Python
 
 from appium import webdriver
+import time
 
 caps = {}
 caps["platformName"] = "Android"
@@ -36,15 +14,25 @@ caps["platformVersion"] = "7.1"
 
 driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
 
-el4 = driver.find_element_by_id("com.tencent.mm:id/d2z")
+el2 = driver.find_element_by_id("com.tencent.mm:id/d2z")
+el2.click()
+el3 = driver.find_element_by_id("com.tencent.mm:id/ht")
+el3.send_keys("18538749356")
+time.sleep(2)
+el4 = driver.find_element_by_id("com.tencent.mm:id/ak_")
 el4.click()
-el5 = driver.find_element_by_id("com.tencent.mm:id/ht")
-el5.send_keys("18613723052")
+time.sleep(2)
+el5 = driver.find_elements_by_class_name("android.widget.EditText")[1]
+el5.send_keys("123")
 el6 = driver.find_element_by_id("com.tencent.mm:id/ak_")
 el6.click()
-el7 = driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.EditText")
-el7.send_keys("123")
-# TouchAction(driver).tap(x=521, y=1143).perform()
-# TouchAction(driver).tap(x=614, y=1198).perform()
+time.sleep(5)
+driver.press_keycode('4')
+time.sleep(20)
+el8 = driver.find_element_by_id("//android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]")
+el8.click()
+el9 = driver.find_element_by_xpath("//android.widget.ListView/android.widget.LinearLayout")
+el9.click()
+# driver.quit()
 
-driver.quit()
+

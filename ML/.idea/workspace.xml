@@ -14,8 +14,11 @@
       <file leaf-file-name="t1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../app_test/t1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="46" column="50" lean-forward="true" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+            <state relative-caret-position="660">
+              <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+              <folding>
+                <element signature="e#150#178#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,6 +82,7 @@
         <option value="$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/settings.py" />
         <option value="$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/spiders/hcc.py" />
         <option value="$PROJECT_DIR$/../spark/spark_hc_detail_5_18.py" />
+        <option value="$PROJECT_DIR$/../app_test/h_test.py" />
         <option value="$PROJECT_DIR$/../app_test/t1.py" />
       </list>
     </option>
@@ -310,7 +314,7 @@
     <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17760417" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17760417" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3209352" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32943678" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
@@ -338,13 +342,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/spiders/hcc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../django_test/mysite/mysite/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -666,10 +663,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../app_test/h_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../app_test/t1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="46" column="50" lean-forward="true" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+        <state relative-caret-position="660">
+          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <folding>
+            <element signature="e#150#178#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
