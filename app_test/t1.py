@@ -23,7 +23,7 @@ el4 = driver.find_element_by_id("com.tencent.mm:id/ak_")
 el4.click()
 time.sleep(2)
 el5 = driver.find_elements_by_class_name("android.widget.EditText")[1]
-el5.send_keys("5801200zxg")
+el5.send_keys("123")
 el6 = driver.find_element_by_id("com.tencent.mm:id/ak_")
 el6.click()
 time.sleep(5)
