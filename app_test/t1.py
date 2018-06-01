@@ -31,9 +31,37 @@ driver.press_keycode('4')
 time.sleep(30)
 el8 = driver.find_element_by_xpath("//android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RelativeLayout[contains(@index,2)]")
 el8.click()
+time.sleep(2)
 el9 = driver.find_element_by_xpath("//android.widget.ListView/android.widget.LinearLayout")
 el9.click()
-el10 = driver.find_elements_by_xpath("//android.widget.ListView/android.widget.FrameLayout")
+time.sleep(2)
+# 打印屏幕高和宽
+print(driver.get_window_size())
+#获取屏幕的高
+x = driver.get_window_size()['width']
+# 获取屏幕宽
+y = driver.get_window_size()['height']
+for i in range(10):
+    try:
+        time.sleep(5)
+        data = driver.find_elements_by_xpath("//android.widget.ListView/android.widget.FrameLayout")[1:]
+        try:
+            for i in data:
+                name = i.find_element_by_xpath("//android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView").get_attribute("text")
+                words = i.find_element_by_xpath("//android.widget.LinearLayout/android.widget.LinearLayout").get_attribute("text")
+                image = ""
+                try:
+                    image = i.find_element_by_xpath("//android.widget.LinearLayout/android.widget.LinearLayout[contains(@index,2)]/android.widget.FrameLayout/android.view.View").screenshot('/Screenshots/foo.png')
+                except Exception as e:
+                    print(e)
+                print(name , words , image)
+        except:
+            pass
+        # 向上滑
+        driver.swipe(1 / 2 * x, 8 / 10 * y, 1 / 2 * x, 2 / 10 * y, 2000)
+        time.sleep(5)
+    except:
+        pass
 # driver.quit()
 
 

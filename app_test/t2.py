@@ -4,6 +4,7 @@
 
 from appium import webdriver
 import time
+import os
 
 caps = {}
 caps["platformName"] = "Android"
@@ -15,5 +16,7 @@ caps["platformVersion"] = "7.1"
 driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
 # el9 = driver.find_element_by_xpath("//android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.ImageButton[1]")
 # el9.click()
-el10 = driver.find_element_by_xpath("//android.widget.RelativeLayout/android.widget.FrameLayout/com.smartisanos.calculator.DisplayView")
-print(el10.get_attribute("text"))
+# el10 = driver.find_element_by_xpath("//android.widget.RelativeLayout/android.widget.FrameLayout/com.smartisanos.calculator.DisplayView")
+# print(el10.get_attribute("text"))
+
+driver.save_screenshot('D:\\pythonPra\\app_test\\screenshots\\foo.png')
