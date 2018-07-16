@@ -10,6 +10,8 @@
     <orderEntry type="module" module-name="spark" />
     <orderEntry type="module" module-name="huicong_com" />
     <orderEntry type="module" module-name="app_test" />
+    <orderEntry type="module" module-name="pythonPra" />
+    <orderEntry type="module" module-name="tools" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Twisted Trial" />

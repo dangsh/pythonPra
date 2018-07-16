@@ -6,7 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/../app_test/.idea/app_test.iml" filepath="$PROJECT_DIR$/../app_test/.idea/app_test.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/gcpy_utils/.idea/gcpy_utils.iml" filepath="$USER_HOME$/Desktop/gcpy_utils/.idea/gcpy_utils.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/.idea/huicong_com.iml" filepath="$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/.idea/huicong_com.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../.idea/pythonPra.iml" filepath="$PROJECT_DIR$/../.idea/pythonPra.iml" />
       <module fileurl="file://$PROJECT_DIR$/../spark/.idea/spark.iml" filepath="$PROJECT_DIR$/../spark/.idea/spark.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/xizhi/tools/.idea/tools.iml" filepath="$USER_HOME$/Desktop/xizhi/tools/.idea/tools.iml" />
     </modules>
   </component>
 </project>
