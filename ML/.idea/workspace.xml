@@ -4,8 +4,6 @@
     <list default="true" id="3718cc79-43a2-4629-8b26-008e37373782" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../10_19前/之前/gameArts" beforeDir="false" afterPath="$PROJECT_DIR$/../10_19前/之前/gameArts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../10_19前/之前/todolist" beforeDir="false" afterPath="$PROJECT_DIR$/../10_19前/之前/todolist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ML.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,11 +15,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="7_14_data2mysql.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hcc.py" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/spiders/hcc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+              <folding>
+                <element signature="e#24#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="7_14_data2mysql.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Desktop/xizhi/tools/7_14_data2mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="540">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -123,7 +133,18 @@
           <expand>
             <path>
               <item name="ML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
+              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
+              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -158,7 +179,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.t1">
+  <component name="RunManager">
     <configuration name="get_huicong_level3_5_24" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ML" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,24 +193,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/xizhi/tools/get_huicong_level3_5_24.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="t1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="app_test" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../app_test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../app_test/t1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -297,11 +300,9 @@
     <list>
       <item itemvalue="Python.test" />
       <item itemvalue="Python.get_huicong_level3_5_24" />
-      <item itemvalue="Python.t1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.t1" />
         <item itemvalue="Python.get_huicong_level3_5_24" />
         <item itemvalue="Python.test" />
       </list>
@@ -664,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/spiders/hcc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/xizhi/tools/a.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -683,10 +677,20 @@
     </entry>
     <entry file="file://$USER_HOME$/Desktop/xizhi/tools/7_14_data2mysql.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="540">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/hive/scrapySpider/huicong_com/huicong_com/spiders/hcc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
